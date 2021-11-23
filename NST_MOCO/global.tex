@@ -49,22 +49,7 @@
 }
 
 % 摘要
-\begin{abstract}
-  本文介绍如何使用\nuaathesis{} 文档类撰写南京航空航天大学学位论文。
-
-  首先介绍如何获取并编译本文档，然后展示论文部件的实例，最后列举部分常用宏包的使用方法。
-\end{abstract}
-\keywords{学位论文, 模板, \nuaathesis}
-
-\begin{abstractEn}
-  This document introduces \nuaathesis, the \LaTeX{} document class for NUAA Thesis.
-
-  First, we show how to get the source code and compile this document.
-  Then we provide snippets for figures, tables, equations, etc.
-  Finally we enforce some usage patterns.
-\end{abstractEn}
-\keywordsEn{NUAA thesis, document class, space is accepted here}
-
+\include{chapter/Abstract}
 
 % 请按自己的论文排版需求，随意修改以下全局设置
 
@@ -83,6 +68,10 @@
 \usepackage{listings}
 \usepackage{multirow}
 \usepackage{pifont}
+% \usepackage{algorithm}
+% \usepackage{algorithmic}
+\usepackage[ruled,linesnumbered]{algorithm2e}
+\usepackage{setspace}
 
 \lstdefinestyle{lstStyleBase}{%
   basicstyle=\small\ttfamily,

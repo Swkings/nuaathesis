@@ -4,17 +4,26 @@
 
 \chapter*{注释表}
 
-\noindent\begin{tabu} to \textwidth {|X[l]|p{4.5cm}|X[l]|p{4.5cm}|}\hline
-$O$ & 时间（空间）复杂度 & $e$ & 误差绝对值 \\ \hline
-\multirow{2}{*}{$a_{s1}, a_{s0}$} & \multirow{2}{4.5cm}{连轴器及传动轴简化模型传递系数} &
-$F_X$ & 汽车总制动力 \\ \cline{3-4}
-& & $F_Y$ & 汽车总侧向力 \\ \hline
+\noindent\begin{longtabu} to \textwidth {|X[l]|p{4.5cm}|X[l]|p{4.5cm}|}\hline
+$O$ & 时间（空间）复杂度 & $m$ & 目标数量 \\ \hline
+$F(\mathbf{x})$ & $\mathbf{x}$对应的目标函数 & $f_i(\mathbf{x})$ & 第$i$个目标函数 \\ \hline
+$\Omega)$ & 决策空间 & $\mathbb{R}^n$ & $n$维实数空间 \\ \hline
+$\prec$ & 支配（强支配） & $\not \prec$ & 非支配 \\ \hline
+$\preceq$ & 弱支配 & $\mathbf{x}^*$ & Pareto最优解  \\ \hline 
+$PS$ & Pareto最优解集 & $PF$ & Pareto前沿\\ \hline 
+$\mathbf{z}^*$ & 理想点，参考点 & $\mathbf{z}^{nad}$ & 边界点 \\ \hline
+$\boldsymbol{\lambda}$ & 权重向量 & $\boldsymbol{\lambda}^i$ & 第$i$权重向量 \\ \hline
+$\lambda^i_j$ & 第$i$个权重向量的第$j$分量 & $\mathcal{EP}$ & 外部集（精英种群） \\ \hline
+$\mathcal{SP}$ & 子问题 & $\mathcal{S}$ & 搜索（解）空间 \\ \hline
+$\mathcal{X}$ & 有限（可数无限）变量集 & $s^*$ & 局部最优解 \\ \hline
+$\mathcal{D}$ & 决策域 & $\mathcal{C}$ & 约束域 \\ \hline
+$\mathcal{A}$ & 接受策略 & $\mathcal{N}$ & 邻域结构 \\ \hline
 
-\end{tabu}
+\end{longtabu}
 
 \chapter*{缩略词}
 
-\noindent\begin{tabu} to \textwidth {|X[1,c]|X[4,c]|}\hline
+\noindent\begin{longtabu} to \textwidth {|X[1,c]|X[4,c]|}\hline
 缩略词 & 英文全称 \\ \hline
 MOPs & Multi-objective Optimization Problems \\ \hline
 CMOPs & Combinatorial Multi-objective Optimization Problems \\ \hline
@@ -25,7 +34,7 @@ ML & Machine Learning \\ \hline
 SD & Source Domains \\ \hline
 TD & Target Domains \\ \hline
 EA & Evolutionary Algorithm \\ \hline
-ETO & Evolutionary Transfer Optimization  \\ \hline
+ETO & Evolutionary Transfer Optimization \\ \hline
 NS & Neighborhood Structure \\ \hline
 MOEA & Multi-objective Evolutionary Algorithm \\ \hline
 NSGA & Non-dominated Sorting Genetic Algorithm \\ \hline
@@ -38,10 +47,28 @@ HV & Hypervolume \\ \hline
 IBEA & The Indicator-based Evolutionary Algorithm \\ \hline
 HypE & Hypervolume Estimation Algorithm \\ \hline
 MOEA/D & Multi-objective Evolutionary Algorithm based on Decomposition \\ \hline
-EA & Evolutionary Algorithm \\ \hline
 MOGLS & Multi-objective Genetic Local Search \\ \hline
 GLS & Genetic Local Search \\ \hline
 PAES & Pareto Archived Evolution Strategy \\ \hline
 PLS & Pareto Local Search \\ \hline
 MPLS & Multi-restart Pareto Local Search \\ \hline
-\end{tabu}
+TSP & Traveling Salesman Problem \\ \hline
+VRP & Vehicle Routing Problem \\ \hline
+NDSet & Non-dominated Solution Set \\ \hline
+PS & Pareto Set \\ \hline
+PF & Pareto Front \\ \hline
+NDSort & Non-dominated Sort \\ \hline
+WS & Weight Sum \\ \hline
+TCH & Tchebycheff \\ \hline
+PBI & Penalty-based Boundary Intersection \\ \hline
+EP & External(Elite) Population \\ \hline
+SP & Sub-problem \\ \hline
+GS & Global Search \\ \hline
+MOTSP & Multi-Objective Traveling Salesman Problem \\ \hline
+CSet & Candidate Set \\ \hline
+IGD & Inverted Generational Distance \\ \hline
+MCMST & Multi-criteria Minimum Spanning Tree \\ \hline
+MST & Minimum Spanning Tree \\ \hline
+LKH & Lin Kernighan Helsgaun \\ \hline
+
+\end{longtabu}
