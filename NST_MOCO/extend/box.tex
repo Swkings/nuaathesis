@@ -1,0 +1,88 @@
+
+
+\usepackage{twoopt}
+\usepackage{tikz}
+\usetikzlibrary{fit}
+
+
+%%%
+\newcommand\tikzmark[1]{%
+	\tikz[remember picture,overlay]\node[inner xsep=0pt] (#1) {};}
+
+\newcommandtwoopt\Textbox[8][2.5cm][2cm]{%
+	\begin{tikzpicture}[remember picture,overlay]
+	\coordinate (aux) at ([xshift=#1]#4);
+	\node[inner ysep=#6,xshift=#8, yshift=#7,draw=black,thick,dashed,
+	fit=(#3) (aux),baseline] 
+	(box) {};
+	\node[text=red, text width=#2,anchor=north east,
+	font=\sffamily\footnotesize,align=right] 
+	at (box.north east) {#5};
+	\end{tikzpicture}%
+}
+
+
+
+\begin{algorithm}[t]
+		\caption{OPL-CMA-ES}
+		\label{alg: OPL-CMA-ES}
+		\begin{algorithmic}[1]
+			\setstretch{1.2}
+			\State \textbf{Input:} $\textbf{m}_{0}\in\mathbb{R}^{n},\sigma_{0}\in\mathbb{R}_{+}$
+			\State \textbf{Set:}
+			$\lambda_{\rm def}=4+\lfloor3\ln{n}\rfloor,\mu=\lfloor\lambda_{\rm def}/2\rfloor,c_{c}=\frac{4}{n+4},$
+			\Statex
+			$w_{i}=\frac{\ln{(\mu+0.5)}-\ln{i}}{\sum_{k=1}^{\mu}\ln{(\mu+0.5)}-\ln{k}},i=1,\cdots,\mu,$
+			\Statex
+			$\mu_{w}=\frac{1}{\sum_{i=1}^{\mu}w_{i}^{2}},c_{1}=\frac{2}{(n+1.3)^2+\mu_{w}},c_{\sigma}=\frac{\mu_{w}+2}{n+\mu_{w}+3},$
+			\Statex
+			$c_{\mu}=\frac{2(\mu_{w}-2+\frac{1}{\mu_{w}})}{(n+2)^{2}+\mu_{w}},d_{\sigma}=1+2\max{(0,\sqrt{\frac{\mu_{w}-1}{n+1}}-1)}+c_{\sigma},$
+			\Statex
+			$c_{\lambda}=0.2,\lambda_{\rm def}=\lambda,d_{\lambda}=1 + c_{\lambda}$
+			\State \textbf{Initialize:} $\mathbf{C}_{0}=\mathbf{I},\mathbf{p}_{0}=\mathbf{0},\mathbf{s}_{0}=\mathbf{0},\lambda_{0}=k_{n}\times\lambda_{\rm def},$
+			\Statex
+			$t=0,\psi_{0}=0$
+			\Repeat
+			\State \tikzmark{start1}{{\small // sample $\lambda_{t}$ candidate solutions from $\mathcal{N}(\vc{m}_{t},\sigma_{t}^{2}\vc{C}_{t})$}}\label{opl-cma-es:sampling1}
+			%\State $\mathbf{B}\mathbf{D}^{2}\mathbf{B}^{T}\leftarrow {\rm eigen\!-\!decomposition}(\mathbf{C}_{t})$
+			\For{$i=1\;{\rm to}\;\lambda_{t}$}
+			%\State $\mathbf{y}_{i}\sim\mathcal{N}(\mathbf{0},\mathbf{C}_{t})$, with $\mathbf{z}_{i}\sim\mathcal{N}(\mathbf{0},\mathbf{I})$
+			\State $\mathbf{x}_{i}=\mathbf{m}_{t}+\sigma_{t}\mathbf{y}_{i}$ with $\mathbf{y}_{i}\sim\mathcal{N}(\mathbf{0},\mathbf{C}_{t})$
+			\EndFor\label{opl-cma-es:sampling2}
+			\tikzmark{end1}
+			
+			\vspace*{2pt}
+			\State \tikzmark{start2}{{\small // compute the noise strength}}\label{opl-cma-es:detection1}
+			\State $\displaystyle r,[\widetilde{f}_{1},\cdots,\widetilde{f}_\lambda]\leftarrow\mathbf{detection}([\mathbf{x}_{1}\cdots,\mathbf{x}_\lambda], [\widetilde{f}_{1},\cdots,\widetilde{f}_\lambda])$\tikzmark{end2}\label{opl-cma-es:detection2}
+			
+			\vspace*{2pt}
+			\State \tikzmark{start3}{{\small // update the population size}}
+			\State  $\displaystyle \psi_{t+1}=(1-c_{\lambda})\psi_{t}+c_{\lambda}r$\label{opl-cma-es:psi}
+			\State $\displaystyle \lambda_{t+1}=\lambda_{t}\cdot\exp\left( \frac{\psi_{t+1}}{d_{\lambda}} \right)$\label{opl-cma-es:lambda}
+			\State $\displaystyle \lambda_{t+1}=\min\left(\max(\lfloor \lambda_{t+1} \rfloor, \lambda_{\rm min}), \lambda_{\rm max}\right)$\label{opl-cma-es:restrict}
+			%			\State $\displaystyle \sigma_{t+1}=\sigma_{t+1}\cdot\frac{\sigma^{*}(\lambda_{t+1})}{\sigma^{*}(\lambda_{t})}$
+			\tikzmark{end3}
+			
+			\vspace*{2pt}
+			\State \tikzmark{start4}{{\small // update the distribution parameters}}\label{opl-cma-es:update1}
+			\State sort $\widetilde{f}(\mathbf{x}_{1:\lambda})\le \widetilde{f}(\mathbf{x}_{2:\lambda})\le\cdots\le \widetilde{f}(\mathbf{x}_{\lambda:\lambda})$
+			\State $\mathbf{m}_{t+1}=\mathbf{m}_{t}+\sum_{i=1}^{\mu}w_{i}(\mathbf{x}_{i:\lambda}-\mathbf{m}_{t})$
+			\State $\mathbf{p}_{t+1}=(1-c_{c})\mathbf{p}_{t}\!+\!\sqrt{c_{c}(2-c_{c})}\sqrt{\mu_{w}}\frac{\mathbf{m}_{t+1}-\mathbf{m}_{t}}{\sigma_{t}}$
+			\State $\displaystyle \small{\mathbf{s}_{t+1}=(1-c_{\sigma})\mathbf{s}_{t}\!+\!\sqrt{c_{\sigma}(2-c_{\sigma})}\sqrt{\mu_{w}}\mathbf{C}_{t}^{-\frac{1}{2}}\frac{\mathbf{m}_{t+1}-\mathbf{m}_{t}}{\sigma_{t}}}$
+			\State \small{$\displaystyle \mathbf{C}_{t+1}=(1-c_{1}-c_{\mu})\mathbf{C}_{t}+c_{1}\mathbf{p}_{t+1}\mathbf{p}_{t+1}^{T}+c_{\mu}\sum_{i=1}^{\mu}w_{i}\mathbf{y}_{i:\lambda}\mathbf{y}_{i:\lambda}^{T}$}
+			\normalsize
+			\State $\displaystyle \sigma_{t+1}=\sigma_{t}\cdot\exp\left(\frac{c_{\sigma}}{d_{\sigma}}\left(\frac{||\mathbf{s}_{t+1}||}{\mathbb{E}[||\mathcal{N}(\mathbf{0},\mathbf{I})||]}-1\right)\right)$\label{opl-cma-es:update2}
+			\tikzmark{end4}
+			
+			\vspace*{2pt}
+			\If{$\lambda_{t+1}$ is changed}\label{opl-cma-es:change1}
+			\State update the parameters depending on $\lambda_{t+1}$
+			\EndIf\label{opl-cma-es:change2}
+			\State $t=t+1$
+			\Until{stopping criterion is met}
+		\end{algorithmic}
+		\Textbox[6.73cm][2.5cm]{start1}{end1}{}{5pt}{0ex}{0ex}
+		\Textbox[-0.1cm][2cm]{start2}{end2}{}{5pt}{0ex}{0ex}
+		\Textbox[2.1cm][4cm]{start3}{end3}{}{4pt}{0ex}{0ex}
+		\Textbox[1.35cm][2cm]{start4}{end4}{}{8pt}{-0.4ex}{0ex}
+\end{algorithm}

@@ -1,0 +1,65 @@
+一、LATEX调整公式与正文间距离，调整空白大小：
+
+ 
+
+调整空白命令：
+
+\setlength{\abovedisplayskip}{3pt} %%% 3pt 个人觉得稍妥，可自行设置
+
+\setlength{\belowdisplayskip}{3pt}
+
+ 
+
+用法，放在各种公式命令的适当位置，参见如下：
+
+ 
+
+%样式一
+
+\begin{equation}
+
+\setlength{\abovedisplayskip}{3pt}
+
+\setlength{\belowdisplayskip}{3pt}
+
+y(t)=a(t)-b(t).
+
+\end{equation}
+
+ 
+
+%样式二
+
+$$
+
+\setlength{\abovedisplayskip}{3pt}
+
+\setlength{\belowdisplayskip}{3pt}
+
+y(t)=a(t)-b(t).
+
+$$
+
+ 
+
+%样式三
+
+\begin{eqnarray}
+
+\setlength{\abovedisplayskip}{3pt}
+
+\setlength{\belowdisplayskip}{3pt}
+
+y(t)=a(t)-b(t).
+
+\end{eqnarray}
+
+ 
+
+% 二、Latex调整图片与上下文距离
+
+\vspace{-0.8cm}  %调整图片与上文的垂直距离
+
+\setlength{\abovecaptionskip}{-0.2cm}   %调整图片标题与图距离
+
+\setlength{\belowcaptionskip}{-1cm}   %调整图片标题与下文距离

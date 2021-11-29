@@ -68,10 +68,14 @@
 \usepackage{listings}
 \usepackage{multirow}
 \usepackage{pifont}
-% \usepackage{algorithm}
-% \usepackage{algorithmic}
-\usepackage[ruled,linesnumbered]{algorithm2e}
+
+% \usepackage[ruled,linesnumbered]{algorithm2e}
+% 按章节编号
+% vlined 去掉算法中的封闭语法end
+\usepackage[ruled,linesnumbered,resetcount,algochapter]{algorithm2e}
 \usepackage{setspace}
+% 三线表，表格注释说明
+\usepackage{threeparttable}
 
 \lstdefinestyle{lstStyleBase}{%
   basicstyle=\small\ttfamily,
@@ -115,6 +119,8 @@
 
 \theoremstyle{nuaaplain}
 \nuaatheoremchapu{definition}{定义}
+\nuaatheoremchapu{theorem}{定理}
+\nuaatheoremchapu{corollary}{推论}
 \nuaatheoremchapu{assumption}{假设}
 \nuaatheoremchap{exercise}{练习}
 \nuaatheoremchap{nonsense}{胡诌}
