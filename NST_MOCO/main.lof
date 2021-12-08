@@ -1,0 +1,84 @@
+\contentsline {figure}{\numberline {2.1}{\ignorespaces MOP中相关概念示意图\relax }}{8}{figure.caption.7}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {决策空间}}}{8}{subfigure.1.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {目标空间}}}{8}{subfigure.1.2}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces 理想点和边界点示意图\relax }}{8}{figure.caption.8}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {2目标MOP}}}{8}{subfigure.2.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {3目标MOP}}}{8}{subfigure.2.2}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces 多目标进化算法流程图\relax }}{11}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces 加权和法（WS）等高线示意图}}{12}{figure.caption.11}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces 切比雪夫法（TCH）等高线示意图}}{13}{figure.caption.12}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces 基于惩罚的边界交叉法（PBI）等高线示意图}}{14}{figure.caption.13}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces 邻域结构示意图}}{18}{figure.caption.16}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {全连接图$\mathcal {G}$ }}}{18}{subfigure.7.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {邻居结构$\mathcal {N}_1$ }}}{18}{subfigure.7.2}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {邻居结构$\mathcal {N}_2$ }}}{18}{subfigure.7.3}%
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {局部最优解$s^* \in \mathcal {N}_1 \in \mathcal {G}$ }}}{19}{subfigure.7.4}%
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {全局最优解$s^* \in \mathcal {N}_2 \in \mathcal {G}$ }}}{19}{subfigure.7.5}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces k-opt示意图}}{20}{figure.caption.18}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {2-opt }}}{20}{subfigure.8.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {3-opt }}}{20}{subfigure.8.2}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {4-opt }}}{20}{subfigure.8.3}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces 跨问题知识迁移示意图}}{21}{figure.caption.19}%
+\contentsline {figure}{\numberline {2.10}{\ignorespaces HV指标示意图}}{22}{figure.caption.20}%
+\contentsline {figure}{\numberline {2.11}{\ignorespaces IGD指标示意图}}{23}{figure.caption.21}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces 生成1-tree示意图}}{30}{figure.caption.22}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces 欧拉路径示意图}}{31}{figure.caption.23}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {无向连通图 }}}{31}{subfigure.2.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {欧拉路径 }}}{31}{subfigure.2.2}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces 欧拉回路示意图}}{31}{figure.caption.24}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {无向连通图 }}}{31}{subfigure.3.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {欧拉回路 }}}{31}{subfigure.3.2}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces 次梯度优化结果示意图}}{34}{figure.caption.26}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {初始$\mathcal {T}$ }}}{34}{subfigure.4.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {优化$\mathcal {T_{\pi }}$ }}}{34}{subfigure.4.2}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {最优Tour }}}{34}{subfigure.4.3}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces 1MST构造Tour示意图}}{38}{figure.caption.29}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {最小生成1-tree }}}{38}{subfigure.5.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {欧拉图 }}}{38}{subfigure.5.2}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Tour }}}{38}{subfigure.5.3}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces 循环扫描局部优化示意图}}{39}{figure.caption.31}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces meNS与raNS时间对比示意图}}{42}{figure.caption.35}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces meNS和其他算法生成邻域结构时间对比示意图}}{45}{figure.caption.36}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {聚类型 }}}{45}{subfigure.8.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {均匀分布型 }}}{45}{subfigure.8.2}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {真实数据 }}}{45}{subfigure.8.3}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces 各算法在聚类型用例$C3K$生成的邻域结构}}{46}{figure.caption.37}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {meNS}}}{46}{subfigure.9.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {K-NN}}}{46}{subfigure.9.2}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$\alpha $-nearest}}}{46}{subfigure.9.3}%
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Delaunay}}}{46}{subfigure.9.4}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces 各算法在均匀分布型用例$E3K$生成的邻域结构}}{46}{figure.caption.38}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {meNS}}}{46}{subfigure.10.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {K-NN}}}{46}{subfigure.10.2}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$\alpha $-nearest}}}{47}{subfigure.10.3}%
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Delaunay}}}{47}{subfigure.10.4}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces 各算法在印刷电路板测试用例$pla7397$生成的邻域结构}}{47}{figure.caption.40}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {meNS}}}{47}{subfigure.11.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {K-NN}}}{47}{subfigure.11.2}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$\alpha $-nearest }}}{47}{subfigure.11.3}%
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Delaunay}}}{47}{subfigure.11.4}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces 各算法在真实地理位置测试用例$brd14051$生成的邻域结构}}{48}{figure.caption.41}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {meNS}}}{48}{subfigure.12.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {K-NN}}}{48}{subfigure.12.2}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$\alpha $-nearest }}}{48}{subfigure.12.3}%
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Delaunay}}}{48}{subfigure.12.4}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces 相似度等级示意图}}{54}{figure.caption.42}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces 相似度和信息增益映射关系示意图}}{56}{figure.caption.44}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces 各算法在KroAB300上的非支配解集示意图}}{64}{figure.caption.51}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces 各算法在KroABC100上的非支配解集示意图}}{65}{figure.caption.52}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces 各算法在KroABCD100上的非支配解集示意图}}{65}{figure.caption.53}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces 各算法Hypervolume指标对比示意图}}{66}{figure.caption.54}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {KroAB100 }}}{66}{subfigure.6.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {KroABC100 }}}{66}{subfigure.6.2}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {KroABCD100 }}}{66}{subfigure.6.3}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces 各算法在部分真实地理数据测试用例上的收敛轨迹示意图}}{71}{figure.caption.59}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {RealAB100 }}}{71}{subfigure.7.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {RealAB300 }}}{71}{subfigure.7.2}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {RealABC100 }}}{71}{subfigure.7.3}%
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {RealABCD100 }}}{71}{subfigure.7.4}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces 采用不同相似度等级$K$的NST-MOEA分别在2、3和4目标测试用例上的Hypervolume箱型图}}{73}{figure.caption.61}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {KroAB100 }}}{73}{subfigure.8.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {KroABC100 }}}{73}{subfigure.8.2}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {EuclidABCD100 }}}{73}{subfigure.8.3}%
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {EuclidABCDE100 }}}{73}{subfigure.8.4}%
+\contentsfinish 

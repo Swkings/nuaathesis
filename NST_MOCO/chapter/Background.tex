@@ -172,7 +172,7 @@
 \par
 在MOEA/D中，它把一个多目标优化问题根据一组权重向量分解成多个单目标子问题，然后根据各个子问题之间的联系形成邻居关系，然后利用邻居子问题之间的信息对所有子问题进行优化。对于一个具有$m$个目标的MOP，将其分解成$k$个子问题，首先需要定义$k$个均匀的权重向量，其中一个权重向量$\boldsymbol{\lambda}$为：
 \begin{align}
-    \label{eq:权重向量}
+    \label{eq:背景介绍:权重向量}
     \boldsymbol{\lambda} = (\lambda_1, \cdots. \lambda_m)^T, \quad \forall \lambda_i \geq 0 , \quad \sum_{i=1}^m \lambda_i = 1. 
 \end{align}
 然后，针对不同类型的问题，可以使用不同的分解方法，下面将介绍三种常用的分解方法（聚合函数）：

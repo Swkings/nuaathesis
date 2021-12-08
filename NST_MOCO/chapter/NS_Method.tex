@@ -27,7 +27,7 @@ Fourman等人于1985年在解决多目标优化问题时提出多目标进化算
 
 \section{相关定义与基本概念}
 \label{sec:NS_Method:相关定义与基本概念}
-在这一节，我们将介绍一些有关邻域结构生成方法的基本概念，最小生成1-tree和欧拉回路的相关定义以及次梯度优化产生MST的过程。
+在这一节中，将介绍一些有关邻域结构生成方法的基本概念，最小生成1-tree和欧拉回路的相关定义以及次梯度优化产生MST的过程。
 
 \subsection{最小生成1-tree}
 \label{subsec:NS_Method:相关定义与基本概念:最小生成1-tree}
@@ -233,6 +233,7 @@ Fourman等人于1985年在解决多目标优化问题时提出多目标进化算
         $Tour \xleftarrow[]{Transform} \mathcal{T}$ \label{line:1MST转换} \;
         \tcp{通过循环扫描局部优化，对$Tour$进行优化得到$Tour'$}
         $Tour' \xleftarrow[]{Optimize} Tour, L, S$ \label{line:Tour局部优化} \;
+        \tcp{将$Tour'$转换成边集并入到$meNS$中}
         $meNS \leftarrow meNS \bigcup Tour'$ \label{line:并入meNS} \;
     } \label{line:处理1MST结束}
     \tcp{修剪meNS，使得每个点的候选边不超过M条}
@@ -380,19 +381,19 @@ Fourman等人于1985年在解决多目标优化问题时提出多目标进化算
     \item $EUC\_2D$为二维欧几里得权重，设有两点及其坐标$v_i = (x_i, y_i)$和$v_j = (x_j, y_j)$，则边$e_{i,j}$的权重为：
     \vspace{-1.5em}
     \begin{align}
-        \label{eq:EUC_2D}
+        \label{eq:EUC2D}
         w_{i,j} = \lfloor \sqrt{(x_i-x_j)^2 + (y_i-y_j)^2} + 0.5 \rfloor .
     \end{align}
     \vspace{-1.5em}
-    \item $EUC\_2D$为二维向上取整的欧几里得距离，设有两点及其坐标$v_i = (x_i, y_i)$和$v_j = (x_j, y_j)$，则边$e_{i,j}$的权重为：
+    \item $CEIL_2D\_2D$为二维向上取整的欧几里得距离，设有两点及其坐标$v_i = (x_i, y_i)$和$v_j = (x_j, y_j)$，则边$e_{i,j}$的权重为：
     \vspace{-1.5em}
     \begin{align}
-        \label{eq:CEIL_2D}
+        \label{eq:CEIL2D}
         w_{i,j} = \lceil \sqrt{(x_i-x_j)^2 + (y_i-y_j)^2} \rceil .
     \end{align}
 \end{itemize}
 \par
-同时，为了测试算法的性能，本节主要用到了距离趋近度指标（章节~\ref{subsec:背景介绍:性能评价指标:距离趋近度指标}）和最优边遗失率指标（章节~\ref{subsec:背景介绍:性能评价指标:最优边遗失率指标}）来衡量算法生成的邻域结构的质量。
+同时，为了测试算法的性能，本章主要用到了距离趋近度指标（章节~\ref{subsec:背景介绍:性能评价指标:距离趋近度指标}）和最优边遗失率指标（章节~\ref{subsec:背景介绍:性能评价指标:最优边遗失率指标}）来衡量算法生成的邻域结构的质量。
 
 \subsection{meNS的质量及其生成算法的效率}
 \label{subsec:NS_Method:实验与讨论:meNS质量及其生成算法的效率}
@@ -459,116 +460,122 @@ Fourman等人于1985年在解决多目标优化问题时提出多目标进化算
 	\multicolumn{6}{r}{续下页}
 	\endfoot
 	\endlastfoot
-    \multirow{4}[2]{*}{C1k}    & Preprocessing Time (s) & 1.7    & 1.18   & 2.74    & 0.96   \\
-                & NS Degree       & 4.6    & 4.7    & 5       & 5      \\
-                & Missing (\%)              & 0.2000  & 0.2000  & 0.4000  & 0.5000  \\
-                & LKH Gap (\%)           & 0.5438 & 0.5438 & 0.5438  & 0.5438 \\
+    \multirow{4}[2]{*}{C1k}    & Candidate Time (s) & 0.38    & 0.01   & 0.04    & 0.01   \\
+                & NS Degree       & 4.6    & 5    & 5       & 5      \\
+                & Missing (\%)              & 0.2000  & 3.0000  & 0.4000  & 0.5000  \\
+                & LKH Gap (\%)           & 0.5438 & 0.5508 & 0.5438  & 0.5438 \\
     \midrule
-    \multirow{4}[2]{*}{C3k}    & Preprocessing Time (s) & 7.43   & 4.99   & 19.06   & 3.43   \\
-                & NS Degree       & 4.6    & 4.9    & 5       & 5      \\
-                & Missing (\%)               & 0.1898  & 0.1581  & 0.4111  & 0.2530  \\
-                & LKH Gap (\%)           & 0.6179 & 0.7107 & 0.6179  & 0.6179 \\
+    \multirow{4}[2]{*}{C3k}    & Candidate Time (s) & 1.9   & 0.15   & 0.77   & 0.02   \\
+                & NS Degree       & 4.6    & 5    & 5       & 5      \\
+                & Missing (\%)               & 0.1898  & 2.7514  & 0.4111  & 0.2530  \\
+                & LKH Gap (\%)           & 0.6179 & 0.6415 & 0.6179  & 0.6179 \\
     \midrule
-    \multirow{4}[2]{*}{C10k}   & Preprocessing Time (s) & 33.77  & 20.26  & 82.09   & 15.54  \\
-                & NS Degree       & 4.6    & 4.8    & 5       & 5      \\
-                & Missing (\%)               & 0.4400  & 0.1700  & 0.3200  & 0.2900  \\
-                & LKH Gap (\%)           & 0.6688 & 0.7141 & 0.7966  & 0.7412 \\
+    \multirow{4}[2]{*}{C10k}   & Candidate Time (s) & 6.43  & 2.15  & 10.19   & 0.01  \\
+                & NS Degree       & 4.6    & 5    & 5       & 5      \\
+                & Missing (\%)               & 0.4400  & 2.3800 & 0.3200  & 0.2900  \\
+                & LKH Gap (\%)           & 0.6688 & 0.7171 & 0.7966  & 0.7412 \\
     \midrule
-    \multirow{4}[2]{*}{C31k}   & Preprocessing Time (s) & 119.26 & 83.12  & 506.62  & 63.95  \\
-                & NS Degree       & 4.6    & 4.8    & 5       & 5      \\
-                & Missing (\%)               & 0.2245  & 0.1328  & 0.3731  & 0.3384  \\
-                & LKH Gap (\%)           & 0.5183 & 0.7978 & 1.7965  & 0.8065 \\
+    \multirow{4}[2]{*}{C31k}   & Candidate Time (s) & 12.28 & 19.72  & 141.82  & 0.15  \\
+                & NS Degree       & 4.6    & 5    & 5       & 5      \\
+                & Missing (\%)               & 0.2245  & 2.5140  & 0.3731  & 0.3384  \\
+                & LKH Gap (\%)           & 0.5183 & 0.7077 & 1.7965  & 0.8065 \\
     \midrule
-    \multirow{4}[2]{*}{C100k}  & Preprocessing Time (s) & 888.83 & 358.82 & 5140.05 & 323.03 \\
-                & NS Degree       & 4.7    & 4.8    & 5       & 5      \\
-                & Missing (\%)               & 0.13  & 0.173 & 0.363 & 0.353 \\
-                & LKH Gap (\%)           & 0.1919 & 0.8343 & 1.2847  & 1.5998 \\
+    \multirow{4}[2]{*}{C100k}  & Candidate Time (s) & 51.26 & 468.86 & 1612.35 & 0.55 \\
+                & NS Degree       & 4.7    & 5    & 5       & 5      \\
+                & Missing (\%)               & 0.13  & 2.403 & 0.363 & 0.353 \\
+                & LKH Gap (\%)           & 0.1919 & 7.713 & 1.2847  & 1.5998 \\
     \midrule
-    \multirow{4}[2]{*}{E1k}    & Preprocessing Time (s) & 1.71   & 1.12   & 2.72    & 0.75   \\
-                & NS Degree       & 4.5    & 4.8    & 5       & 4      \\
-                & Missing (\%)               & 0.2000  & 0.2000  & 0.3000  & 2.8000  \\
+    \multirow{4}[2]{*}{E1k}    & Candidate Time (s) & 0.44   & 0.02   & 0.04    & 0.01   \\
+                & NS Degree       & 4.5    & 5    & 5       & 4      \\
+                & Missing (\%)               & 0.2000  & 1.3000 & 0.3000  & 2.8000  \\
                 & LKH Gap (\%)           & 0.7677 & 0.7967 & 0.7677  & 1.012  \\
     \midrule
-    \multirow{4}[2]{*}{E3k}    & Preprocessing Time (s) & 7.87   & 5.17   & 12.37   & 3.11   \\
-                & NS Degree       & 4.6    & 4.9    & 3.1     & 3.8    \\
-                & Missing (\%)               & 0.2846  & 0.2214  & 2.0873  & 1.3599  \\
-                & LKH Gap (\%)           & 0.7138 & 0.7107 & 1.057   & 0.8482 \\
+    \multirow{4}[2]{*}{E3k}    & Candidate Time (s) & 2.1   & 0.16   & 0.78   & 0.03  \\
+                & NS Degree       & 4.6    & 5    & 3.1     & 3.8    \\
+                & Missing (\%)               & 0.2846  & 1.9608 & 2.0873  & 1.3599  \\
+                & LKH Gap (\%)           & 0.7138 & 0.7826 & 1.057   & 0.8482 \\
     \midrule
-    \multirow{4}[2]{*}{E10k}   & Preprocessing Time (s) & 32.82  & 20.25  & 84.12   & 15.17  \\
-                & NS Degree       & 4.6    & 4.9    & 4.2     & 4.9    \\
-                & Missing (\%)               & 0.1600  & 0.0900  & 0.4500  & 0.1500  \\
-                & LKH Gap (\%)           & 0.7103 & 0.7166 & 0.7481  & 0.7104 \\
+    \multirow{4}[2]{*}{E10k}   & Candidate Time (s) & 6.4  & 2.07  & 10.14   & 0.2  \\
+                & NS Degree       & 4.6    & 5    & 4.2     & 4.9    \\
+                & Missing (\%)               & 0.1600  & 1.7100 & 0.4500  & 0.1500  \\
+                & LKH Gap (\%)           & 0.7103 & 0.7758 & 0.7481  & 0.7104 \\
     \midrule
-    \multirow{4}[2]{*}{E31k}   & Preprocessing Time (s) & 112.95 & 73.63  & 497.43  & 74.01  \\
-                & NS Degree       & 4.6    & 4.9    & 5       & 5      \\
-                & Missing (\%)              & 0.1708  & 0.1202  & 0.2340  & 0.2150  \\
-                & LKH Gap (\%)           & 0.3615 & 0.6463 & 0.6505  & 0.6549 \\
+    \multirow{4}[2]{*}{E31k}   & Candidate Time (s) & 10.5 & 19.72  & 127.48  & 0.14  \\
+                & NS Degree       & 4.6    & 5    & 5       & 5      \\
+                & Missing (\%)              & 0.1708  & 1.7424 & 0.2340  & 0.2150  \\
+                & LKH Gap (\%)           & 0.3615 & 0.7077 & 0.6505  & 0.6549 \\
     \midrule
-    \multirow{4}[2]{*}{E100k}  & Preprocessing Time (s) & 626.55 & 382.07 & 3349.24 & 323.62 \\
-                & NS Degree       & 4.6    & 4.9    & 5       & 5      \\
-                & Missing (\%)               & 0.1920  & 0.1220  & 0.2770  & 0.2230  \\
-                & LKH Gap (\%)           & 0.4078 & 0.6664 & 0.6687  & 0.6658 \\
+    \multirow{4}[2]{*}{E100k}  & Candidate Time (s) & 33.64 & 434.29 & 1098.61 & 0.63 \\
+                & NS Degree       & 4.6    & 5    & 5       & 5      \\
+                & Missing (\%)               & 0.1920  & 1.7300 & 0.2770  & 0.2230  \\
+                & LKH Gap (\%)           & 0.4078 & 0.7116 & 0.6687  & 0.6658 \\
     \midrule
-    \multirow{4}[2]{*}{pla7397}  & Preprocessing Time (s) & 9.82   & 12.17  & 41.33   & 11.38  \\
-                & NS Degree       & 4.4    & 4.9    & 4.9     & 4.9    \\
-                & Missing (\%)               & 0.1352  & 0.1622  & 0.2433  & 0.2433  \\
-                & LKH Gap (\%)           & 0.586  & 0.5806 & 0.5842  & 0.5806 \\
+    \multirow{4}[2]{*}{pla7397}  & Candidate Time (s) & 1.8   & 0.94  & 3.12   & 0.12  \\
+                & NS Degree       & 4.4    & 5    & 4.9     & 4.9    \\
+                & Missing (\%)               & 0.1352  & 0.8652 & 0.2433  & 0.2433  \\
+                & LKH Gap (\%)           & 0.586  & 0.7725 & 0.5842  & 0.5806 \\
     \midrule
-    \multirow{4}[2]{*}{pla85900} & Preprocessing Time (s) & 432.86 & 337.45 & 1789.22 & 404.99 \\
+    \multirow{4}[2]{*}{pla85900} & Candidate Time (s) & 20.2 & 337.45 & 528.27 & 0.86 \\
                 & NS Degree       & 4.5    & 5      & 4.8     & 4.8    \\
-                & Missing (\%)               & 0.1630  & 0.0827  & 0.1281  & 0.1292  \\
-                & LKH Gap (\%)           & 0.4701 & 0.4468 & 0.4774  & 0.4665 \\
+                & Missing (\%)               & 0.1630  & 0.2398 & 0.1281  & 0.1292  \\
+                & LKH Gap (\%)           & 0.4701 & 1.5986 & 0.4774  & 0.4665 \\
     \midrule
-    \multirow{4}[2]{*}{brd14051} & Preprocessing Time (s) & 43.66  & 32.52  & 125.29  & 26.7   \\
+    \multirow{4}[2]{*}{brd14051} & Candidate Time (s) & 6.42  & 166.33  & 17.51  & 0.51   \\
                 & NS Degree       & 4.7    & 5      & 5       & 5      \\
-                & Missing (\%)               & 0.0641  & 0.0925  & 0.1139  & 0.1139  \\
-                & LKH Gap (\%)           & 0.4877 & 0.4855 & 0.4889  & 0.4883 \\
+                & Missing (\%)               & 0.0641  & 0.8042 & 0.1139  & 0.1139  \\
+                & LKH Gap (\%)           & 0.4877 & 0.4949 & 0.4889  & 0.4883 \\
     \bottomrule
 \end{longtable}
 \par
-\autoref{tab:各算法表现}~展示的是meNS与K-NN、$\alpha$-nearest和Delaunay算法生成的邻域结构的对比数据，并且在\autoref{tab:各算法表现}~中比较了各个算法生成的邻域结构在LKH算法\cite{helsgaun2000effective}（目前解决大型TSP问题最优秀的算法之一）中的表现，同时统计了各算法在LKH中预处理（包括问题预处理、邻域结构生成和修剪等）时间（Preprocessing Time）、邻域结构的稀疏度（NS Degree）、最优边遗失率（Missing）和LKH最终解的距离趋近度（LKH Gap）四项指标数据。
+\autoref{tab:各算法表现}~展示的是meNS与K-NN、$\alpha$-nearest和Delaunay算法生成的邻域结构的对比数据，并且在\autoref{tab:各算法表现}~中比较了各个算法生成的邻域结构在LKH算法\cite{helsgaun2000effective}（目前解决大型TSP问题最优秀的算法之一）中的表现，同时统计了各算法邻域结构生成时间（Candidate Time）、邻域结构的稀疏度（NS Degree）、最优边遗失率（Missing）和LKH最终解的距离趋近度（LKH Gap）四项指标数据。
 \par
-{\color{red}
-从\autoref{tab:各算法表现}~可以看出，在Preprocessing Time指标数据上，使用Delaunay生成的邻域结构耗费的时间比其他算法生成邻域结构花费的时间都要少，因为Delaunay算法采用分治的思想对整个图进行三角剖分，能够在$O(nlogn)$的时间复杂度内完成邻域结构的构建，但是Delaunay只能在二维坐标测试问题上有效生成邻域结构，当测试问题的坐标维度高于二维时，Delaunay算法就难以保持其高效性且算法会变得及其复杂。而K-NN和$\alpha$-nearest算法都是$O(n^2)$的时间复杂度，所以在构造邻域结构花费的时间最多，meNS生成算法构造邻域结构花费的时间介于Delaunay和K-NN、$\alpha$-nearest算法构造邻域结构花费的时间之间，从侧面也可以证明meNS生成算法的时间复杂度是低于二次方时间复杂度的。\autoref{fig:meNS和其他算法在LKH中预处理时间对比示意图}~展示的是meNS生成算法和其他算法在不同类型测试用例构造邻域结构的时间示意图，从图中也能够得看出，meNS生成算法的高效性。
-}
+从\autoref{tab:各算法表现}~可以看出，在Candidate Time指标数据上，使用Delaunay生成的邻域结构耗费的时间比其他算法生成邻域结构花费的时间都要少，因为Delaunay算法采用分治的思想对整个图进行三角剖分，能够在$O(nlogn)$的时间复杂度内完成邻域结构的构建，但是Delaunay只能在二维坐标测试问题上有效生成邻域结构，当测试问题的坐标维度高于二维时，Delaunay算法就难以保持其高效性且算法会变得及其复杂。而K-NN和$\alpha$-nearest算法都是$O(n^2)$的时间复杂度，所以在构造邻域结构花费的时间最多，并且K-NN生成的邻域结构不需要修剪操作，所以K-NN生成邻域结构耗时比$\alpha$-nearest生成邻域结构耗时少。meNS生成算法构造邻域结构花费的时间介于Delaunay和K-NN、$\alpha$-nearest算法构造邻域结构花费的时间之间，从侧面也可以证明meNS生成算法的时间复杂度是低于二次方时间复杂度的。\autoref{fig:meNS和其他算法生成邻域结构时间对比示意图}~展示的是meNS生成算法和其他算法在不同类型测试用例构造邻域结构的时间示意图，从图中也能够得看出，meNS生成算法的高效性。
 \begin{figure}[htb]
-    \subfloat[聚类型 \label{subfig:聚类型}]{\includegraphics[width=.33\linewidth]{聚类型.pdf}}
-    \subfloat[均匀分布型 \label{subfig:均匀分布型}]{\includegraphics[width=.33\linewidth]{均匀分布型.pdf}}
-    \subfloat[真实数据 \label{subfig:真实数据}]{\includegraphics[width=.33\linewidth]{真实数据.pdf}}
-    \caption[meNS和其他算法在LKH中预处理时间对比示意图]{meNS和其他算法在LKH中预处理时间对比示意图}
-    \label{fig:meNS和其他算法在LKH中预处理时间对比示意图}
+    \subfloat[聚类型 \label{subfig:聚类型}]{\includegraphics[width=.33\linewidth]{聚类型.can.pdf}}
+    \subfloat[均匀分布型 \label{subfig:均匀分布型}]{\includegraphics[width=.33\linewidth]{均匀分布型.can.pdf}}
+    \subfloat[真实数据 \label{subfig:真实数据}]{\includegraphics[width=.33\linewidth]{真实数据.can.pdf}}
+    \caption[meNS和其他算法生成邻域结构时间对比示意图]{meNS和其他算法生成邻域结构时间对比示意图}
+    \label{fig:meNS和其他算法生成邻域结构时间对比示意图}
 \end{figure}
 \par
-在将各算法生成的邻域结构正式应用到LKH算法中之前，还需要对邻域结构进行修剪，以保证邻域结构的稀疏度。在本文中，邻域结构在修剪后，每个点最多只保留$M=5$条边作为其邻域。因此，从\autoref{tab:各算法表现}~中可以知道，在NS Degree指标数据上，所有的数值都不超过5，这是就是对邻域结构修剪的结果，但是，在各数值上仍然能够得出，meNS生成算法的邻域结构修剪后要比其他生成算法修剪后的邻域结构更加稀疏，这使得该邻域结构用在求解算法中会收敛的更快，\autoref{fig:各算法在聚类型用例C10K生成的邻域结构}~、\autoref{fig:各算法在聚类型用例C10K生成的邻域结构}~，\autoref{fig:各算法在印刷电路板测试用例pla7397生成的邻域结构}~和\autoref{fig:各算法在真实地理位置测试用例brd14051生成的邻域结构}~中分别展示了各算法对于不同类型的测试用例生成的邻域结构修剪后的部分示意图。
-\begin{figure}[!htb]
-    \subfloat[meNS]{\includegraphics[width=.3\linewidth]{meNS时间对比.pdf}}
-    \subfloat[K-NN]{\includegraphics[width=.3\linewidth]{meNS时间对比.pdf}} \\
-    \subfloat[$\alpha$-nearest]{\includegraphics[width=.3\linewidth]{meNS时间对比.pdf}}
-    \subfloat[Delaunay]{\includegraphics[width=.3\linewidth]{meNS时间对比.pdf}}
-    \caption[各算法在聚类型用例$C10K$生成的邻域结构]{各算法在聚类型用例$C10K$生成的邻域结构}
-    \label{fig:各算法在聚类型用例C10K生成的邻域结构}
+在将各算法生成的邻域结构正式应用到LKH算法中之前，还需要对邻域结构进行修剪，以保证邻域结构的稀疏度。在本文中，邻域结构在修剪后，每个点最多只保留$M=5$条边作为其邻域。因此，从\autoref{tab:各算法表现}~中可以知道，在NS Degree指标数据上，所有的数值都不超过5，这就是对邻域结构修剪的结果。但是，在各数值上仍然能够得出，meNS生成算法的邻域结构修剪后要比其他生成算法修剪后的邻域结构更加稀疏，这使得该邻域结构用在求解算法中会收敛的更快，\autoref{fig:各算法在聚类型用例C3K生成的邻域结构}~、\autoref{fig:各算法在聚类型用例C3K生成的邻域结构}~，\autoref{fig:各算法在印刷电路板测试用例pla7397生成的邻域结构}~和\autoref{fig:各算法在真实地理位置测试用例brd14051生成的邻域结构}~中分别展示了各算法对于不同类型的测试用例生成的邻域结构修剪后的部分示意图。
+% C3K
+\begin{figure}[t]
+    \subfloat[meNS]{\includegraphics[width=.37\linewidth]{C3K.0-meNS.pdf}} \qquad
+    \subfloat[K-NN]{\includegraphics[width=.37\linewidth]{C3K.0-knNS.pdf}} \\
+    \subfloat[$\alpha$-nearest]{\includegraphics[width=.37\linewidth]{C3K.0-alNS.pdf}} \qquad
+    \subfloat[Delaunay]{\includegraphics[width=.37\linewidth]{C3K.0-deNS.pdf}}
+    \caption[各算法在聚类型用例$C3K$生成的邻域结构]{各算法在聚类型用例$C3K$生成的邻域结构}
+    \label{fig:各算法在聚类型用例C3K生成的邻域结构}
 \end{figure}
-\begin{figure}[!h]
-    \subfloat[meNS]{\includegraphics[width=.3\linewidth]{meNS时间对比.pdf}}
-    \subfloat[K-NN]{\includegraphics[width=.3\linewidth]{meNS时间对比.pdf}} \\
-    \subfloat[$\alpha$-nearest ]{\includegraphics[width=.3\linewidth]{meNS时间对比.pdf}}
-    \subfloat[Delaunay]{\includegraphics[width=.3\linewidth]{meNS时间对比.pdf}}
-    \caption[各算法在均匀分布型用例$E10K$生成的邻域结构]{各算法在均匀分布型用例$E10K$生成的邻域结构}
-    \label{fig:各算法在均匀分布型用例E10K生成的邻域结构}
+% E3K
+\begin{figure}[!ht]
+    \subfloat[meNS]{\includegraphics[width=.37\linewidth]{E3K.0-meNS.pdf}} \qquad
+    \subfloat[K-NN]{\includegraphics[width=.37\linewidth]{E3K.0-knNS.pdf}}
+    \caption[各算法在均匀分布型用例$E3K$生成的邻域结构]{各算法在均匀分布型用例$E3K$生成的邻域结构}
+    \label{fig:各算法在均匀分布型用例E3K生成的邻域结构}
 \end{figure}
-\begin{figure}[!h]
-    \subfloat[meNS]{\includegraphics[width=.3\linewidth]{meNS时间对比.pdf}}
-    \subfloat[K-NN]{\includegraphics[width=.3\linewidth]{meNS时间对比.pdf}} \\
-    \subfloat[$\alpha$-nearest ]{\includegraphics[width=.3\linewidth]{meNS时间对比.pdf}}
-    \subfloat[Delaunay]{\includegraphics[width=.3\linewidth]{meNS时间对比.pdf}}
+\begin{figure}[t]
+    \ContinuedFloat
+    \subfloat[$\alpha$-nearest]{\includegraphics[width=.37\linewidth]{E3K.0-alNS.pdf}} \qquad
+    \subfloat[Delaunay]{\includegraphics[width=.37\linewidth]{E3K.0-deNS.pdf}}
+    \caption[]{各算法在均匀分布型用例$E3K$生成的邻域结构（续）}
+\end{figure}
+% pla7397
+\begin{figure}[!ht]
+    \subfloat[meNS]{\includegraphics[width=.37\linewidth]{pla7397.0-meNS.pdf}} \qquad
+    \subfloat[K-NN]{\includegraphics[width=.37\linewidth]{pla7397.0-knNS.pdf}} \\
+    \subfloat[$\alpha$-nearest ]{\includegraphics[width=.37\linewidth]{pla7397.0-alNS.pdf}} \qquad
+    \subfloat[Delaunay]{\includegraphics[width=.37\linewidth]{pla7397.0-deNS.pdf}}
     \caption[各算法在印刷电路板测试用例$pla7397$生成的邻域结构]{各算法在印刷电路板测试用例$pla7397$生成的邻域结构}
     \label{fig:各算法在印刷电路板测试用例pla7397生成的邻域结构}
 \end{figure}
-\begin{figure}[!h]
-    \subfloat[meNS]{\includegraphics[width=.3\linewidth]{meNS时间对比.pdf}}
-    \subfloat[K-NN]{\includegraphics[width=.3\linewidth]{meNS时间对比.pdf}} \\
-    \subfloat[$\alpha$-nearest ]{\includegraphics[width=.3\linewidth]{meNS时间对比.pdf}}
-    \subfloat[Delaunay]{\includegraphics[width=.3\linewidth]{meNS时间对比.pdf}}
+% brd14051
+\begin{figure}[!ht]
+    \subfloat[meNS]{\includegraphics[width=.37\linewidth]{brd14051.0-meNS.pdf}} \qquad
+    \subfloat[K-NN]{\includegraphics[width=.37\linewidth]{brd14051.0-knNS.pdf}} \\
+    \subfloat[$\alpha$-nearest ]{\includegraphics[width=.37\linewidth]{brd14051.0-alNS.pdf}} \qquad
+    \subfloat[Delaunay]{\includegraphics[width=.37\linewidth]{brd14051.0-deNS.pdf}}
     \caption[各算法在真实地理位置测试用例$brd14051$生成的邻域结构]{各算法在真实地理位置测试用例$brd14051$生成的邻域结构}
     \label{fig:各算法在真实地理位置测试用例brd14051生成的邻域结构}
 \end{figure}

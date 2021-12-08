@@ -87,5 +87,32 @@
       \bottomrule
       \end{tabular}%
     \label{tab:addlabel}%
-  \end{table}%
+\end{table}%
   
+
+\begin{table}[ht]
+      \small
+      \renewcommand\tabcolsep{4.5pt}
+      \centering
+      \caption{各算法在TSPLIB测试集上获得的非支配解集的Hypervolume指标对比 \label{tab:各算法在TSPLIB测试集上获得的非支配解集的Hypervolume指标对比}}
+      \begin{threeparttable}
+            \begin{tabular}{lcccccccc}
+                  \toprule
+                  \multirow{2}[4]{*}{测试用例} & \multicolumn{3}{c}{MOEA/D} & \multicolumn{1}{c}{\multirow{2}[4]{*}{DCDG}} & \multicolumn{1}{c}{\multirow{2}[4]{*}{GWS-PLS}} & \multicolumn{1}{c}{\multirow{2}[4]{*}{2PPLS}} & \multicolumn{1}{c}{\multirow{2}[4]{*}{NST-MOEA}} \\
+      \cmidrule{3-5}          &       & \multicolumn{1}{c}{WS} & \multicolumn{1}{c}{THC} & \multicolumn{1}{c}{PBI} &       &       &  \\
+                  \midrule
+                  %2 obj
+                  %kro
+                  \multirow{2}{*}{kroAB100}             & 7.082e-01$^{\dag}$ & 7.110e-01$^{\dag}$ & 6.867e-01$^{\dag}$ & 7.163e-01$^{\dag}$ & 7.170e-01$^{\dag}$ & 7.190e-01$^{\dag}$ & \textbf{7.226e-01} \\
+                                                            & 3.8e-03            & 3.7e-03            & 4.8e-03            & 4.3e-03            & 3.9e-03            & 3.7e-03            & 3.6e-03            \\
+                  \bottomrule
+            \end{tabular}
+            \begin{tablenotes}
+                  \item[] Wilcoxon’s rank sum test at a 0.05 significance level is performed between NST-MOLK and each of the other competing algorithms.
+                  \item[] $^\dag$, $^\ddag$ and $^\approx$ denotes that the performance of the corresponding algorithm is significantly worse than, better than or similar to that of NST-MOLK.
+                  \item[] N.A. means not available of the algorithm on this instance because of huge computational complexity.
+                  \item[] The best mean is highlighted in boldface.
+            \end{tablenotes}
+      \end{threeparttable}
+\end{table}
+
