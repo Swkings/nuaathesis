@@ -62,8 +62,8 @@
 \contentsline {subsection}{\numberline {4.5.4}各算法在真实地理数据测试集上的对比}{68}{subsection.4.5.4}%
 \contentsline {subsection}{\numberline {4.5.5}两目标相似度模型有效性分析}{71}{subsection.4.5.5}%
 \contentsline {subsection}{\numberline {4.5.6}多臂老虎机模型有效性分析}{72}{subsection.4.5.6}%
-\contentsline {section}{\numberline {4.6}本章小结}{72}{section.4.6}%
-\contentsline {chapter}{参考文献}{74}{section*.62}%
-\contentsline {chapter}{致谢}{80}{chapter*.64}%
-\contentsline {chapter}{在学期间的研究成果及学术论文情况}{81}{chapter*.65}%
+\contentsline {section}{\numberline {4.6}本章小结}{73}{section.4.6}%
+\contentsline {chapter}{参考文献}{76}{section*.64}%
+\contentsline {chapter}{致谢}{82}{chapter*.66}%
+\contentsline {chapter}{在学期间的研究成果及学术论文情况}{83}{chapter*.67}%
 \contentsfinish 

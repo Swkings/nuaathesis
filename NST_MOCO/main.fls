@@ -744,6 +744,14 @@ INPUT c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/./figure/chapter4/HV-KroAB100-
 INPUT c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/./figure/chapter4/HV-KroABC100-Dynamic.pdf
 INPUT c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/./figure/chapter4/HV-EuclidABCD100-Dynamic.pdf
 INPUT c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/./figure/chapter4/HV-EuclidABCDE100-Dynamic.pdf
+INPUT c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/./figure/chapter4/MAB-Random-Convergence-LS-RealAB100.pdf
+INPUT c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/./figure/chapter4/MAB-Random-Convergence-LS-RealAB300.pdf
+INPUT c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/./figure/chapter4/MAB-Random-Convergence-LS-RealABC100.pdf
+INPUT c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/./figure/chapter4/MAB-Random-Convergence-LS-RealABCD100.pdf
+INPUT c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/./figure/chapter4/MAB-Random-Convergence-LS-RealAB100.pdf
+INPUT c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/./figure/chapter4/MAB-Random-Convergence-LS-RealAB300.pdf
+INPUT c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/./figure/chapter4/MAB-Random-Convergence-LS-RealABC100.pdf
+INPUT c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/./figure/chapter4/MAB-Random-Convergence-LS-RealABCD100.pdf
 INPUT c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/main.bbl
 INPUT c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/main.bbl
 OUTPUT c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/content/acknowledge.aux
