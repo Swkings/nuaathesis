@@ -192,7 +192,7 @@
     \mathcal{NS} & = \{\mathcal{NS}^1, \cdots, \mathcal{NS}^n\}, \\
     \mathcal{NS}^i &= SI^i_0 \bigcup SI^i_K. \notag
 \end{align}
-其中，$mathcal{NS}^i$中存储的是相对于第$i$个子问题，其相似度等级为0和$K$的子问题的索引，$SI^i_k$是相对于第$i$个子问题相似度等级为$k$的所有子问题的索引（\autoref{eq:获取合适的相似度等级}）。
+其中，$\mathcal{NS}^i$中存储的是相对于第$i$个子问题，其相似度等级为0和$K$的子问题的索引，$SI^i_k$是相对于第$i$个子问题相似度等级为$k$的所有子问题的索引（\autoref{eq:获取合适的相似度等级}）。
 \par
 一般地，在本文中，同样使用相似度等级$K$来确定子问题的邻居：
 \begin{align}
@@ -457,7 +457,7 @@ MAB模型中的$\epsilon$-greedy算法\cite{cesa1998finite,vermorel2005multi}、
     \item 2PLLS：初始解数量为300，最大迭代次数为100,。由于该算法计算量随目标数呈指数级增长\cite{lust2012multiobjective}，所以只测试了两个目标的测试用例。
     \item NST-MOEA：种群大小为300，最大迭代次数为（$\lfloor (n/100+1)/2 \rfloor * 100$），$n$为问题的节点数。
 \end{itemize}
-所有算法都是用局部搜索算子（2-opt、3-opt和4-opt（如\ref{fig:k-opt示意图}））产生新解，当算法没有新解产生或者到达最大迭代次数时终止。所有算法的初始种群都为同一个随机生成的种群，且所有算法在每个测试用例上均独立运行20次。
+所有算法都是用局部搜索算子（2-opt、3-opt和4-opt（如\autoref{fig:k-opt示意图}））产生新解，当算法没有新解产生或者到达最大迭代次数时终止。所有算法的初始种群都为同一个随机生成的种群，且所有算法在每个测试用例上均独立运行30次。
 
 \subsection{各算法在TSPLIB测试集上的对比}
 \label{subsec:NST:实验与讨论:各算法在TSPLIB测试集上的对比}
@@ -490,7 +490,7 @@ MAB模型中的$\epsilon$-greedy算法\cite{cesa1998finite,vermorel2005multi}、
     \label{fig:各算法Hypervolume指标对比示意图}
 \end{figure}
 \par
-为了更进一步地了解算法在TSPLIB测试用例的表现，现将各算法在所有TSPLIB测试用例上运行20次所获得的非支配解集的Hypervolume指标和C-Metric指标进行对比。\autoref{tab:各算法在TSPLIB测试集上获得的非支配解集的Hypervolume指标对比}~展现的是各算法在测试用例上所获得的非支配解集的Hypervolume指标，从\autoref{tab:各算法在TSPLIB测试集上获得的非支配解集的Hypervolume指标对比}~中能够看出，NST-MOEA获得的非支配解集在Hypervolume指标上要显著优于其他对比的算法，并且Hypervolume指标能够反映解集的综合性能，由此可说明NST-MOEA获得的质量要比其他对比算法要好。同时，在\autoref{tab:各算法在TSPLIB测试集上获得的非支配解集的C-Metric指标对比}~中展现的是各算法在三目标以下的测试用例上所获得的非支配解集的C-Metric指标，从\autoref{tab:各算法在TSPLIB测试集上获得的非支配解集的C-Metric指标对比}~中能够看出，NST-MOEA获得的非支配解集在一些测试用例上几乎要完全支配其他算法获得的非支配解集，并且C-Metric指标能够反映解集的收敛情况，由此可说明NST-MOEA能够获得比其他算法收敛性更好的非支配解集。
+为了更进一步地了解算法在TSPLIB测试用例的表现，现将各算法在所有TSPLIB测试用例上运行30次所获得的非支配解集的Hypervolume指标和C-Metric指标进行对比。\autoref{tab:各算法在TSPLIB测试集上获得的非支配解集的Hypervolume指标对比}~展现的是各算法在测试用例上所获得的非支配解集的Hypervolume指标，从\autoref{tab:各算法在TSPLIB测试集上获得的非支配解集的Hypervolume指标对比}~中能够看出，NST-MOEA获得的非支配解集在Hypervolume指标上要显著优于其他对比的算法，并且Hypervolume指标能够反映解集的综合性能，由此可说明NST-MOEA获得的质量要比其他对比算法要好。同时，在\autoref{tab:各算法在TSPLIB测试集上获得的非支配解集的C-Metric指标对比}~中展现的是各算法在三目标以下的测试用例上所获得的非支配解集的C-Metric指标，从\autoref{tab:各算法在TSPLIB测试集上获得的非支配解集的C-Metric指标对比}~中能够看出，NST-MOEA获得的非支配解集在一些测试用例上几乎要完全支配其他算法获得的非支配解集，并且C-Metric指标能够反映解集的收敛情况，由此可说明NST-MOEA能够获得比其他算法收敛性更好的非支配解集。
 {\small
 \setlength{\tabcolsep}{4.5pt}
 \renewcommand\arraystretch{.7}
@@ -633,7 +633,7 @@ MAB模型中的$\epsilon$-greedy算法\cite{cesa1998finite,vermorel2005multi}、
         “$^\dag$”表示该算法在此问题解集上的Hypervolume指标显著劣于NST-MOEA\vspace{-.75em}\newline{}
         “$^\approx$”表示该算法在此问题解集上的Hypervolume指标与NST-MOEA没有明显差异\vspace{-.75em}\newline{}
         “N.A.”表示该算法在合理的时间内无法获取该问题的非支配解集\vspace{-.75em}\newline{}
-        每一行中，上面的数据为算法运行20次获取的Hypervolume指标的均值，下面的数据为标准差
+        每一行中，上面的数据为算法运行30次获取的Hypervolume指标的均值，下面的数据为标准差
         }
 \end{longtable}
 }% 设置字体大小,设置块
@@ -796,7 +796,7 @@ MAB模型中的$\epsilon$-greedy算法\cite{cesa1998finite,vermorel2005multi}、
         “$^\dag$”表示该算法在此问题解集上的Hypervolume指标显著劣于NST-MOEA\vspace{-.75em}\newline{}
         “$^\approx$”表示该算法在此问题解集上的Hypervolume指标与NST-MOEA没有明显差异\vspace{-.75em}\newline{}
         “N.A.”表示该算法在合理的时间内无法获取该问题的非支配解集\vspace{-.75em}\newline{}
-        每一行中，上面的数据为算法运行20次获取的Hypervolume指标的均值，下面的数据为标准差
+        每一行中，上面的数据为算法运行30次获取的Hypervolume指标的均值，下面的数据为标准差
         }
 \end{longtable}
 }% 设置字体大小,设置块

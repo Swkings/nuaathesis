@@ -32,36 +32,36 @@
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {初始$\mathcal {T}$ }}}{34}{subfigure.4.1}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {优化$\mathcal {T_{\pi }}$ }}}{34}{subfigure.4.2}%
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {最优Tour }}}{34}{subfigure.4.3}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces 1MST构造Tour示意图}}{38}{figure.caption.29}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {最小生成1-tree }}}{38}{subfigure.5.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {欧拉图 }}}{38}{subfigure.5.2}%
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Tour }}}{38}{subfigure.5.3}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces 循环扫描局部优化示意图}}{39}{figure.caption.31}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces meNS与raNS时间对比示意图}}{42}{figure.caption.35}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces meNS和其他算法生成邻域结构时间对比示意图}}{45}{figure.caption.36}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {聚类型 }}}{45}{subfigure.8.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {均匀分布型 }}}{45}{subfigure.8.2}%
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {真实数据 }}}{45}{subfigure.8.3}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces 各算法在聚类型用例$C3K$生成的邻域结构}}{46}{figure.caption.37}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {meNS}}}{46}{subfigure.9.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {K-NN}}}{46}{subfigure.9.2}%
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$\alpha $-nearest}}}{46}{subfigure.9.3}%
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Delaunay}}}{46}{subfigure.9.4}%
-\contentsline {figure}{\numberline {3.10}{\ignorespaces 各算法在均匀分布型用例$E3K$生成的邻域结构}}{46}{figure.caption.38}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {meNS}}}{46}{subfigure.10.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {K-NN}}}{46}{subfigure.10.2}%
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$\alpha $-nearest}}}{47}{subfigure.10.3}%
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Delaunay}}}{47}{subfigure.10.4}%
-\contentsline {figure}{\numberline {3.11}{\ignorespaces 各算法在印刷电路板测试用例$pla7397$生成的邻域结构}}{47}{figure.caption.40}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {meNS}}}{47}{subfigure.11.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {K-NN}}}{47}{subfigure.11.2}%
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$\alpha $-nearest }}}{47}{subfigure.11.3}%
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Delaunay}}}{47}{subfigure.11.4}%
-\contentsline {figure}{\numberline {3.12}{\ignorespaces 各算法在真实地理位置测试用例$brd14051$生成的邻域结构}}{48}{figure.caption.41}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {meNS}}}{48}{subfigure.12.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {K-NN}}}{48}{subfigure.12.2}%
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$\alpha $-nearest }}}{48}{subfigure.12.3}%
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Delaunay}}}{48}{subfigure.12.4}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces 1MST构造Tour示意图}}{37}{figure.caption.29}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {最小生成1-tree }}}{37}{subfigure.5.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {欧拉图 }}}{37}{subfigure.5.2}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Tour }}}{37}{subfigure.5.3}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces 循环扫描局部优化示意图}}{38}{figure.caption.31}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces meNS与raNS时间对比示意图}}{41}{figure.caption.35}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces meNS和其他算法生成邻域结构时间对比示意图}}{44}{figure.caption.36}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {聚类型 }}}{44}{subfigure.8.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {均匀分布型 }}}{44}{subfigure.8.2}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {真实数据 }}}{44}{subfigure.8.3}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces 各算法在聚类型用例$C3K$生成的邻域结构}}{45}{figure.caption.37}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {meNS}}}{45}{subfigure.9.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {K-NN}}}{45}{subfigure.9.2}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$\alpha $-nearest}}}{45}{subfigure.9.3}%
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Delaunay}}}{45}{subfigure.9.4}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces 各算法在均匀分布型用例$E3K$生成的邻域结构}}{45}{figure.caption.38}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {meNS}}}{45}{subfigure.10.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {K-NN}}}{45}{subfigure.10.2}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$\alpha $-nearest}}}{46}{subfigure.10.3}%
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Delaunay}}}{46}{subfigure.10.4}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces 各算法在印刷电路板测试用例$pla7397$生成的邻域结构}}{46}{figure.caption.40}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {meNS}}}{46}{subfigure.11.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {K-NN}}}{46}{subfigure.11.2}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$\alpha $-nearest }}}{46}{subfigure.11.3}%
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Delaunay}}}{46}{subfigure.11.4}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces 各算法在真实地理位置测试用例$brd14051$生成的邻域结构}}{47}{figure.caption.41}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {meNS}}}{47}{subfigure.12.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {K-NN}}}{47}{subfigure.12.2}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$\alpha $-nearest }}}{47}{subfigure.12.3}%
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Delaunay}}}{47}{subfigure.12.4}%
 \contentsline {figure}{\numberline {4.1}{\ignorespaces 相似度等级示意图}}{54}{figure.caption.42}%
 \contentsline {figure}{\numberline {4.2}{\ignorespaces 相似度和信息增益映射关系示意图}}{56}{figure.caption.44}%
 \contentsline {figure}{\numberline {4.3}{\ignorespaces 各算法在KroAB300上的非支配解集示意图}}{64}{figure.caption.51}%

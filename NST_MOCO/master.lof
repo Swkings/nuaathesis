@@ -1,0 +1,24 @@
+\contentsline {figure}{\numberline {4.1}{\ignorespaces tikz例子\relax }}{6}{figure.caption.7}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces 一个校徽\relax }}{7}{figure.caption.8}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces 包含两张图片的插图\relax }}{7}{figure.caption.9}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {左边的大校徽}}}{7}{subfigure.3.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces 短标题：小校徽}}{7}{subfigure.3.2}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces 拙作中利用 \texttt {pgfplot}\textsuperscript {PKG} 绘制的图表\relax }}{8}{figure.caption.10}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {二维图像}}}{8}{subfigure.4.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {三维图像}}}{8}{subfigure.4.2}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces 包含多张图片的插图\relax }}{9}{figure.caption.11}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {校徽$\times 1$}}}{9}{subfigure.5.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {校徽$\times 2$}}}{9}{subfigure.5.2}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {校徽$\times 3$}}}{9}{subfigure.5.3}%
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {校徽$\times 4$}}}{9}{subfigure.5.4}%
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {校徽$\times 5$}}}{12}{subfigure.5.5}%
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {校徽$\times 6$ }}}{12}{subfigure.5.6}%
+\contentsline {subfigure}{\numberline {(g)}{\ignorespaces {校徽$\times 7$}}}{12}{subfigure.5.7}%
+\contentsline {subfigure}{\numberline {(h)}{\ignorespaces {校徽$\times 8$}}}{12}{subfigure.5.8}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces 一幅占用完整页面的图片\relax }}{13}{figure.caption.13}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {First caption}}}{13}{subfigure.6.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Second caption}}}{13}{subfigure.6.2}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces 又一幅占用完整页面的图片\relax }}{14}{figure.caption.14}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {First caption}}}{14}{subfigure.7.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Second caption}}}{14}{subfigure.7.2}%
+\contentsfinish 

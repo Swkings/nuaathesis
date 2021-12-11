@@ -6,9 +6,10 @@ A level-1 auxiliary file: chapter/Introduction.aux
 A level-1 auxiliary file: chapter/Background.aux
 A level-1 auxiliary file: chapter/NS_Method.aux
 A level-1 auxiliary file: chapter/NST.aux
+A level-1 auxiliary file: chapter/Conclusion.aux
 The style file: nuaabib.bst
-A level-1 auxiliary file: content/acknowledge.aux
-A level-1 auxiliary file: content/backmatter.aux
+A level-1 auxiliary file: chapter/acknowledge.aux
+A level-1 auxiliary file: chapter/backmatter.aux
 Database file #1: bib/ref.bib
 Warning--there's a publisher but no address in paquete2004pareto
 Warning--there's a publisher but no address in hillermeier2001nonlinear
@@ -19,7 +20,7 @@ Warning--there's a publisher but no address in crowder1974computational
 Warning--there's a publisher but no address in sutton2018reinforcement
 You've used 102 entries,
             2324 wiz_defined-function locations,
-            1106 strings with 22519 characters,
+            1107 strings with 22541 characters,
 and the built_in function-call counts, 48068 in all, are:
 = -- 4998
 > -- 1074

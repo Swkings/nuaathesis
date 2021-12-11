@@ -35,13 +35,13 @@
 \contentsline {subsection}{\numberline {3.3.3}次梯度优化}{32}{subsection.3.3.3}%
 \contentsline {section}{\numberline {3.4}邻域结构生成算法}{34}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1}meNS生成算法主框架}{34}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}1MST变换}{36}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.2}1MST变换}{35}{subsection.3.4.2}%
 \contentsline {subsection}{\numberline {3.4.3}循环扫描局部优化}{37}{subsection.3.4.3}%
 \contentsline {section}{\numberline {3.5}实验与讨论}{39}{section.3.5}%
 \contentsline {subsection}{\numberline {3.5.1}实验设置及测试集}{39}{subsection.3.5.1}%
 \contentsline {subsection}{\numberline {3.5.2}meNS的质量及其生成算法的效率}{40}{subsection.3.5.2}%
 \contentsline {subsection}{\numberline {3.5.3}meNS与其他邻域结构生成算法的比较}{41}{subsection.3.5.3}%
-\contentsline {section}{\numberline {3.6}本章小结}{45}{section.3.6}%
+\contentsline {section}{\numberline {3.6}本章小结}{47}{section.3.6}%
 \contentsline {chapter}{\numberline {第四章\hspace {.3em}}基于邻域结构迁移的多目标组合优化算法}{49}{chapter.4}%
 \contentsline {section}{\numberline {4.1}引言}{49}{section.4.1}%
 \contentsline {section}{\numberline {4.2}研究动机}{50}{section.4.2}%
@@ -63,7 +63,10 @@
 \contentsline {subsection}{\numberline {4.5.5}两目标相似度模型有效性分析}{71}{subsection.4.5.5}%
 \contentsline {subsection}{\numberline {4.5.6}多臂老虎机模型有效性分析}{72}{subsection.4.5.6}%
 \contentsline {section}{\numberline {4.6}本章小结}{73}{section.4.6}%
-\contentsline {chapter}{参考文献}{76}{section*.64}%
-\contentsline {chapter}{致谢}{82}{chapter*.66}%
-\contentsline {chapter}{在学期间的研究成果及学术论文情况}{83}{chapter*.67}%
+\contentsline {chapter}{\numberline {第五章\hspace {.3em}}研究工作总结和展望}{76}{chapter.5}%
+\contentsline {section}{\numberline {5.1}本文总结}{76}{section.5.1}%
+\contentsline {section}{\numberline {5.2}研究展望}{77}{section.5.2}%
+\contentsline {chapter}{参考文献}{78}{section*.64}%
+\contentsline {chapter}{致谢}{84}{chapter*.66}%
+\contentsline {chapter}{在学期间的研究成果及学术论文情况}{85}{chapter*.67}%
 \contentsfinish 

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.12.16)  8 DEC 2021 15:52
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.12.16)  10 DEC 2021 10:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1306,7 +1306,7 @@ Package: threeparttable 2003/06/13  v 3.0
 Package: xeCJK-listings 2020/02/18 v3.8.2 xeCJK patch file for listings
 \l__xeCJK_listings_max_char_int=\count425
 \l__xeCJK_listings_flag_int=\count426
-) (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/main.aux (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/chapter/abbr.aux) (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/chapter/Introduction.aux) (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/chapter/Background.aux) (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/chapter/NS_Method.aux) (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/chapter/NST.aux) (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/content/acknowledge.aux) (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/content/backmatter.aux))
+) (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/main.aux (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/chapter/abbr.aux) (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/chapter/Introduction.aux) (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/chapter/Background.aux) (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/chapter/NS_Method.aux) (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/chapter/NST.aux) (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/chapter/Conclusion.aux) (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/chapter/acknowledge.aux) (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/chapter/backmatter.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 23.
@@ -1658,14 +1658,14 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
  [2
 
 
-] (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/main.toc [3
+] [3] (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/main.toc [4
 
 
-] [4])
+] [5])
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- [5] (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/main.lof [6
+ [6] (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/main.lof [7
 
 
 ])
@@ -1676,23 +1676,23 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 \tf@lot=\write7
 \openout7 = `main.lot'.
 
- [7]
+ [8]
 \openout2 = `chapter/abbr.aux'.
 
  (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/chapter/abbr.tex
 Underfull \vbox (badness 10000) detected at line 22
  []
 
-[8
+[9
 
 
 ]
 Underfull \vbox (badness 10000) detected at line 82
  []
 
-[9
+[10
 
-]) [10]
+]) [11]
 \openout2 = `chapter/Introduction.aux'.
 
  (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/chapter/Introduction.tex
@@ -1844,17 +1844,20 @@ File: ./figure/chapter3/1MST Improved.pdf Graphic file (type pdf)
 <use ./figure/chapter3/1MST Improved.pdf>
 File: ./figure/chapter3/1MST Tour.pdf Graphic file (type pdf)
 <use ./figure/chapter3/1MST Tour.pdf>
- [34] [35] [36]
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[34] [35] [36]
 File: ./figure/chapter3/Transform-1MST.pdf Graphic file (type pdf)
 <use ./figure/chapter3/Transform-1MST.pdf>
 File: ./figure/chapter3/Transform-Euler Graph.pdf Graphic file (type pdf)
 <use ./figure/chapter3/Transform-Euler Graph.pdf>
 File: ./figure/chapter3/Transform-Tour.pdf Graphic file (type pdf)
 <use ./figure/chapter3/Transform-Tour.pdf>
- [37]
 File: ./figure/chapter3/循环右移.pdf Graphic file (type pdf)
 <use ./figure/chapter3/循环右移.pdf>
- [38]
+ [37] [38]
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
 (Font)              scaled to size 7.52812pt on input line 352.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/it' will be
@@ -1903,15 +1906,15 @@ File: ./figure/chapter3/brd14051.0-alNS.pdf Graphic file (type pdf)
 <use ./figure/chapter3/brd14051.0-alNS.pdf>
 File: ./figure/chapter3/brd14051.0-deNS.pdf Graphic file (type pdf)
 <use ./figure/chapter3/brd14051.0-deNS.pdf>
- [44]) [45]
+ [44]
+
+LaTeX Warning: Text page 45 contains only floats.
+
+[45]
 
 LaTeX Warning: Text page 46 contains only floats.
 
-[46]
-
-LaTeX Warning: Text page 47 contains only floats.
-
-[47] [48]
+[46]) [47] [48]
 \openout2 = `chapter/NST.aux'.
 
  (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/chapter/NST.tex
@@ -2042,44 +2045,53 @@ Overfull \hbox (0.33423pt too wide) in paragraph at lines 910--40
 []\TU/SimSun(0)/m/n/10.53937 本 章 提 出 了 一 种 基 于 邻 域 结 构 迁 移 的 多 目 标 组 合 优 化 算 法  |（\T1/ntxtlf/m/n/10.53937 NST-MOEA\TU/SimSun(0)/m/n/10.53937 ） 。|  主 要 针 对 \T1/ntxtlf/m/n/10.53937 MOTSP
  []
 
-[73] [74] [75] (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/main.bbl [76
+[73] [74] [75]
+\openout2 = `chapter/Conclusion.aux'.
+
+ (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/chapter/Conclusion.tex
+第五章
+[76
+
+
+
+]) [77] (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/main.bbl [78
 
 
 
 
-] [77] [78] [79] [80]) [81]
-\openout2 = `content/acknowledge.aux'.
+] [79] [80] [81] [82]) [83]
+\openout2 = `chapter/acknowledge.aux'.
 
- (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/content/acknowledge.tex) [82
+ (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/chapter/acknowledge.tex) [84
 
 
 ]
-\openout2 = `content/backmatter.aux'.
+\openout2 = `chapter/backmatter.aux'.
 
- (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/content/backmatter.tex) [83
+ (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/chapter/backmatter.tex) [85
 
 
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 57.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 57.
- (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/main.aux (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/chapter/abbr.aux) (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/chapter/Introduction.aux) (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/chapter/Background.aux) (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/chapter/NS_Method.aux) (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/chapter/NST.aux) (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/content/acknowledge.aux) (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/content/backmatter.aux))
+ (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/main.aux (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/chapter/abbr.aux) (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/chapter/Introduction.aux) (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/chapter/Background.aux) (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/chapter/NS_Method.aux) (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/chapter/NST.aux) (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/chapter/Conclusion.aux) (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/chapter/acknowledge.aux) (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/chapter/backmatter.aux))
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 57.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 57.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: DB1D2F51DD1AD79C71DEB46A3F6667AC;9586.
+(rerunfilecheck)             Checksum: 07EC96D080B98BDEE98385718AC1C502;9962.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 50333 strings out of 479418
- 1172820 string characters out of 5888104
- 1535976 words of memory out of 5000000
- 66709 multiletter control sequences out of 15000+600000
+ 50359 strings out of 479418
+ 1174063 string characters out of 5888104
+ 1543947 words of memory out of 5000000
+ 66730 multiletter control sequences out of 15000+600000
  683787 words of font info for 238 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 76i,25n,129p,1336b,1347s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 76i,25n,129p,1408b,1347s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/main.pdf (96 pages).
+Output written on c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/main.pdf (99 pages).

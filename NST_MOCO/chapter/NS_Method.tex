@@ -215,7 +215,7 @@ Fourman等人于1985年在解决多目标优化问题时提出多目标进化算
 \label{subsec:NS_Method:邻域结构生成算法:meNS主框架}
 实现meNS生成算法的关键在于如何高效的生成一系列中等质量的初始Tour，因为这些初始Tour中必定包含大量的最优Tour中的边。算法利用这一系列中等质量的Tour，将其拆分并重新组装构造成一个完整的邻域结构。从算法~\ref{alg:次梯度优化}~可以知道，算法产生了大量的未被使用的1MST。而meNS生成算法的核心思想就是利用这些未被使用的1MST，用欧拉回路最为桥梁，将其转变为Tour。经过1MST转变来的Tour的质量会比随机生成的好很多，因此，这个步骤将节省大部分的优化时间。最后，只需要将这些Tour经过局部优化，就可以得到一个高质量的邻域结构。meNS生成算法主框架如下：
 \par
-\begin{algorithm}
+\begin{algorithm}[h]
     \setstretch{1.3}
     \caption{meNS生成算法主框架}
     \label{alg:meNS生成算法主框架}
