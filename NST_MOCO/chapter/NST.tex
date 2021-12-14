@@ -25,7 +25,7 @@
 
 \section{邻域结构迁移}
 \label{sec:NST:邻域结构迁移}
-进化迁移优化（ETO）是利用跨问题领域的知识来提高其优化能力的一种方法。容易知道，知识的表达形式，及其如何跨问题迁移是设计算法时的关键点。在提出的邻域结构迁移这一模型中，本章将问题的邻域结构具象化，将邻域结构作为知识迁移的基础单位，视分解得到的多个子问题为不同的问题领域，并且提出了一种由知识关联到问题的双目标相似度模型，该模型能够为每个子问题构造一个知识库，然后使用多臂老虎机模型来获取知识库中的知识，以此达到知识在不同子问题间迁移。
+进化迁移优化（ETO）是利用跨问题领域的知识来提高其优化能力的一种方法。容易知道，知识的表达形式，及其如何跨问题迁移是设计算法时的关键点。在提出的邻域结构迁移这一模型中，本章将问题的邻域结构具象化，将邻域结构作为知识迁移的基础单位，视分解得到的多个子问题为不同的问题领域，并且提出了一种由知识关联到问题的两目标相似度模型，该模型能够为每个子问题构造一个知识库，然后使用多臂老虎机模型来获取知识库中的知识，以此达到知识在不同子问题间迁移。
 
 \subsection{子问题}
 \label{subsec:NST:邻域结构迁移:子问题}
@@ -70,8 +70,8 @@
     \mathcal{N}^{k} \xleftarrow[M]{meNS} \mathcal{W}^k.
 \end{align}
 
-\subsection{双目标相似度模型}
-\label{subsec:NST:邻域结构迁移:双目标相似度模型}
+\subsection{两目标相似度模型}
+\label{subsec:NST:邻域结构迁移:两目标相似度模型}
 进化迁移优化（ETO）作为近年来较为新颖的方法，在多目标优化领域中，常与其他优化算法相结合的形式在多任务优化当中出现\cite{feng2020explicit,lin2020effective,gupta2016multiobjective}。并且，ETO在多任务优化中具有几个特征：
 \begin{itemize}
     \item 任务与任务之间存在相关性，即任务之间具有一定的相似度。
@@ -79,133 +79,90 @@
 \end{itemize}
 其目的在于，使得信息能够在多任务之间进行正迁移，以致于这些信息能够给其它相异的任务起到促进的作用。同理，这些特征在多目标组合优化之中同样适用，当一个多目标组合优化问题分解为多个不同的子问题时，这些子问题之间自然地具有内在的相似性，并且用meNS生成算法为这些子问题生成各自的邻域结构，以这些邻域结构当作信息的载体，然后通过子问题之间的关联来进行邻域结构的迁移，以此达到子问题之间的相互促进。
 \par
-为了建立子问题和邻域结构之间的映射关系、定量的表示子问题之间的相关性以及邻域结构中所蕴含信息量的多少，下面将介绍一些与之相关的定义。
+为了建立子问题和邻域结构之间的映射关系、定量的表示子问题之间的相关性以及邻域结构中所蕴含信息量的多少，下面将介绍两目标相似度模型中关联子问题和邻域结构的两个目标的相关定义。
 \par
-\begin{definition}[相似度（Similarity）]
-    \label{def:Similarity}
-    假设有问题$G = (V,E,W)$，分解向量集$\lambda = \{ \lambda^1, \cdots, \lambda^N \}$，则可得子问题集$\mathcal{G} = \{ \mathcal{G}^1, \cdots , \mathcal{G}^N \}$，如果有子问题$\mathcal{G}^i$和参考子问题$\mathcal{G}^j$，则子问题$\mathcal{G}^i$和参考子问题$\mathcal{G}^j$之间的相似度为两子问题对应的分解权重向量$\lambda^i$与$\lambda^j$之差的$L2$范数，其数学形式如下：
+\begin{enumerate}
+    \item 第一个目标为相似度：假设有问题$G = (V,E,W)$，分解向量集$\lambda = \{ \lambda^1, \cdots, \lambda^N \}$，则可得子问题集$\mathcal{G} = \{ \mathcal{G}^1, \cdots , \mathcal{G}^N \}$，如果有子问题$\mathcal{G}^j$和参考子问题$\mathcal{G}^i$，则子问题$\mathcal{G}^j$和参考子问题$\mathcal{G}^i$之间的相似度为两子问题对应的分解权重向量$\lambda^i$与$\lambda^j$之差的$L_2$范数，其数学形式如下：
     \begin{align}
         \label{eq:Similarity}
-        & S_{i,j}  = \|\lambda^i - \lambda^j\|_2, \\
+        & S^i_j  = \|\lambda^j - \lambda^i\|_2, \\
         s.t. \quad & \lambda^i, \lambda^j \in \lambda, \notag \\
         & i,j \in \{1, \cdots, N\}. \notag
     \end{align}
-    其中，$\| \cdot \|_2 = \sqrt{\sum \cdot^2}$为$L2$范数计算公式。由\autoref{eq:Similarity}~可知，子问题和参考子问题之间的相似度实质就是两个子问题所对应分解向量之间的距离，当两子问题之间的差异大，则问题所对应的分解向量的距离就会大，相似度就会小，反之亦然。
-\end{definition}
-\begin{definition}[信息增益（Information Gain，IG）]
-    \label{def:Information Gain}
-    假设有子问题集$\mathcal{G} = \{ \mathcal{G}^1, \cdots , \mathcal{G}^N \}$，可得对应的邻域结构集$\mathcal{N} = \{ \mathcal{N}^1, \cdots , \mathcal{N}^N \}$，如果有邻域结构$\mathcal{N}^i$和参考邻域结构$\mathcal{N}^j$，则邻域结构$\mathcal{N}^i$相对于参考邻域结构$\mathcal{N}^j$的信息增益为邻域结构$\mathcal{N}^i$中不属于$\mathcal{N}^j$中的候选边的比例，其数学形式如下：
+    其中，$\| \cdot \|_2 = \sqrt{\sum \cdot^2}$为$L_2$范数计算公式。由\autoref{eq:Similarity}~可知，子问题和参考子问题之间的相似度实质就是两个子问题所对应分解向量之间的距离，当两子问题之间的差异大，则问题所对应的分解向量的距离就会大，相似度就会小，反之亦然。
+    \item 第二个目标是信息增益（Information Gain，IG）：假设有子问题集$\mathcal{G} = \{ \mathcal{G}^1, \cdots , \mathcal{G}^N \}$，可得对应的邻域结构集$\mathcal{N} = \{ \mathcal{N}^1, \cdots , \mathcal{N}^N \}$，如果有邻域结构$\mathcal{N}^j$和参考邻域结构$\mathcal{N}^i$，则邻域结构$\mathcal{N}^j$相对于参考邻域结构$\mathcal{N}^i$的信息增益为邻域结构$\mathcal{N}^j$中不属于$\mathcal{N}^i$中的候选边的比例，其数学形式如下：
     \begin{align}
         \label{eq:Information Gain}
-        & IG_{i,j} =  \frac{\sum_{\mathcal{N}^i_k \in \mathcal{N}^i} \sum_{\mathcal{N}^i_{k,l} \in \mathcal{N}^i_k} I_{\mathcal{N}_k^j} (\mathcal{N}_{k,l}^i)}{\sum_{\mathcal{N}^i_k \in \mathcal{N}^i} |\mathcal{N}^i_k|}, \\
+        & IG^i_j =  \frac{\sum_{\mathcal{N}^j_k \in \mathcal{N}^j} \sum_{\mathcal{N}^j_{k,l} \in \mathcal{N}^j_k} I_{\mathcal{N}_k^i} (\mathcal{N}_{k,l}^j)}{\sum_{\mathcal{N}^j_k \in \mathcal{N}^j} |\mathcal{N}^j_k|}, \\
         s.t. \quad & \mathcal{N}^i, \ \mathcal{N}^j \in \mathcal{N}, \notag  \\
                    & i,j \in \{ 1, \cdots, N \}. \notag
     \end{align}
-    其中，$|\cdot|$表示集合中元素的个数，$\mathcal{N}^i_k$是邻域结构$\mathcal{N}^i$中第$k$个点的邻域点集合，则$\mathcal{N}^i_{k,l}$是邻域结构$\mathcal{N}^i$中第$k$个点的第$l$个邻域点，$I_{\mathcal{N}_k^j} (\mathcal{N}_{k,l}^i)$为示性函数，用于判断元素$\mathcal{N}_{k,l}^i$是否属于集合$\mathcal{N}_k^j$，其数学表达式如下：
+    其中，$|\cdot|$表示集合中元素的个数，$\mathcal{N}^i_k$是邻域结构$\mathcal{N}^i$中第$k$个点的邻域点集合，则$\mathcal{N}^i_{k,l}$是邻域结构$\mathcal{N}^i$中第$k$个点的第$l$个邻域点，$I_{\mathcal{N}_k^i} (\mathcal{N}_{k,l}^j)$为示性函数，用于判断元素$\mathcal{N}_{k,l}^j$是否属于集合$\mathcal{N}_k^i$，其数学表达式如下：
     \begin{align}
         \label{eq:示性函数}
-        I_{\mathcal{N}_k^j} (\mathcal{N}_{k,l}^i) = 
+        I_{\mathcal{N}_k^i} (\mathcal{N}_{k,l}^j) = 
         \begin{cases}
-            1, & \mathcal{N}_{k,l}^i \in \mathcal{N}_k^j,     \\
-            0, & \mathcal{N}_{k,l}^i \not \in \mathcal{N}_k^j.
+            1, & \mathcal{N}_{k,l}^j \in \mathcal{N}_k^i,     \\
+            0, & \mathcal{N}_{k,l}^j \not \in \mathcal{N}_k^i.
         \end{cases}
     \end{align}
-\end{definition}
+\end{enumerate}
 \par
-从\autoref{def:Similarity}~和\autoref{def:Information Gain}~可知，用相似度来描述子问题之间的关联强弱，能够定量的表示子问题之间的关系。用信息增益来表示邻域结构之间的信息差异，能够定量的表示邻域结构所蕴含的相对信息量。从章节~\ref{sec:NS_Method:实验与讨论}~可以看出，问题的邻域结构的质量能够一定程度上决定最总解的质量，因此，可以将一个问题抽象出一个邻域结构。综上原因易知，不同子问题之间的相似度与其对应的邻域结构之间的信息增益也存在相关性，若两个子问题相似度高（$S$值小），则其对应的邻域结构之间的信息增益也会小，若两个子问题不相关，则它们的邻域结构之间就拥有最大的信息增益。
-\par
-本章节将邻域结构作为知识迁移的基本单位，因此，建立两目标相似度模型来粗粒度地构建一个可用来迁移的知识库（邻域结构集合），使得最终从知识库中迁移到其他子问题的邻域结构能够在使用局部搜索算法的情况下尽可能的产生正迁移。由此可知，知识库是邻域结构迁移的核心组件之一，它为每个子问题都建立了一个可迁移的邻域结构索引集合，以便在迁移时能够快速地找到相应的邻域结构。并且容易知道，对于同一个子问题而言，存在多个与之对应的具有相同相似度的子问题。因此，为了统一这些相同的相似度，我们将相似度等级定义如下：
-\begin{definition}[相似度等级（Similarity Level，SL）]
-    \label{def:Similarity Level}
-    如\autoref{fig:相似度等级示意图}，相似度等级是所有子问题与参考子问题的相似度排序后的索引，并且相同的相似度具有相同的相似度等级。
-\end{definition}
-\begin{figure}[htb]
-    \includegraphics[width=.5\linewidth]{相似度等级.pdf}
-    \caption[相似度等级示意图]{相似度等级示意图}
-    \label{fig:相似度等级示意图}
-\end{figure}
-如\autoref{fig:相似度等级示意图}所示，相似度等级有如下特点：
-\begin{itemize}
-    \item 两个向量相对于参照向量越相似，其相似度等级越小；
-    \item 如果两个向量相对于参照向量具有相同的相似度，则其相似度等级相同。
-    \item 一个向量相对于该向量本身，其相似度等级为零。
-\end{itemize}
-\par
-因此，可以由算法~\ref{alg:获取相似度等级}~来获取所有子问题相对于参考子问题的相似度的相似度等级（$SL$）及其相应等级所包含的子问题的索引（$SI$）集合：
-\begin{align}
-    \label{eq:Similarity Level}
-    [SL^i, SI^i] = CSL(S^i), \ i \in \{1,\cdots,n\}. 
-\end{align}
-\par
-\begin{algorithm}
-    \caption{构造相似度等级（Construct Similarity Level (CSL)）}
-    \label{alg:获取相似度等级}
-    \BlankLine
-    \KwIn{ \\
-        \hspace{1.1em} $S^i \ $：所有子问题相对于第$i$个子问题的相似度集合
-    }
-    \KwOut{ \\
-        \hspace{1.1em} $SL^i \ $：相似度等级 \\
-        \hspace{1.1em} $SI^i \ $：相似度等级对应的子问题索引集合
-    }
-    \tcp{对$S^i$进行字典排序，并且用$R$存储索引}
-    $[S', R] = sort(S^i)$ \;
-    $SL^i, SI^i = \varnothing$ \;
-    $k = 0$ \;
-    \For{$j=1 \ $ to $\ n$}{
-        $SL^i_k = SL^i_k \bigcup S'_j$ \;
-        $SI^i_k = SI^i_k \bigcup R_j$ \;
-        \lIf{$S'_j \not = S'_{j+1}$}{
-            $k = k+1$
-        }
-    }
-    \textbf{return } $SL^i, SI^i $ \;
-\end{algorithm}
-\par
-通过\autoref{def:Similarity}~、\autoref{def:Information Gain}~和\autoref{def:Similarity Level}~可以知道，邻域结构能够侧面反映子问题所蕴含的信息。当两个子问题的相似度越高（$S$值越小），其信息增益就越小。若两子问题的相似度越低，则它们的信息增益就越大。因此，在相似度（$S$）和信息增益（$IG$）之间存在着映射关系：
+从\autoref{eq:Similarity}~和\autoref{eq:Information Gain}~可知，用相似度来描述子问题之间的关联强弱，能够定量的表示子问题之间的关系。用信息增益来表示邻域结构之间的信息差异，能够定量的表示邻域结构所蕴含的相对信息量。从章节~\ref{sec:NS_Method:实验与讨论}~可以看出，邻域结构能够侧面反映子问题所蕴含的信息，问题的邻域结构的质量能够一定程度上决定最终解的质量，因此，可以将一个问题抽象出一个邻域结构。综上原因易知，不同子问题之间的相似度与其对应的邻域结构之间的信息增益也存在相关性，若两个子问题相似度高（$S$值小），则其对应的邻域结构之间的信息增益也会小，若两个子问题不相关，则它们的邻域结构之间就拥有最大的信息增益。因此，在相似度（$S$）和信息增益（$IG$）之间存在着映射关系：
 \begin{align}
     \label{eq:相似度与信息增益的映射关系}
     f: S^i \mapsto IG^i.
 \end{align}
 其中，$S^i, IG^i$代表相对于第$i$个子问题的相似度和信息增益。
 \par
-在建立起子问题和邻域结构的映射关系的基础上，需要为每一个子问题构建一个邻域结构集合用来存放能够被用作迁移的邻域结构，并且要求所子问题所属的邻域结构相对于该子问题的邻域结构在尽可能相似的情形下，能够有尽可能大的信息增益。因为子问题之间越相似，则说明它们的邻域结构也越相似，这使得它们能够互相使用对方的邻域结构。但是子问题之间越相似，其邻域结构之间的信息增益就越小，信息量小则难以对其他子问题起到促进作用。为此，需要找到一个相似度和信息增益之间的平衡，其最终目的在于找到一个合适的相似度等级，使得构建的邻域结构集合中的邻域结构能够尽可能地产生正迁移。
+在建立起子问题和邻域结构的映射关系的基础上，需要为每一个子问题构建一个邻域结构集合用来存放能够被用作迁移的邻域结构，并且要求所子问题所属的邻域结构相对于该子问题的邻域结构在尽可能相似的情形下，能够有尽可能大的信息增益。因为子问题之间越相似，则说明它们的邻域结构也越相似，这使得它们能够互相使用对方的邻域结构。但是子问题之间越相似，其邻域结构之间的信息增益就越小，信息量小则难以对其他子问题起到促进作用。为此，需要找到一个相似度和信息增益之间的平衡，其最终目的在于找到一个合适的相似度，使得构建的邻域结构集合中的邻域结构能够尽可能地产生正迁移。
 \par
-如\autoref{fig:相似度和信息增益映射关系示意图}~所示是归一化后的相似度和信息增益映射关系示意图。\autoref{eq:获取合适的相似度等级}~展示的是图中对应的表达式。通过拟合相似度和信息增益的映射关系$y(x)$来求出随着相似度变弱的信息增益的比率$g(x)$，然后将比率$g(x)$的最大增量$max \ \Delta g(x)$所处的相似度即为所求相似度，然后将相似度转化为相应的相似度等级$K$，则$K$即为构造子问题邻域结构集合的邻域结构所在子问题与该子问题的相似度等级。
+如\autoref{fig:相似度和信息增益映射关系示意图}~所示是归一化后的相似度和信息增益映射关系示意图。\autoref{eq:获取合适的相似度}~展示的是图中对应的表达式。通过拟合相似度和信息增益的映射关系$IG^i = f(S^i)$来求出$IG^i$随着$S^i$增加的比率$g$，然后将比率$g$的最大增量$max \ \Delta g$所处的相似度作为为最优相似度$S^*$：
+\begin{align}
+    \label{eq:获取合适的相似度}
+    & IG^i = f(S^i), \\
+    & g = f(S^i)', \notag \\
+    & \Delta g = g', \notag \\
+    & S^* = argmax (\Delta g).  \notag
+\end{align}
 \begin{figure}[htb]
-    \includegraphics[width=.75\linewidth]{Kns-kroAB300.pdf}
+    \includegraphics[width=.7\linewidth]{Kns-KroAB300.pdf}
     \caption[相似度和信息增益映射关系示意图]{相似度和信息增益映射关系示意图}
     \label{fig:相似度和信息增益映射关系示意图}
 \end{figure}
-\vspace{-1em}
-\begin{align}
-    \label{eq:获取合适的相似度等级}
-    y(x) &= f(SL^i_x), \\
-    g(x) &= y(x)', \notag \\
-    \Delta g(x) &= g(x+1) - g(x), \notag \\
-    K = 1 + argmax&(\{\Delta g(x) \ | \  x \in \{1, \cdots, n-1\} \}).  \notag
-\end{align}
-其中，$n$是子问题数目，$SL^i_x$代表第$i$个子问题的相似度等级中，等级为$x$所对应的相似度。由于，最小的相似度等级为0，代表子问题本身，所以所求的$K$最小为1。因此，可以用$K$来获取所有子问题的邻域结构集合（$\mathcal{NS}$）:
-\vspace{-1em}
-\begin{align}
-    \label{eq:邻域结构集合}
-    \mathcal{NS} & = \{\mathcal{NS}^1, \cdots, \mathcal{NS}^n\}, \\
-    \mathcal{NS}^i &= SI^i_0 \bigcup SI^i_K. \notag
-\end{align}
-其中，$\mathcal{NS}^i$中存储的是相对于第$i$个子问题，其相似度等级为0和$K$的子问题的索引，$SI^i_k$是相对于第$i$个子问题相似度等级为$k$的所有子问题的索引（\autoref{eq:获取合适的相似度等级}）。
 \par
-一般地，在本文中，同样使用相似度等级$K$来确定子问题的邻居：
-\begin{align}
-    \label{eq:邻居子问题}
-    B(i) = SI^i_0 \bigcup \cdots \bigcup SI^i_{(K+1)/2}.
-\end{align}
-其中，$B(i)$代表了第$i$个子问题的邻居子问题的索引集合。
+通过\autoref{eq:获取合适的相似度}~获取的最优相似度$S^*$，可以为每一个子问题构建一个邻域结构集合用来存放能够被用作迁移的邻域结构。因此，两目标相似度模型的整体流程如算法~\ref{alg:两目标相似度模型}~所示
+\begin{algorithm}[!h]
+    \caption{两目标相似度模型（Bi-objective Similarity Model，BSM）}
+    \label{alg:两目标相似度模型}
+    \BlankLine
+    \KwIn{ \\
+    \hspace{1.1em} $\lambda$：分解权重向量集合 \\
+        \hspace{1.1em} $\mathcal{N}$: $n$个子问题的邻域结构; \\
+    }
+    \KwOut{ \\
+        \hspace{1.1em} $NS \ $：邻域结构集合 \\
+        \hspace{1.1em} $B \ $：邻居子问题集合
+    }
+    \tcp{使用分解权重向量集合和所有子问题的邻域结构获取合适的相似度}
+    $S^* \xleftarrow[]{\text{式}\eqref{eq:获取合适的相似度}} \lambda, \ \mathcal{N}$ \;
+    $NS = \varnothing$ \;
+    $B = \varnothing$ \;
+    \For{$i=1 \ $ to $ \ n$}{
+        $S^i \xleftarrow[]{\text{式}\eqref{eq:Similarity}} \lambda^i, \ \mathcal{N}^i$ \;
+        $NS^i = NS^i \bigcup \{ i \} \bigcup \{ j \ | \  S^i_j==S^*, S^i_j \in S^i \}$ \;
+        $B^i = B^i \bigcup \{ i \} \bigcup \{ j \ | \  S^i_j \leq S^*, S^i_j \in S^i \}$ \;
+    }
+    \textbf{return } $NS, \ B$ \;
+\end{algorithm}
+\par
+在算法~\ref{alg:两目标相似度模型}~中，$NS$就是邻域结构集合，$B$是邻居子问题集合。其中，$NS^i$中存储着与第$i$个子问题相似度为0和相似度为$S^*$的子问题的邻域结构的索引，$B^i$中存储着与第$i$个子问题相似度小于或等于$S^*$的子问题的索引。
 
 \subsection{多臂老虎机模型}
 \label{subsec:NST:邻域结构迁移:多臂老虎机模型}
 多臂老虎机（Multi-armed Bandit，MAB）问题由Robbins于1952年研究统计学时提出\cite{robbins1952some}，此后被广泛应用于模拟自动化代理所面临的权衡，该代理旨在通过探索其环境和利用其当前可靠的知识来获得最高的预期收益\cite{kuleshov2014algorithms}。最常见的一个例子：当一个赌徒在面对一台拥有多个拉杆的老虎机时，拉动每一个拉杆都会获得一定的回报奖励（满足一定的概率分布），这个回报奖励和拉杆的分布有关，而赌徒的目的就是在不知道这些拉杆的回报奖励的情况下，最大化自己的收益。且每次只能拉动其中一个拉杆，当赌徒对其中一个拉杆的拉动达到一定的次数时，那么就可以得出这个拉杆的回报奖励对应的统计分布。同时，当赌徒只拉动其中一个或几个拉杆时，那么其他拉杆的拉动次数就会相应的减少，而这些拉杆也有可能会得到更高的回报奖励。因此，赌徒所面临的问题是：选择已知回报奖励均值最高的拉杆还是选择其他未知但可能获得更好的回报奖励的拉杆\cite{gittins1979bandit}。
 \par
-在章节~\ref{subsec:NST:邻域结构迁移:双目标相似度模型}~中，双目标相似度模型为算法确定了一个邻域结构库，其中包含了对于相应子问题能够用于知识迁移的邻域结构。但是，在算法中，每次只能选择一个邻域结构用于对当前子问题进行局部搜索。在算法初期，我们不知道哪个邻域结构能为当前子问题带来收益（问题改进），但是我们又期望最终能够获得最大的回报奖励。这正是MAB模型中赌徒遇到的问题。因此，我们将邻域结构的选择问题建模成一个MAB模型，然后用求解多MAB问题的相关算法来对邻域结构进行选择。
+在章节~\ref{subsec:NST:邻域结构迁移:两目标相似度模型}~中，两目标相似度模型为算法确定了一个邻域结构库，其中包含了对于相应子问题能够用于知识迁移的邻域结构。但是，在算法中，每次只能选择一个邻域结构用于对当前子问题进行局部搜索。在算法初期，我们不知道哪个邻域结构能为当前子问题带来收益（问题改进），但是我们又期望最终能够获得最大的回报奖励。这正是MAB模型中赌徒遇到的问题。因此，我们将邻域结构的选择问题建模成一个MAB模型，然后用求解多MAB问题的相关算法来对邻域结构进行选择。
 \par
 MAB模型中的$\epsilon$-greedy算法\cite{cesa1998finite,vermorel2005multi}、Pursuit算法\cite{thathachar1984class,sutton2018reinforcement}和上置信界（Upper Confidence Bound，UCB）算法\cite{auer2002using,garivier2008upper,slivkins2011contextual}等都能够有效地解决该模型中的利用和探索的权衡问题。因此我们利用MAB模型中的UCB算法来有效解决在没有先验知识的情况下来选择合适的邻域结构的问题。
 \par
@@ -252,7 +209,8 @@ MAB模型中的$\epsilon$-greedy算法\cite{cesa1998finite,vermorel2005multi}、
 \begin{enumerate}
     \item $EP$: 所有非支配解的外部集合；
     \item $\mathcal{N}$: 所有子问题的邻居结构集合；
-    \item $\mathcal{NS}$: 所有子问题的邻域结构库集合；
+    \item $\mathcal{NS}$: 所有子问题的邻域结构库集合（存邻域结构的索引）；
+    \item $B$: 所有子问题的邻居子问题集合（存子问题索引）；
     \item $M$: 所有子问题的多臂老虎机模型参数集合。
 \end{enumerate}
 \begin{algorithm}
@@ -261,14 +219,18 @@ MAB模型中的$\epsilon$-greedy算法\cite{cesa1998finite,vermorel2005multi}、
     \BlankLine
     \KwIn{ \\
         \hspace{1.1em} $Stop$：算法终止条件 \\
-        \hspace{1.1em} $MOP$：多目标组合优化问题的权重集合 \\
+        \hspace{1.1em} $W$：多目标组合优化问题的权重集合 \\
         \hspace{1.1em} $\lambda$：分解权重向量集合
     }
     \KwOut{ \\
         \hspace{1.1em} $EP \ $：外部集合
     }
-    \tcp{通过NST中的两个模型对问题建模}
-    [$\mathcal{N}, \ \mathcal{NS}, \ M$] = $NST(MOP, \ \lambda)$ \label{line:NST} \;
+    \tcp{使用邻域结构生成方法为所有子问题生成邻域结构}
+    $\mathcal{N} \xleftarrow[]{meNS} W, \ \lambda$ \label{line:meNS} \;
+    \tcp{通过两目标相似度模型为每个子问题构造邻域结构集合和邻居子问题}
+    [$NS, \ B$] = $BSM(\lambda, \ \mathcal{N})$ \label{line:BSM} \;
+    \tcp{根据\autoref{eq:MAB Model}，初始化MAB模型参数为0}
+    $M = \mathbf{0}$ \label{line:MAB} \;
     \tcp{随机生成初始种群}
     $P = \{x^1, \cdots, x^n\}$ \label{line:初始化P} \;
     $EP = \varnothing$  \label{line:初始化EP}\;
@@ -280,37 +242,17 @@ MAB模型中的$\epsilon$-greedy算法\cite{cesa1998finite,vermorel2005multi}、
             \tcp{对个体进行局部搜索}
             $x'$ = LS($x^i$, $\mathcal{N}^{\mathcal{NS}^i_j}$) \label{line:LS} \;
             \tcp{更新参数}
-            UPDATE($x^i$, $x'$, $B(i)$, $M^i$, $EP$) \label{line:Update} \;
+            UPDATE($x^i$, $x'$, $B^i$, $M^i$, $EP$) \label{line:Update} \;
         }
     }
     \textbf{return } $EP$ \;
 \end{algorithm}
 \vspace{-1em}
-算法~\ref{alg:NST-MOEA算法主框架}~展示的是NST-MOEA算法主框架，从伪代码也能够看出，算法整体分为了三部分：1）初始化部分（第~\ref{line:NST}$\thicksim$\ref{line:初始化t}~行）；2）局部搜索部分（第~\ref{line:UCB}$\thicksim$\ref{line:LS}~行）；3）更新部分（第~\ref{line:Update}~行）。在算法~\ref{alg:NST-MOEA算法主框架}~中，在对算法各参数进行初始化后，就使用局部搜索对种群中的个体进行迭代优化，直到满足算法的终止条件，并且每次对种群中的个体进行优化后，都需要将相应的参数进行更新，最终，算法返回保存非支配解的外部集$EP$。下面将分节详细介绍算法的各个子部分。
+算法~\ref{alg:NST-MOEA算法主框架}~展示的是NST-MOEA算法主框架，从伪代码也能够看出，算法整体分为了三部分：1）初始化部分（第~\ref{line:meNS}$\thicksim$\ref{line:初始化t}~行）；2）局部搜索部分（第~\ref{line:UCB}$\thicksim$\ref{line:LS}~行）；3）更新部分（第~\ref{line:Update}~行）。在算法~\ref{alg:NST-MOEA算法主框架}~中，在对算法各参数进行初始化后，就使用局部搜索对种群中的个体进行迭代优化，直到满足算法的终止条件，并且每次对种群中的个体进行优化后，都需要将相应的参数进行更新，最终，算法返回保存非支配解的外部集$EP$。下面将分节详细介绍算法的各个子部分。
 
 \subsection{初始化阶段}
 \label{subsec:NST:算法设计:初始化阶段}
-在算法~\ref{alg:NST-MOEA算法主框架}~的第~\ref{line:NST}$\thicksim$\ref{line:初始化t}~行是初始化部分。首先，初始化邻域结构迁移中的参数，如算法~\ref{alg:NST}~中所示，首先为所有子问题生成邻域结构，本章使用meNS生成方法为子问题生成邻域结构。然后通过\autoref{eq:邻域结构集合}~为每个子问题构造一个邻域结构库用于知识迁移。接着通过\autoref{eq:MAB Model}~为每个子问题都建立MAB模型，并初始化参数。最后，在算法~\ref{alg:NST-MOEA算法主框架}~的第~\ref{line:初始化P}~行随机生成初始种群$P$，第~\ref{line:初始化EP}~行和~\ref{line:初始化t}~行分别是设置外部集合$EP$为空集和设置试验轮数$t=0$。
-\par
-\begin{algorithm}
-    \caption{NST}
-    \label{alg:NST}
-    \BlankLine
-    \KwIn{ \\
-        \hspace{1.1em} $W$：多目标组合优化问题的权重集合 \\
-        \hspace{1.1em} $\lambda$：分解权重向量集合
-    }
-    \KwOut{ \\
-        \hspace{1.1em} $EP \ $：外部集合
-    }
-    \tcp{使用邻域结构生成方法为所有子问题生成邻域结构}
-    $\mathcal{N} \xleftarrow[]{meNS} W$ \;
-    \tcp{使用分解权重向量集合和所有子问题的邻域结构构造邻域结构库集合}
-    $\mathcal{NS} \xleftarrow[]{\text{式}\eqref{eq:邻域结构集合}} \lambda, \ \mathcal{N}$ \;
-    \tcp{对每个邻域结构库构造MAB模型}
-    $M \xleftarrow[]{\text{式}\eqref{eq:MAB Model}} \mathcal{NS}$ \;
-    \textbf{return } $\mathcal{N}, \ \mathcal{NS}, \ M$ \;
-\end{algorithm}
+在算法~\ref{alg:NST-MOEA算法主框架}~的第~\ref{line:meNS}$\thicksim$\ref{line:初始化t}~行是初始化部分。首先为所有子问题生成邻域结构，本章使用meNS生成方法为子问题生成邻域结构。然后，如算法~\ref{alg:两目标相似度模型}~中所示，使用两目标相似度模型初始化每个子问题的邻域结构集合和邻居子问题。接着通过\autoref{eq:MAB Model}~为每个子问题都建立MAB模型，并初始化参数。最后，在算法~\ref{alg:NST-MOEA算法主框架}~的第~\ref{line:初始化P}~行随机生成初始种群$P$，第~\ref{line:初始化EP}~行和~\ref{line:初始化t}~行分别是设置外部集合$EP$为空集和设置试验轮数$t=0$。
 
 \subsection{局部搜索阶段}
 \label{subsec:NST:算法设计:局部搜索阶段}
@@ -327,19 +269,19 @@ MAB模型中的$\epsilon$-greedy算法\cite{cesa1998finite,vermorel2005multi}、
 \label{subsec:NST:算法设计:更新阶段}
 在算法~\ref{alg:NST-MOEA算法主框架}~的第~\ref{line:Update}~行的更新操作如算法~\ref{alg:UPDATE}~所示。算法~\ref{alg:UPDATE}~主要是对3个集合进行更新。首先是用$x'$对子问题的邻居子问题的解进行更新。然后计算当前轮次获得的收益$r$，然后用收益$r$根据\autoref{eq:Update MAB Model}~对子问题的MAB模型进行更新。最后用$x'$对$EP$集进行更新，主要目的是将$EP$中被$x'$支配的个体排除掉，并且判断是否将$x'$加入到$EP$集中。
 \par
-\begin{algorithm}
+\begin{algorithm}[!h]
     \caption{UPDATE}
     \label{alg:UPDATE}
     \BlankLine
     \KwIn{ \\
         \hspace{1.1em} $x^i$: 第$i$个子问题所关联的解 \\
         \hspace{1.1em} $x'$: $x^i$经过局部搜索改进后的解 \\
-        \hspace{1.1em} $B(i)$: 第$i$个子问题的邻居子问题的索引 \\
+        \hspace{1.1em} $B^i$: 第$i$个子问题的邻居子问题的索引 \\
         \hspace{1.1em} $M^i$: 第$i$个子问题的MAB模型 \\
         \hspace{1.1em} $EP$: 外部集合
     }
     \tcp{更新子问题的邻居解}
-    \ForEach{$j \in B(i)$}{
+    \ForEach{$j \in B^i)$}{
         \If{对于第$j$个子问题，$x'$优于$x^j$}{
             \tcp{用$x'$替换$x^j$}
             $x^j = x'$ \;
@@ -414,7 +356,7 @@ MAB模型中的$\epsilon$-greedy算法\cite{cesa1998finite,vermorel2005multi}、
 \end{table}
 在\autoref{tab:MOTSP问题测试集}~中的测试用例有两种权重类型：TSPLIB中的测试用例的权重类型都为欧几里得距离（$EUC\_2D$），其计算公式可参考\autoref{eq:EUC2D}；真实地理数据测试用例的权重类型为经纬度距离（$GEO$），假设有两点及其经纬度坐标$v_i = (x_i, y_i)$和$v_j = (x_j, y_j)$，$x$为纬度（Latitude），$y$为经度（Longitude），都为浮点数，则其边权$w_{i,j}$计算公式如下：
 \vspace{-1em}
-\begin{align}
+\begin{align}[!h]
     \label{eq:GEO}
     & w_{i,j} =\lfloor R * \arccos(0.5*((1+q_1)*q_2 - (1-q_1)*q_3)) + 1 \rfloor, \\
     s.t. \quad & R = 6378.388, \notag  \\
@@ -425,7 +367,7 @@ MAB模型中的$\epsilon$-greedy算法\cite{cesa1998finite,vermorel2005multi}、
     & q_3 = \cos(lat_i + lat_j). \notag
 \end{align}
 其中，$Convert$（算法~\ref{alg:浮点数转经纬度}）将浮点数坐标转换成经纬度坐标，$R$为地球半径$6378.388$公里。
-\begin{algorithm}
+\begin{algorithm}[!h]
     \caption{浮点数转经纬度（Convert）}
     \label{alg:浮点数转经纬度}
     \BlankLine
@@ -462,30 +404,50 @@ MAB模型中的$\epsilon$-greedy算法\cite{cesa1998finite,vermorel2005multi}、
 \subsection{各算法在TSPLIB测试集上的对比}
 \label{subsec:NST:实验与讨论:各算法在TSPLIB测试集上的对比}
 % TODO: 对比图片重新画，改成中文版
-在本节中，将会对NST-MOEA与MOEA/D（WS、TCH和PBI）、DCDG、GWS-PLS和2PPLS算法在TSPLIB测试集上进行对比。图1,2,3展示的是TSPLIB中部分测试用例（2、3和4目标）在相同尺度下的的最终非支配集可视化图。
+在本节中，将会对NST-MOEA与MOEA/D（WS、TCH和PBI）、DCDG、GWS-PLS和2PPLS算法在TSPLIB测试集上进行对比。\autoref{fig:各算法在KroABC100上的非支配解集示意图}~、\autoref{fig:各算法在KroABC100上的非支配解集示意图}~和\autoref{fig:各算法在KroABCD100上的非支配解集示意图}~分別展示的是TSPLIB中部分测试用例（2、3和4目标）在相同尺度下的的最终非支配集可视化图。
 \par
-从\autoref{fig:各算法在KroAB300上的非支配解集示意图}~可以看出，在二目标测试问题上，MOEA/D-WS得到的非支配解集分布广泛但是不均匀，其PF面有很多缺失的部分。相反，MOEA/D-TCH和MOEA/D-PBI得到的非支配解集分布均匀但是不广泛，丢失了两端边界区域的解，可以看出，子问题不同的分解方式对MOEA/D最终的非支配解集的影响会很大。DCDG获得的非支配解集与MOEA/D-PBI类似，相比于其他算法，它也缺失了两端边界区域的解。从图中还能看出，GWS-PLS、2PPLS和NST-MOEA获得的非支配解集都分布广泛且均匀，但是在最后一个子图的局部放大图中可以看出，NST-MOEA获得的非支配解集的收敛效果比其他算法都好好。
-\begin{figure}[h]
-    \includegraphics[width=\linewidth]{PF-kroAB300.pdf}
+\begin{figure}[!h]
+    \subfloat[All Algorithms \label{subfig:KroAB300-All Algorithms}]{\includegraphics[width=.5\linewidth]{PF/KroAB300/Thesis-All-SameScale1-PF.pdf}} \qquad
+    \subfloat[NST-MOEA \label{subfig:KroAB300-NST-MOEA}]{\includegraphics[width=.32\linewidth]{PF/KroAB300/Thesis-NST-MOEA-SameScale1-PF.pdf}} 
     \caption[各算法在KroAB300上的非支配解集示意图]{各算法在KroAB300上的非支配解集示意图}
     \label{fig:各算法在KroAB300上的非支配解集示意图}
 \end{figure}
+\begin{figure}[t]
+    \ContinuedFloat
+    \subfloat[MOEA/D-WS \label{subfig:KroAB300-MOEA/D-WS}]{\includegraphics[width=.3\linewidth]{PF/KroAB300/Thesis-MOEAD-WS-SameScale1-PF.pdf}} \quad
+    \subfloat[MOEA/D-TCH \label{subfig:KroAB300-MOEA/D-TCH}]{\includegraphics[width=.3\linewidth]{PF/KroAB300/Thesis-MOEAD-TCH-SameScale1-PF.pdf}} \quad
+    \subfloat[MOEA/D-PBI \label{subfig:KroAB300-MOEA/D-PBI}]{\includegraphics[width=.3\linewidth]{PF/KroAB300/Thesis-MOEAD-PBI-SameScale1-PF.pdf}} \\
+    \subfloat[DCDG \label{subfig:KroAB300-DCDG}]{\includegraphics[width=.3\linewidth]{PF/KroAB300/Thesis-DCDG-SameScale1-PF.pdf}} \quad
+    \subfloat[GWS-PLS \label{subfig:KroAB300-GWS-PLS}]{\includegraphics[width=.3\linewidth]{PF/KroAB300/Thesis-GWS-PLS-SameScale1-PF.pdf}} \quad
+    \subfloat[2PPLS \label{subfig:KroAB300-2PPLS}]{\includegraphics[width=.3\linewidth]{PF/KroAB300/Thesis-2PPLS-SameScale1-PF.pdf}}
+    \caption[]{各算法在KroAB300上的非支配解集示意图（续）}
+\end{figure}
 \par
-从\autoref{fig:各算法在KroABC100上的非支配解集示意图}~和\autoref{fig:各算法在KroABCD100上的非支配解集示意图}~可以看出，各算法在高维目标测试问题与二目标测试问题所呈现的非支配解集分布情况相似。除了NST-MOEA获得的非支配解集分布广泛且均匀，MOEA/D-LS获得的解集广泛但不均匀外，其他算法获得的解集都在不同程度上缺失了边界区域的解。并且，结合图1所示的各算法HV指标箱型图，能够知道，NST-MOEA在获得的非支配解集不仅在分布性上表现的要比其他算法好，而且非支配解集的收敛性也要由于其他算法。
+从\autoref{fig:各算法在KroAB300上的非支配解集示意图}~可以看出，在二目标测试问题上，MOEA/D-WS得到的非支配解集分布广泛但是不均匀，其PF面有很多缺失的部分。相反，MOEA/D-TCH和MOEA/D-PBI得到的非支配解集分布均匀但是不广泛，丢失了两端边界区域的解，可以看出，子问题不同的分解方式对MOEA/D最终的非支配解集的影响会很大。DCDG获得的非支配解集与MOEA/D-PBI类似，相比于其他算法，它也缺失了两端边界区域的解。从图中还能看出，GWS-PLS、2PPLS和NST-MOEA获得的非支配解集都分布广泛且均匀，但是在最后一个子图的局部放大图中可以看出，NST-MOEA获得的非支配解集的收敛效果比其他算法都好。从\autoref{fig:各算法在KroABC100上的非支配解集示意图}~和\autoref{fig:各算法在KroABCD100上的非支配解集示意图}~可以看出，各算法在高维目标测试问题与二目标测试问题所呈现的非支配解集分布情况相似。除了NST-MOEA获得的非支配解集分布广泛且均匀，MOEA/D-LS获得的解集广泛但不均匀外，其他算法获得的解集都在不同程度上缺失了边界区域的解。并且，结合\autoref{fig:各算法Hypervolume指标对比示意图}~所示的各算法HV指标箱型图，能够知道，NST-MOEA在获得的非支配解集不仅在分布性上表现的要比其他算法好，而且非支配解集的收敛性也要由于其他算法。
 \begin{figure}[!h]
-    \includegraphics[width=\linewidth]{PF-kroABC100.pdf}
+    \subfloat[NST-MOEA \label{subfig:KroABC100-NST-MOEA}]{\includegraphics[width=.275\linewidth]{PF/KroABC100/Thesis-NST-MOEA-SameScale1-PF.pdf}} \quad
+    \subfloat[MOEA/D-WS \label{subfig:KroABC100-MOEA/D-WS}]{\includegraphics[width=.275\linewidth]{PF/KroABC100/Thesis-MOEAD-WS-SameScale1-PF.pdf}} \quad
+    \subfloat[MOEA/D-TCH \label{subfig:KroABC100-MOEA/D-TCH}]{\includegraphics[width=.275\linewidth]{PF/KroABC100/Thesis-MOEAD-TCH-SameScale1-PF.pdf}} \\
+    \subfloat[MOEA/D-PBI \label{subfig:KroABC100-MOEA/D-PBI}]{\includegraphics[width=.275\linewidth]{PF/KroABC100/Thesis-MOEAD-PBI-SameScale1-PF.pdf}} \quad
+    \subfloat[DCDG \label{subfig:KroABC100-DCDG}]{\includegraphics[width=.275\linewidth]{PF/KroABC100/Thesis-DCDG-SameScale1-PF.pdf}}  \quad
+    \subfloat[GWS-PLS \label{subfig:KroABC100-GWS-PLS}]{\includegraphics[width=.275\linewidth]{PF/KroABC100/Thesis-GWS-PLS-SameScale1-PF.pdf}}
     \caption[各算法在KroABC100上的非支配解集示意图]{各算法在KroABC100上的非支配解集示意图}
     \label{fig:各算法在KroABC100上的非支配解集示意图}
 \end{figure}
 \begin{figure}[!h]
-    \includegraphics[width=\linewidth]{PF-kroABC100.pdf}
+    \subfloat[MOEA/D-WS \label{subfig:KroABCD100-MOEA/D-WS}]{\includegraphics[width=.275\linewidth]{PF/KroABCD100/Thesis-MOEAD-WS-SameScale1-PF.pdf}} \quad
+    \subfloat[MOEA/D-TCH \label{subfig:KroABCD100-MOEA/D-TCH}]{\includegraphics[width=.275\linewidth]{PF/KroABCD100/Thesis-MOEAD-TCH-SameScale1-PF.pdf}} \quad
+    \subfloat[MOEA/D-PBI \label{subfig:KroABCD100-MOEA/D-PBI}]{\includegraphics[width=.275\linewidth]{PF/KroABCD100/Thesis-MOEAD-PBI-SameScale1-PF.pdf}} \\
+    \subfloat[GWS-PLS \label{subfig:KroABCD100-GWS-PLS}]{\includegraphics[width=.275\linewidth]{PF/KroABCD100/Thesis-GWS-PLS-SameScale1-PF.pdf}} \quad
+    \subfloat[NST-MOEA \label{subfig:KroABCD100-NST-MOEA}]{\includegraphics[width=.275\linewidth]{PF/KroABCD100/Thesis-NST-MOEA-SameScale1-PF.pdf}}
     \caption[各算法在KroABCD100上的非支配解集示意图]{各算法在KroABCD100上的非支配解集示意图}
     \label{fig:各算法在KroABCD100上的非支配解集示意图}
 \end{figure}
 \begin{figure}[!h]
-    \subfloat[KroAB100 \label{subfig:Box-HV-kroAB300}]{\includegraphics[width=.33\linewidth]{Box-HV-kroAB300.pdf}}
-    \subfloat[KroABC100 \label{subfig:Box-HV-KroABC100}]{\includegraphics[width=.33\linewidth]{Box-HV-kroABC100.pdf}}
-    \subfloat[KroABCD100 \label{subfig:Box-HV-KroABCD100}]{\includegraphics[width=.33\linewidth]{Box-HV-kroABC100.pdf}}
+    \subfloat[KroAB100 \label{subfig:Box-HV-kroAB100}]{\includegraphics[width=.4\linewidth]{Box-HV-KroAB100.pdf}} \quad
+    \subfloat[KroAB300 \label{subfig:Box-HV-kroAB300}]{\includegraphics[width=.4\linewidth]{Box-HV-KroAB300.pdf}} \\
+    \subfloat[KroABC100 \label{subfig:Box-HV-KroABC100}]{\includegraphics[width=.4\linewidth]{Box-HV-KroABC100.pdf}} \quad
+    \subfloat[KroABCD100 \label{subfig:Box-HV-KroABCD100}]{\includegraphics[width=.4\linewidth]{Box-HV-KroABCD100.pdf}}
     \caption[各算法Hypervolume指标对比示意图]{各算法Hypervolume指标对比示意图}
     \label{fig:各算法Hypervolume指标对比示意图}
 \end{figure}
@@ -629,10 +591,10 @@ MAB模型中的$\epsilon$-greedy算法\cite{cesa1998finite,vermorel2005multi}、
     \bottomrule
     \multicolumn{8}{p{45em}}{
         对Hypervolume指标值进行显著性水平为0.05的Wilcoxon秩和检验\vspace{-.75em}\newline{}
-        “$^\ddag$”表示该算法在此问题解集上的Hypervolume指标显著优于NST-MOEA\vspace{-.75em}\newline{}
-        “$^\dag$”表示该算法在此问题解集上的Hypervolume指标显著劣于NST-MOEA\vspace{-.75em}\newline{}
-        “$^\approx$”表示该算法在此问题解集上的Hypervolume指标与NST-MOEA没有明显差异\vspace{-.75em}\newline{}
-        “N.A.”表示该算法在合理的时间内无法获取该问题的非支配解集\vspace{-.75em}\newline{}
+        $^\ddag$表示该算法在此问题解集上的Hypervolume指标显著优于NST-MOEA\vspace{-.75em}\newline{}
+        $^\dag$表示该算法在此问题解集上的Hypervolume指标显著劣于NST-MOEA\vspace{-.75em}\newline{}
+        $^\approx$表示该算法在此问题解集上的Hypervolume指标与NST-MOEA没有明显差异\vspace{-.75em}\newline{}
+        N.A.表示该算法在合理的时间内无法获取该问题的非支配解集\vspace{-.75em}\newline{}
         每一行中，上面的数据为算法运行30次获取的Hypervolume指标的均值，下面的数据为标准差
         }
 \end{longtable}
@@ -684,9 +646,175 @@ MAB模型中的$\epsilon$-greedy算法\cite{cesa1998finite,vermorel2005multi}、
     \end{threeparttable}
 \end{table}
 
+\subsection{邻域结构迁移的有效性分析}
+\label{subsec:NST:实验与讨论:邻域结构迁移的有效性分析}
+在本节中，将通过NST-MOEA与未使用邻域结构迁移（NST）的NST-MOEA作对比，以此来验证邻域结构迁移的有效性。
+\autoref{tab:HV and C-Metric}~中展示了NST-MOEA和未使用NST的NST-MOEA在TSPLIB测试集上运行30次所获得的非支配解集的Hypervolume指标和部分C-Metric指标的对比数据。从表中数据可以看出，NST-MOEA在两目标测试集上的Hypervolume指标要优于未使用NST的NST-MOEA，而且在高维目标测试集上的Hypervolume指标要显著优于未使用NST的NST-MOEA。并且从C-Metric指标的对比上能够看出，NST-MOEA获得的非支配解集的收敛程度要优于未使用NST的NST-MOEA，但是由于问题越到高维，其最终的非支配解就会越多，所以在收敛效果上的表现会不明显。
+\par
+{
+% \small
+% \setlength{\tabcolsep}{4.5pt}
+\renewcommand\arraystretch{.7}
+\begin{longtable}[c]{lcc|cc}
+    \caption{NST-MOEA和未使用NST的NST-MOEA在TSPLIB测试集上获得的非支配解集的Hypervolume指标和部分C-Metric指标的对比} \label{tab:HV and C-Metric} \\
+    \toprule
+    \multirow{2}[4]{*}{测试用例} & \multicolumn{2}{c|}{HV}  & \multicolumn{2}{c}{C-Metric}      \\
+    \cmidrule{2-5}                   & A    & B             &    C(A,B)    & C(B,A) \\
+    \midrule
+    \endfirsthead
+    \multicolumn{5}{c}{\nuaafontcaption 续表~\thetable\hskip1em Hypervolume指标和部分C-Metric指标的对比}\\
+    \toprule
+    \multirow{2}[4]{*}{测试用例} & \multicolumn{2}{c|}{HV}         & \multicolumn{2}{c}{C-Metric}      \\
+    \cmidrule{2-5} & A                              & B                    & C(A,B)         & C(B,A) \\
+    \midrule
+    \endhead
+    \hline
+    \multicolumn{5}{r}{续下页} \\
+    \endfoot
+    \endlastfoot
+    %2 obj
+    KroAB100       &\textbf{7.226e-01} (3.6e-03)    &7.215e-01 (3.6e-03)$^{\approx}$   &\textbf{29.62}  &14.48 \\
+    KroAB200       &\textbf{7.837e-01} (3.4e-03)    &7.833e-01 (3.4e-03)$^{\approx}$   &\textbf{45.03}  &27.71 \\
+    KroAB300       &\textbf{8.129e-01} (1.3e-03)    &8.126e-01 (1.3e-03)$^{\approx}$   &\textbf{44.62}  &29.89 \\
+    KroAB400       &\textbf{8.273e-01} (1.2e-03)    &8.269e-01 (1.3e-03)$^{\approx}$   &\textbf{43.06}  &29.77 \\
+    KroAB500       &\textbf{8.418e-01} (1.2e-03)    &8.414e-01 (1.2e-03)$^{\approx}$   &\textbf{41.47}  &30.89 \\
+    KroAB750       &\textbf{8.682e-01} (9.3e-04)    &8.680e-01 (9.8e-04)$^{\approx}$   &\textbf{41.08}  &31.12 \\
+    KroAB1000      &\textbf{8.818e-01} (6.8e-04)    &8.814e-01 (7.4e-04)$^{\approx}$   &\textbf{38.19}  &29.46 \\
+    ClusterAB100   &\textbf{7.355e-01} (3.1e-03)    &7.346e-01 (3.0e-03)$^{\approx}$   &\textbf{33.26}  &20.19 \\
+    ClusterAB300   &\textbf{8.349e-01} (2.4e-03)    &8.348e-01 (2.5e-03)$^{\approx}$   &\textbf{40.82}  &37.97 \\
+    ClusterAB500   &\textbf{8.806e-01} (1.1e-03)    &8.802e-01 (1.1e-03)$^{\approx}$   &\textbf{45.85}  &34.40 \\
+    EuclidAB100    &\textbf{6.600e-01} (3.7e-03)    &6.584e-01 (3.8e-03)$^{\approx}$   &\textbf{42.27}  &19.52 \\
+    EuclidAB300    &\textbf{7.844e-01} (2.8e-03)    &7.841e-01 (2.7e-03)$^{\approx}$   &\textbf{43.01}  &30.59 \\
+    EuclidAB500    &\textbf{8.277e-01} (8.7e-04)    &8.273e-01 (8.0e-04)$^{\approx}$   &\textbf{44.96}  &29.97 \\
+    %3 obj
+    KroABC100      &\textbf{5.630e-01} (3.5e-03)    &5.603e-01 (3.4e-03)$^{\dag}$	   &\textbf{15.68}  &14.31 \\
+    KroBCD100      &\textbf{5.489e-01} (3.4e-03)    &5.462e-01 (3.4e-03)$^{\dag}$	   &\textbf{15.65}  &12.51 \\
+    KroCDE100      &\textbf{5.686e-01} (5.3e-03)    &5.656e-01 (5.3e-03)$^{\dag}$	   &\textbf{16.68}  &12.19 \\
+    %4 obj
+    KroABCD100     &\textbf{3.960e-01} (3.3e-03)	&3.921e-01 (3.2e-03)$^{\dag}$      &N.A.            &N.A. \\ 
+    KroBCDE100     &\textbf{4.163e-01} (3.4e-03)	&4.124e-01 (3.8e-03)$^{\dag}$      &N.A.            &N.A. \\	
+    EuclidA$\sim$D100   &\textbf{3.778e-01} (4.8e-03)	&3.730e-01 (4.5e-03)$^{\dag}$      &N.A.            &N.A. \\	
+    EuclidB$\sim$E100   &\textbf{3.714e-01} (3.0e-03)	&3.652e-01 (3.7e-03)$^{\dag}$      &N.A.            &N.A. \\	
+    EuclidC$\sim$F100   &\textbf{3.270e-01} (2.6e-03)	&3.212e-01 (2.5e-03)$^{\dag}$      &N.A.            &N.A. \\	
+    EuclidD$\sim$G100   &\textbf{3.363e-01} (3.7e-03)	&3.324e-01 (3.5e-03)$^{\dag}$      &N.A.            &N.A. \\	
+    EuclidE$\sim$H100   &\textbf{3.251e-01} (3.1e-03)	&3.213e-01 (2.8e-03)$^{\dag}$      &N.A.            &N.A. \\
+    %5 obj	
+    EuclidA$\sim$E100   &\textbf{2.258e-01} (2.8e-03)	&2.185e-01 (2.7e-03)$^{\dag}$      &N.A.            &N.A. \\	
+    EuclidB$\sim$F100   &\textbf{2.213e-01} (2.6e-03)	&2.146e-01 (3.2e-03)$^{\dag}$      &N.A.            &N.A. \\	
+    EuclidC$\sim$G100   &\textbf{2.027e-01} (3.6e-03)	&1.956e-01 (3.8e-03)$^{\dag}$      &N.A.            &N.A. \\	
+    EuclidD$\sim$H100   &\textbf{2.019e-01} (2.5e-03)	&1.960e-01 (2.6e-03)$^{\dag}$      &N.A.            &N.A. \\	
+    %6 obj	
+    EuclidA$\sim$F100   &\textbf{1.252e-01} (2.5e-03)	&1.194e-01 (2.7e-03)$^{\dag}$      &N.A.            &N.A. \\
+    EuclidB$\sim$G100   &\textbf{1.301e-01} (1.8e-03)	&1.256e-01 (1.9e-03)$^{\dag}$      &N.A.            &N.A. \\	
+    EuclidC$\sim$H100   &\textbf{1.108e-01} (2.3e-03)	&1.057e-01 (2.3e-03)$^{\dag}$      &N.A.            &N.A. \\
+    %7 obj		
+    EuclidA$\sim$G100   &\textbf{5.973e-02} (1.1e-03)	&5.508e-02 (1.2e-03)$^{\dag}$      &N.A.            &N.A. \\	
+    EuclidB$\sim$H100   &\textbf{6.211e-02} (1.1e-03)	&5.753e-02 (1.1e-03)$^{\dag}$      &N.A.            &N.A. \\	
+    \bottomrule
+    \multicolumn{5}{p{35em}}{
+        A代表NST-MOEA，B代表未使用NST的NST-MOEA\vspace{-.75em}\newline{}
+        对Hypervolume指标值进行显著性水平为0.05的Wilcoxon秩和检验\vspace{-.75em}\newline{}
+        $^\ddag$，$^\dag$和$^\approx$ 分别代表对应的算法性能显著优于，劣于或相似于NST-MOEA的性能\vspace{-.75em}\newline{}
+        N.A.表示无法在合理时间内计算该指标
+        }
+\end{longtable}
+}% 设置字体大小,设置块
+% \end{tabular}
+% \begin{tablenotes}
+%     \item[] A代表NST-MOEA，B代表未使用NST的NST-MOEA
+%     \item[] 对Hypervolume指标值进行显著性水平为0.05的Wilcoxon秩和检验
+%     \item[] $^\ddag$，$^\dag$和$^\approx$ 分别代表对应的算法性能显著优于，劣于或相似于NST-MOEA的性能
+%     \item[] “N.A.”表示无法在合理时间内计算该指标
+% \end{tablenotes}
+% \end{threeparttable}
+% 此外，\autoref{fig:Convergence}~中展示了NST-MOEA和未使用NST的NST-MOEA在部分测试用例上的收敛轨迹。从图中能够看出，NST-MOEA的收敛速度比未使用NST的NST-MOEA要快，并且NST-MOEA的最终性能也要优于未使用NST的NST-MOEA。综上所述，可以证实NST的有效性。
+% % TODO: 换成NST-MOEA和未使用NST的NST-MOEA对比图
+% \begin{figure}[h]
+%     \centering
+%     \subfloat[KroAB100]{ \label{subfig:LS2}
+%         \includegraphics[width=.4\linewidth]{Convergence-LS-All-RealAB100.pdf}
+%     }
+%     \subfloat[KroAB300]{ \label{subfig:LS3}
+%         \includegraphics[width=.4\linewidth]{Convergence-LS-All-RealAB300.pdf}
+%     }
+%     % \hfill
+%     \vspace{-1em}
+%     \subfloat[KroABC100]{ \label{subfig:LS4}
+%         \includegraphics[width=.4\linewidth]{Convergence-LS-All-RealABC100.pdf}
+%     }
+%     \subfloat[KroABCD100]{ \label{subfig:LS5}
+%         \includegraphics[width=.4\linewidth]{Convergence-LS-All-RealABCD100.pdf}
+%     }
+%     \caption{
+%         NST-MOEA与未使用NST的NST-MOEA分别在2、3 和4目标测试用例上的收敛轨迹.
+%     }
+%     \label{fig:Convergence}
+% \end{figure}
+
+\subsection{两目标相似度模型有效性分析}
+\label{subsec:NST:实验与讨论:两目标相似度模型有效性分析}
+在本节中，将使用实验验证邻域结构迁移中的两目标相似度模型的有效性。在NST-MOEA中，两目标相似度模型的作用就在于建立起子问题和邻域结构之间的映射关系，并且为每个子问题构建一个专属的用于知识迁移的邻域结构库。为了使得算法能够尽可能的产生正迁移，子问题所属的邻域结构库中的邻域结构应该能为当前子问题带来促进的效果。如果邻域结构库中的邻域结构与当前子问题偏差很大（子问题间相似度小），那么该邻域结构所蕴含的信息就难以对当前子问题带来改进（正迁移）。若邻域结构库中的邻域结构与当前子问题没有偏差（子问题间相似度大），那么该邻域结构中所蕴含的信息就与当前子问题的邻域结构所蕴含的信息相差无几，这样就使得有很多重复的信息，也难以促进当前子问题的优化。因此，我们需要获取与当前子问题相似度合适的子问题下的邻域结构，而两目标相似度模型就是为了获取这样一个合适的相似度$S^*$（\autoref{eq:获取合适的相似度}），以构成邻域结构库。因此，在NST-MOEA中使用不同的相似度$S^*$对部分测试用例进行多次实验，获取平均性能最佳的相似度$S^*$，然后通过对比使用两目标相似度模型获取到的$S^*$（\autoref{tab:两目标相似度模型获取的部分相似度S*值表}）是否一致，从而来验证两目标相似度模型的有效性。
+\begin{table}[h]
+    % \small
+    % \renewcommand\tabcolsep{2pt}
+    \centering
+    \caption{两目标相似度模型获取的部分相似度$S^*$值表 \label{tab:两目标相似度模型获取的部分相似度S*值表}}
+    \begin{tabular}{ll|ll}
+        \toprule
+        测试用例   & $S^*$  & 测试用例    & $S^*$ \\
+        \midrule
+        KroAB100          & 0.010    & EuclidAB100       & 0.010   \\
+        KroAB200          & 0.011    & EuclidAB300       & 0.010   \\
+        KroAB300          & 0.010    & EuclidAB500       & 0.010   \\
+        KroAB400          & 0.011    & ClusterAB100      & 0.010   \\
+        KroAB500          & 0.011    & ClusterAB300      & 0.010   \\
+        KroAB750          & 0.010    & ClusterAB500      & 0.011   \\
+        KroAB1000         & 0.011    & EuclidABCD100     & 0.019   \\
+        KroABC100         & 0.005    & EuclidBCDE100     & 0.019   \\
+        KroBCD100         & 0.005    & EuclidABCDE100    & 0.032   \\
+        KroCDE100         & 0.005    & EuclidABCDEF100   & 0.045   \\
+        KroABCD100        & 0.019    & EuclidABCDEFG100  & 0.047   \\
+        KroBCDE100        & 0.019    & EuclidABCDEFGH100 & 0.047   \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+\par
+\begin{figure}[!h]
+    \subfloat[KroAB100 \label{subfig:HV-KroAB100-Dynamic}]{\includegraphics[width=.4\linewidth]{Similarity/Sim-HV-KroAB100-Dynamic.pdf}} \quad
+    \subfloat[KroABC100 \label{subfig:HV-KroABC100-Dynamic}]{\includegraphics[width=.4\linewidth]{Similarity/Sim-HV-KroABC100-Dynamic.pdf}}\\
+    \subfloat[EuclidABCD100 \label{subfig:HV-EuclidABCD100-Dynamic}]{\includegraphics[width=.4\linewidth]{Similarity/Sim-HV-EuclidABCD100-Dynamic.pdf}} \quad
+    \subfloat[EuclidABCDE100 \label{subfig:HV-EuclidABCDE100-Dynamic}]{\includegraphics[width=.4\linewidth]{Similarity/Sim-HV-EuclidABCDE100-Dynamic.pdf}}
+    \caption[采用不同相似度$S^*$的NST-MOEA分别在2、3、4和5目标测试用例上的Hypervolume箱型图]{采用不同相似度$S^*$的NST-MOEA分别在2、3和4目标测试用例上的Hypervolume箱型图}
+    \label{fig:采用不同相似度S*的NST-MOEA分别在2、3、4和5目标测试用例上的Hypervolume箱型图}
+\end{figure}
+如\autoref{fig:采用不同相似度S*的NST-MOEA分别在2、3、4和5目标测试用例上的Hypervolume箱型图}~所示是采用不同相似度$S^*$的NST-MOEA分别在2、3和4目标测试用例上的Hypervolume箱型图，从图中可以观察到，当NST-MOEA的Hypervolume指标平均值最大时，此时算法表现的最好，且该指标所对应的相似度$S^*$是最优的。通过对比\autoref{fig:采用不同相似度S*的NST-MOEA分别在2、3、4和5目标测试用例上的Hypervolume箱型图}~表现最优的相似度和\autoref{tab:两目标相似度模型获取的部分相似度S*值表}~中两目标相似度模型计算得到的相似度，可以看出，两者获取的相似度在一定范围内是一致的。这说明，两目标相似度模型能够通过子问题和邻域结构之间的映射关系，找到一个合适的相似度$S^*$，从而使为子问题构建的邻域结构库中包含能够使得算法发生尽可能多的正迁移的邻域结构。由此，通过\autoref{fig:采用不同相似度S*的NST-MOEA分别在2、3、4和5目标测试用例上的Hypervolume箱型图}~和\autoref{tab:两目标相似度模型获取的部分相似度S*值表}~的对比可以证实两目标相似度的有效性。
+
+\subsection{多臂老虎机模型有效性分析}
+\label{subsec:NST:实验与讨论:多臂老虎机模型有效性分析}
+在本节中，将使用实验验证邻域结构迁移中的多臂老虎机模型的有效性。在NST-MOEA中，多臂老虎机模型旨在提高算法的效率，减少计算资源。从前面的章节能够知道，在两目标相似度模型中为每个子问题都构建了邻域结构库，但是在NST-MOEA中优化子问题时，若使用该子问题邻域结构库中的所有邻域结构，这将造成大量的重复计算。并且，邻域结构库的大小和问题的目标数呈正相关，若问题的目标较多时，其邻域结构库中的邻域结构也会很多，如果每次都将邻域结构库中的所有邻域结构应用于子问题的局部搜索，则会导致算法的效率降低。由此，在NST-MOEA中使用多臂老虎机模型来为算法作出一系列的决策，从两目标相似度模型构建的邻域结构库中选出供局部搜索使用的邻域结构，使得算法的最终收益最大。为了验证多臂老虎机模型在NST-MOEA中的有效性，在子问题具有相同的邻域结构库的基础上，本节使用随机选择的方式来与使用多臂老虎机模型从邻域结构库中选择邻域结构的方式进行对比实验。
+\begin{figure}[!h]
+    \subfloat[KroAB100 \label{subfig:MAB-Random-Convergence-LS-KroAB100}]{\includegraphics[width=.35\linewidth]{Ran-MAB-Convergence-LS-KroAB100.pdf}} \quad
+    \subfloat[KroAB300 \label{subfig:MAB-Random-Convergence-LS-KroAB300}]{\includegraphics[width=.35\linewidth]{Ran-MAB-Convergence-LS-KroAB300.pdf}}\\
+    \subfloat[KroABC100 \label{subfig:MAB-Random-Convergence-LS-KroABC100}]{\includegraphics[width=.35\linewidth]{Ran-MAB-Convergence-LS-KroABC100.pdf}} \quad
+    \subfloat[KroABCD100 \label{subfig:MAB-Random-Convergence-LS-KroABCD100}]{\includegraphics[width=.35\linewidth]{Ran-MAB-Convergence-LS-KroABCD100.pdf}}
+    \caption[NST-MOEA中使用随机方法和MAB模型分别在2、3和4目标测试用例上的收敛轨迹]{NST-MOEA中使用随机方法和MAB模型分别在2、3和4目标测试用例上的收敛轨迹}
+    \label{fig:NST-MOEA中使用随机方法和MAB模型分别在2、3和4目标测试用例上的收敛轨迹}
+\end{figure}
+% TODO: 改图
+\begin{figure}[!h]
+    \subfloat[RealAB100 \label{subfig:MAB-Random-HV-RealAB100}]{\includegraphics[width=.35\linewidth]{Box-HV-KroAB300.pdf}} \quad
+    \subfloat[RealAB300 \label{subfig:MAB-Random-HV-RealAB300}]{\includegraphics[width=.35\linewidth]{Box-HV-KroAB300.pdf}}\\
+    \subfloat[RealABC100 \label{subfig:MAB-Random-HV-RealABC100}]{\includegraphics[width=.35\linewidth]{Box-HV-KroAB300.pdf}} \quad
+    \subfloat[RealABCD100 \label{subfig:MAB-Random-HV-RealABCD100}]{\includegraphics[width=.35\linewidth]{Box-HV-KroAB300.pdf}}
+    \caption[NST-MOEA中使用随机方法和MAB模型分别在2、3和4目标测试用例上的Hypervolume指标箱型图]{NST-MOEA中使用随机方法和MAB模型分别在2、3和4目标测试用例上的Hypervolume指标箱型图}
+    \label{fig:NST-MOEA中使用随机方法和MAB模型分别在2、3和4目标测试用例上的Hypervolume指标箱型图}
+\end{figure}
+\par
+\autoref{fig:NST-MOEA中使用随机方法和MAB模型分别在2、3和4目标测试用例上的收敛轨迹}~和\autoref{fig:NST-MOEA中使用随机方法和MAB模型分别在2、3和4目标测试用例上的Hypervolume指标箱型图}~分别展示的是NST-MOEA中使用随机方法和MAB模型在2、3和4目标测试用例上的收敛轨迹和Hypervolume指标箱型图，从\autoref{fig:NST-MOEA中使用随机方法和MAB模型分别在2、3和4目标测试用例上的收敛轨迹}~中能够看出，在NST-MOEA中使用MAB模型来选择邻域结构库中的邻域结构要比随机的方法收敛得要快，能够使用更少的局部搜索次数达到收敛的状态，并且目标数有多，邻域结构库中的邻域结构就越多，此时使用MAB模型的NST-MOEA的效果更加明显。从\autoref{fig:NST-MOEA中使用随机方法和MAB模型分别在2、3和4目标测试用例上的Hypervolume指标箱型图}~中能够看出，使用MAB模型选择邻域结构的NST-MOEA要比使用随机方法选择邻域结构的NST-MOEA最终获得的非支配解的平均Hypervolume指标要高，这说明在NST-MOEA中使用MAB模型能够提升算法的综合性能。综上，可以验证多臂老虎机模型在NST-MOEA中的有效性。
+
 \subsection{各算法在真实地理数据测试集上的对比}
 \label{subsec:NST:实验与讨论:各算法在真实地理数据测试集上的对比}
-在本节中，将会对NST-MOEA与MOEA/D（WS、TCH和PBI）、DCDG、GWS-PLS和2PPLS算法在真实地理数据测试集上进行对比。\autoref{tab:各算法在真实地理数据测试集上获得的非支配解集的Hypervolume指标对比}~和\autoref{tab:各算法在真实地理数据测试集上获得的非支配解集的C-Metric指标对比}~分别展现的是各算法在测试用例上获得的非支配解集的Hypervolume和C-Metric指标数据，从\autoref{tab:各算法在真实地理数据测试集上获得的非支配解集的Hypervolume指标对比}~和\autoref{tab:各算法在真实地理数据测试集上获得的非支配解集的C-Metric指标对比}~中能够分析出，NST-MOEA获得的非支配解集的质量在真实地理数据的测试集上的综合性能（分布性和收敛性）仍然要显著优于其他算法。尤其是在高维目标问题上，NST-MOEA的性能更加优异。此外，图1还展示了各算法在部分真实地理数据测试用例上的收敛轨迹示意图，从图中也能看出，从同一初始种群开始优化，NST-MOEA相较于其他算法，能够更快地收敛，并且使用更少的局部搜索次数。这是因为在NST-MOEA中使用局部搜索时，当子问题产生了一个优于当前个体的新解时就停止当前的局部搜索过程，而其他算法中在这个过程中并不停止，而是继续搜索完当前所有的邻居解，最后从邻居解中选出优秀的解进行更新，这就导致了浪费了大量的局部搜索操作。因此，这一操作也是NST-MOEA算法中使用局部搜索的创新点之一。
+在本节中，将会对NST-MOEA与MOEA/D（WS、TCH和PBI）、DCDG、GWS-PLS和2PPLS算法在真实地理数据测试集上进行对比。\autoref{tab:各算法在真实地理数据测试集上获得的非支配解集的Hypervolume指标对比}~和\autoref{tab:各算法在真实地理数据测试集上获得的非支配解集的C-Metric指标对比}~分别展现的是各算法在测试用例上获得的非支配解集的Hypervolume和C-Metric指标数据，从\autoref{tab:各算法在真实地理数据测试集上获得的非支配解集的Hypervolume指标对比}~和\autoref{tab:各算法在真实地理数据测试集上获得的非支配解集的C-Metric指标对比}~中能够分析出，NST-MOEA获得的非支配解集的质量在真实地理数据的测试集上的综合性能（分布性和收敛性）仍然要显著优于其他算法。尤其是在高维目标问题上，NST-MOEA的性能更加优异。此外，\autoref{fig:各算法在部分真实地理数据测试用例上的收敛轨迹示意图}~还展示了各算法在部分真实地理数据测试用例上的收敛轨迹示意图，从图中也能看出，从同一初始种群开始优化，NST-MOEA相较于其他算法，能够更快地收敛，并且使用更少的局部搜索次数。这是因为在NST-MOEA中使用局部搜索时，当子问题产生了一个优于当前个体的新解时就停止当前的局部搜索过程，而其他算法中在这个过程中并不停止，而是继续搜索完当前所有的邻居解，最后从邻居解中选出优秀的解进行更新，这就导致了浪费了大量的局部搜索操作。因此，这一操作也是NST-MOEA算法中使用局部搜索的创新点之一。
 \par
 {\small
 \setlength{\tabcolsep}{4.5pt}
@@ -792,20 +920,20 @@ MAB模型中的$\epsilon$-greedy算法\cite{cesa1998finite,vermorel2005multi}、
     \bottomrule
     \multicolumn{8}{p{45em}}{
         对Hypervolume指标值进行显著性水平为0.05的Wilcoxon秩和检验\vspace{-.75em}\newline{}
-        “$^\ddag$”表示该算法在此问题解集上的Hypervolume指标显著优于NST-MOEA\vspace{-.75em}\newline{}
-        “$^\dag$”表示该算法在此问题解集上的Hypervolume指标显著劣于NST-MOEA\vspace{-.75em}\newline{}
-        “$^\approx$”表示该算法在此问题解集上的Hypervolume指标与NST-MOEA没有明显差异\vspace{-.75em}\newline{}
-        “N.A.”表示该算法在合理的时间内无法获取该问题的非支配解集\vspace{-.75em}\newline{}
+        $^\ddag$表示该算法在此问题解集上的Hypervolume指标显著优于NST-MOEA\vspace{-.75em}\newline{}
+        $^\dag$表示该算法在此问题解集上的Hypervolume指标显著劣于NST-MOEA\vspace{-.75em}\newline{}
+        $^\approx$表示该算法在此问题解集上的Hypervolume指标与NST-MOEA没有明显差异\vspace{-.75em}\newline{}
+        N.A.表示该算法在合理的时间内无法获取该问题的非支配解集\vspace{-.75em}\newline{}
         每一行中，上面的数据为算法运行30次获取的Hypervolume指标的均值，下面的数据为标准差
         }
 \end{longtable}
 }% 设置字体大小,设置块
-\begin{table}[h]
+\begin{table}[!h]
     \small
     \renewcommand\arraystretch{1.2}
     \renewcommand\tabcolsep{2pt}
     \centering
-    \caption{各算法在真实地理数据测试集上获得的非支配解集的C-Metric指标对比 \label{tab:各算法在真实地理数据测试集上获得的非支配解集的C-Metric指标对比}}
+    \caption{各算法在部分真实地理数据测试集上获得的非支配解集的C-Metric指标对比 \label{tab:各算法在真实地理数据测试集上获得的非支配解集的C-Metric指标对比}}
     \begin{threeparttable}
         \begin{tabular}{lcccccccccccc}
             \toprule
@@ -835,74 +963,12 @@ MAB模型中的$\epsilon$-greedy算法\cite{cesa1998finite,vermorel2005multi}、
     \end{threeparttable}
 \end{table}
 \begin{figure}[!h]
-    \subfloat[RealAB100 \label{subfig:Convergence-LS-All-RealAB100}]{\includegraphics[width=.45\linewidth]{Convergence-LS-All-RealAB100.pdf}} \quad
-    \subfloat[RealAB300 \label{subfig:Convergence-LS-All-RealAB300}]{\includegraphics[width=.45\linewidth]{Convergence-LS-All-RealAB300.pdf}}\\
-    \subfloat[RealABC100 \label{subfig:Convergence-LS-All-RealABC100}]{\includegraphics[width=.45\linewidth]{Convergence-LS-All-RealABC100.pdf}} \quad
-    \subfloat[RealABCD100 \label{subfig:Convergence-LS-All-RealABCD100}]{\includegraphics[width=.45\linewidth]{Convergence-LS-All-RealABCD100.pdf}}
+    \subfloat[RealAB100 \label{subfig:Convergence-LS-All-RealAB100}]{\includegraphics[width=.45\linewidth]{Real/Convergence-LS-All-RealAB100.pdf}} \quad
+    \subfloat[RealAB300 \label{subfig:Convergence-LS-All-RealAB300}]{\includegraphics[width=.45\linewidth]{Real/Convergence-LS-All-RealAB300.pdf}}\\
+    \subfloat[RealABC100 \label{subfig:Convergence-LS-All-RealABC100}]{\includegraphics[width=.45\linewidth]{Real/Convergence-LS-All-RealABC100.pdf}} \quad
+    \subfloat[RealABCD100 \label{subfig:Convergence-LS-All-RealABCD100}]{\includegraphics[width=.45\linewidth]{Real/Convergence-LS-All-RealABCD100.pdf}}
     \caption[各算法在部分真实地理数据测试用例上的收敛轨迹示意图]{各算法在部分真实地理数据测试用例上的收敛轨迹示意图}
     \label{fig:各算法在部分真实地理数据测试用例上的收敛轨迹示意图}
-\end{figure}
-
-\subsection{两目标相似度模型有效性分析}
-\label{subsec:NST:实验与讨论:两目标相似度模型有效性分析}
-在本节中，将使用实验验证邻域结构迁移中的两目标相似度模型的有效性。在NST-MOEA中，两目标相似度模型的作用就在于建立起子问题和邻域结构之间的映射关系，并且为每个子问题构建一个专属的用于知识迁移的邻域结构库。为了使得算法能够尽可能的产生正迁移，子问题所属的邻域结构库中的邻域结构应该能为当前子问题带来促进的效果。如果邻域结构库中的邻域结构与当前子问题偏差很大（子问题间相似度小），那么该邻域结构所蕴含的信息就难以对当前子问题带来改进（正迁移）。若邻域结构库中的邻域结构与当前子问题没有偏差（子问题间相似度大），那么该邻域结构中所蕴含的信息就与当前子问题的邻域结构所蕴含的信息相差无几，这样就使得有很多重复的信息，也难以促进当前子问题的优化。因此，我们需要获取与当前子问题相似度合适的子问题下的邻域结构，而两目标相似度模型就是为了获取这样一个合适的相似度等级$K$（\autoref{eq:Similarity Level}），以构成邻域结构库。因此，在NST-MOEA中使用不同的相似度等级$K$对部分测试用例进行多次实验，获取平均性能最佳的相似度等级$K$，然后通过对比使用两目标相似度模型获取到的$K$（\autoref{tab:两目标相似度模型获取的部分相似度等级K值表}）是否一致，从而来验证两目标相似度模型的有效性。
-\begin{table}[h]
-    % \small
-    % \renewcommand\tabcolsep{2pt}
-    \centering
-    \caption{两目标相似度模型获取的部分相似度等级K值表 \label{tab:两目标相似度模型获取的部分相似度等级K值表}}
-    \begin{tabular}{ll|ll}
-        \toprule
-        测试用例   & $K$  & 测试用例    & $K$ \\
-        \midrule
-        KroAB100      & 15    & RealAB100     & 15  \\
-        KroAB200      & 16    & RealBC100     & 15  \\
-        KroAB300      & 15    & RealCD100     & 15  \\
-        KroAB400      & 16    & RealAB300     & 15  \\
-        KroAB750      & 16    & RealAB500     & 16  \\
-        KroAB1000     & 16    & RealAB750     & 16  \\
-        ClusterAB100  & 15    & RealAB1000    & 16  \\
-        ClusterAB300  & 15    & RealABC100    & 1   \\
-        ClusterAB500  & 16    & RealBCD100    & 1   \\
-        EuclidAB100   & 15    & RealCDE100    & 1   \\
-        EuclidAB300   & 15    & RealABCD100   & 1   \\
-        EuclidAB500   & 15    & RealBCDE100   & 1   \\
-        KroABC100     & 1     & RealCDEF100   &     \\
-        KroBCD100     & 1     & KroCDE100     & 1   \\
-        \bottomrule
-    \end{tabular}
-\end{table}
-\par
-如\autoref{fig:采用不同相似度等级K的NST-MOEA分别在2、3和4目标测试用例上的Hypervolume箱型图}~所示是采用不同相似度等级$K$的NST-MOEA分别在2、3和4目标测试用例上的Hypervolume箱型图，从图中可以观察到，图1a中，当相似度等级$K$在15左右时，NST-MOEA的Hypervolume指标的最大值和平均值都最大，此时算法表现的最好，将此时的相似度等级$K$与\autoref{tab:两目标相似度模型获取的部分相似度等级K值表}~中两目标相似度模型计算得到的相似度等级$K$一致。这说明，两目标相似度模型能够通过子问题和邻域结构之间的映射关系，找到一个合适的相似度等级$K$，从而使为子问题构建的邻域结构库中包含能够使得算法发生尽可能多的正迁移的邻域结构。由此，通过\autoref{fig:采用不同相似度等级K的NST-MOEA分别在2、3和4目标测试用例上的Hypervolume箱型图}~和\autoref{tab:两目标相似度模型获取的部分相似度等级K值表}~的对比可以证实两目标相似度的有效性。
-\begin{figure}[!h]
-    \subfloat[KroAB100 \label{subfig:HV-KroAB100-Dynamic}]{\includegraphics[width=.4\linewidth]{HV-KroAB100-Dynamic.pdf}} \quad
-    \subfloat[KroABC100 \label{subfig:HV-KroABC100-Dynamic}]{\includegraphics[width=.4\linewidth]{HV-KroABC100-Dynamic.pdf}}\\
-    \subfloat[EuclidABCD100 \label{subfig:HV-EuclidABCD100-Dynamic}]{\includegraphics[width=.4\linewidth]{HV-EuclidABCD100-Dynamic.pdf}} \quad
-    \subfloat[EuclidABCDE100 \label{subfig:HV-EuclidABCDE100-Dynamic}]{\includegraphics[width=.4\linewidth]{HV-EuclidABCDE100-Dynamic.pdf}}
-    \caption[采用不同相似度等级$K$的NST-MOEA分别在2、3和4目标测试用例上的Hypervolume箱型图]{采用不同相似度等级$K$的NST-MOEA分别在2、3和4目标测试用例上的Hypervolume箱型图}
-    \label{fig:采用不同相似度等级K的NST-MOEA分别在2、3和4目标测试用例上的Hypervolume箱型图}
-\end{figure}
-
-\subsection{多臂老虎机模型有效性分析}
-\label{subsec:NST:实验与讨论:多臂老虎机模型有效性分析}
-在本节中，将使用实验验证邻域结构迁移中的多臂老虎机模型的有效性。在NST-MOEA中，多臂老虎机模型旨在提高算法的效率，减少计算资源。从前面的章节能够知道，在两目标相似度模型中为每个子问题都构建了邻域结构库，但是在NST-MOEA中优化子问题时，若使用该子问题邻域结构库中的所有邻域结构，这将造成大量的重复计算。并且，邻域结构库的大小和问题的目标数呈正相关，若问题的目标较多时，其邻域结构库中的邻域结构也会很多，如果每次都将邻域结构库中的所有邻域结构应用于子问题的局部搜索，则会导致算法的效率降低。由此，在NST-MOEA中使用多臂老虎机模型来为算法作出一系列的决策，从两目标相似度模型构建的邻域结构库中选出供局部搜索使用的邻域结构，使得算法的最终收益最大。为了验证多臂老虎机模型在NST-MOEA中的有效性，在子问题具有相同的邻域结构库的基础上，本节使用随机选择的方式来与使用多臂老虎机模型从邻域结构库中选择邻域结构的方式进行对比实验。
-\par
-\autoref{fig:NST-MOEA中使用随机方法和MAB模型分别在2、3和4目标测试用例上的收敛轨迹}~和\autoref{fig:NST-MOEA中使用随机方法和MAB模型分别在2、3和4目标测试用例上的Hypervolume指标箱型图}~分别展示的是NST-MOEA中使用随机方法和MAB模型在2、3和4目标测试用例上的收敛轨迹和Hypervolume指标箱型图，从\autoref{fig:NST-MOEA中使用随机方法和MAB模型分别在2、3和4目标测试用例上的收敛轨迹}~中能够看出，在NST-MOEA中使用MAB模型来选择邻域结构库中的邻域结构要比随机的方法收敛得要快，且能够使用更少的局部搜索次数达到收敛的状态。从\autoref{fig:NST-MOEA中使用随机方法和MAB模型分别在2、3和4目标测试用例上的Hypervolume指标箱型图}~中能够看出，使用MAB模型选择邻域结构的NST-MOEA要比使用随机方法选择邻域结构的NST-MOEA最终获得的非支配解的Hypervolume指标要高，这说明在NST-MOEA中使用MAB模型能够提升算法的综合性能。综上，可以验证多臂老虎机模型在NST-MOEA中的有效性。
-\begin{figure}[!h]
-    \subfloat[RealAB100 \label{subfig:MAB-Random-Convergence-LS-RealAB100}]{\includegraphics[width=.4\linewidth]{MAB-Random-Convergence-LS-RealAB100.pdf}} \quad
-    \subfloat[RealAB300 \label{subfig:MAB-Random-Convergence-LS-RealAB300}]{\includegraphics[width=.4\linewidth]{MAB-Random-Convergence-LS-RealAB300.pdf}}\\
-    \subfloat[RealABC100 \label{subfig:MAB-Random-Convergence-LS-RealABC100}]{\includegraphics[width=.4\linewidth]{MAB-Random-Convergence-LS-RealABC100.pdf}} \quad
-    \subfloat[RealABCD100 \label{subfig:MAB-Random-Convergence-LS-RealABCD100}]{\includegraphics[width=.4\linewidth]{MAB-Random-Convergence-LS-RealABCD100.pdf}}
-    \caption[NST-MOEA中使用随机方法和MAB模型分别在2、3和4目标测试用例上的收敛轨迹]{NST-MOEA中使用随机方法和MAB模型分别在2、3和4目标测试用例上的收敛轨迹}
-    \label{fig:NST-MOEA中使用随机方法和MAB模型分别在2、3和4目标测试用例上的收敛轨迹}
-\end{figure}
-\begin{figure}[!h]
-    \subfloat[RealAB100 \label{subfig:MAB-Random-HV-RealAB100}]{\includegraphics[width=.4\linewidth]{MAB-Random-Convergence-LS-RealAB100.pdf}} \quad
-    \subfloat[RealAB300 \label{subfig:MAB-Random-HV-RealAB300}]{\includegraphics[width=.4\linewidth]{MAB-Random-Convergence-LS-RealAB300.pdf}}\\
-    \subfloat[RealABC100 \label{subfig:MAB-Random-HV-RealABC100}]{\includegraphics[width=.4\linewidth]{MAB-Random-Convergence-LS-RealABC100.pdf}} \quad
-    \subfloat[RealABCD100 \label{subfig:MAB-Random-HV-RealABCD100}]{\includegraphics[width=.4\linewidth]{MAB-Random-Convergence-LS-RealABCD100.pdf}}
-    \caption[NST-MOEA中使用随机方法和MAB模型分别在2、3和4目标测试用例上的Hypervolume指标箱型图]{NST-MOEA中使用随机方法和MAB模型分别在2、3和4目标测试用例上的Hypervolume指标箱型图}
-    \label{fig:NST-MOEA中使用随机方法和MAB模型分别在2、3和4目标测试用例上的Hypervolume指标箱型图}
 \end{figure}
 
 \section{本章小结}

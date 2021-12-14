@@ -3,25 +3,36 @@
 % 注意，表格里的文字不要太长哦。
 
 \chapter*{注释表}
+\label{chap:注释表}
 
 \noindent\begin{longtabu} to \textwidth {|X[l]|p{4.5cm}|X[l]|p{4.5cm}|}\hline
 $O$ & 时间（空间）复杂度 & $m$ & 目标数量 \\ \hline
 $F(\mathbf{x})$ & $\mathbf{x}$对应的目标函数 & $f_i(\mathbf{x})$ & 第$i$个目标函数 \\ \hline
-$\Omega)$ & 决策空间 & $\mathbb{R}^n$ & $n$维实数空间 \\ \hline
+$\Omega$ & 决策空间 & $\mathbb{R}^n$ & $n$维实数空间 \\ \hline
 $\prec$ & 支配（强支配） & $\not \prec$ & 非支配 \\ \hline
 $\preceq$ & 弱支配 & $\mathbf{x}^*$ & Pareto最优解  \\ \hline 
 $PS$ & Pareto最优解集 & $PF$ & Pareto前沿\\ \hline 
 $\mathbf{z}^*$ & 理想点，参考点 & $\mathbf{z}^{nad}$ & 边界点 \\ \hline
 $\boldsymbol{\lambda}$ & 权重向量 & $\boldsymbol{\lambda}^i$ & 第$i$权重向量 \\ \hline
-$\lambda^i_j$ & 第$i$个权重向量的第$j$分量 & $\mathcal{EP}$ & 外部集（精英种群） \\ \hline
+$\lambda^i_j$ & 第$i$个权重向量的第$j$分量 & $g^{ws}(x|\lambda_i)$ & $x$对应$\lambda_i$的加权值 \\ \hline
+$g^{tch}(x|\lambda_i)$ & $x$对应$\lambda_i$的切比雪夫值 & $g^{pbi}(x|\lambda_i)$ & $x$对应$\lambda_i$的PBI值 \\ \hline
+$B(i)$ & 第$i$个子问题的邻居 & $\mathcal{EP}$ & 外部集（精英种群） \\ \hline
 $\mathcal{SP}$ & 子问题 & $\mathcal{S}$ & 搜索（解）空间 \\ \hline
+$\mathcal{N}:\mathcal{S}\rightarrow 2^{\mathcal{S}}$ & 邻域动作 & $\mathcal{N}(s)$ & 解$s$的邻域 \\ \hline
 $\mathcal{X}$ & 有限（可数无限）变量集 & $s^*$ & 局部最优解 \\ \hline
 $\mathcal{D}$ & 决策域 & $\mathcal{C}$ & 约束域 \\ \hline
 $\mathcal{A}$ & 接受策略 & $\mathcal{N}$ & 邻域结构 \\ \hline
+$d(a,b)$ & 向量$a$与向量$b$之间的欧氏距离 & $C(A,B)$ & 集合$B$被集合$A$所支配的程度 \\ \hline
+$\mathcal{G} = (V,E,W)$ & 带权无向图 & $V$ & 带权无向图中的点集 \\ \hline
+$E$ & 带权无向图中的边集 & $W$ & 带权无向图中的边权集 \\ \hline
+$\alpha$ & $\alpha-nearest$边权评估值 & $\pi$ & 边权惩罚值 \\ \hline
+$\sigma$ & 次梯度优化步长 & $M^i$ & 第$i$个子问题MAB模型参数 \\ \hline
+$t^i_j$ & 第$i$个子问题中第$j$个子问题被选择的次数 & $\mu^i_j$ & 第$i$个子问题中第$j$个子问题被选择的奖励均值 \\ \hline
 
 \end{longtabu}
 
 \chapter*{缩略词}
+\label{chap:缩略词}
 
 \noindent\begin{longtabu} to \textwidth {|X[1,c]|X[4,c]|}\hline
 缩略词 & 英文全称 \\ \hline
@@ -73,10 +84,12 @@ LKH & Lin Kernighan Helsgaun \\ \hline
 KNN & K-Nearest Neighbor \\ \hline
 1MST & Minimum Spanning 1-tree \\ \hline
 meNS & Neighborhood Structure based on Minimum spanning tree and Euler circuit \\ \hline
+NST & Neighbor Structure Transfer \\ \hline
 IG & Information Gain \\ \hline
-DB & Database \\ \hline
-SL & Similarity Level \\ \hline
 MAB & Multi-armed Bandit \\ \hline
 UCB & Upper Confidence Bound \\ \hline
+EP & External Population \\ \hline
+BSM & Bi-objective Similarity Model \\ \hline
+
 
 \end{longtabu}

@@ -62,33 +62,52 @@
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {K-NN}}}{47}{subfigure.12.2}%
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$\alpha $-nearest }}}{47}{subfigure.12.3}%
 \contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Delaunay}}}{47}{subfigure.12.4}%
-\contentsline {figure}{\numberline {4.1}{\ignorespaces 相似度等级示意图}}{54}{figure.caption.42}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces 相似度和信息增益映射关系示意图}}{56}{figure.caption.44}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces 各算法在KroAB300上的非支配解集示意图}}{64}{figure.caption.51}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces 各算法在KroABC100上的非支配解集示意图}}{65}{figure.caption.52}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces 各算法在KroABCD100上的非支配解集示意图}}{65}{figure.caption.53}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces 各算法Hypervolume指标对比示意图}}{66}{figure.caption.54}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {KroAB100 }}}{66}{subfigure.6.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {KroABC100 }}}{66}{subfigure.6.2}%
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {KroABCD100 }}}{66}{subfigure.6.3}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces 各算法在部分真实地理数据测试用例上的收敛轨迹示意图}}{71}{figure.caption.59}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {RealAB100 }}}{71}{subfigure.7.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {RealAB300 }}}{71}{subfigure.7.2}%
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {RealABC100 }}}{71}{subfigure.7.3}%
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {RealABCD100 }}}{71}{subfigure.7.4}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces 采用不同相似度等级$K$的NST-MOEA分别在2、3和4目标测试用例上的Hypervolume箱型图}}{73}{figure.caption.61}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {KroAB100 }}}{73}{subfigure.8.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {KroABC100 }}}{73}{subfigure.8.2}%
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {EuclidABCD100 }}}{73}{subfigure.8.3}%
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {EuclidABCDE100 }}}{73}{subfigure.8.4}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces NST-MOEA中使用随机方法和MAB模型分别在2、3和4目标测试用例上的收敛轨迹}}{74}{figure.caption.62}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {RealAB100 }}}{74}{subfigure.9.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {RealAB300 }}}{74}{subfigure.9.2}%
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {RealABC100 }}}{74}{subfigure.9.3}%
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {RealABCD100 }}}{74}{subfigure.9.4}%
-\contentsline {figure}{\numberline {4.10}{\ignorespaces NST-MOEA中使用随机方法和MAB模型分别在2、3和4目标测试用例上的Hypervolume指标箱型图}}{75}{figure.caption.63}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {RealAB100 }}}{75}{subfigure.10.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {RealAB300 }}}{75}{subfigure.10.2}%
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {RealABC100 }}}{75}{subfigure.10.3}%
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {RealABCD100 }}}{75}{subfigure.10.4}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces 相似度和信息增益映射关系示意图}}{55}{figure.caption.42}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces 各算法在KroAB300上的非支配解集示意图}}{63}{figure.caption.49}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {All Algorithms }}}{63}{subfigure.2.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {NST-MOEA }}}{63}{subfigure.2.2}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {MOEA/D-WS }}}{66}{subfigure.2.3}%
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {MOEA/D-TCH }}}{66}{subfigure.2.4}%
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {MOEA/D-PBI }}}{66}{subfigure.2.5}%
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {DCDG }}}{66}{subfigure.2.6}%
+\contentsline {subfigure}{\numberline {(g)}{\ignorespaces {GWS-PLS }}}{66}{subfigure.2.7}%
+\contentsline {subfigure}{\numberline {(h)}{\ignorespaces {2PPLS }}}{66}{subfigure.2.8}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces 各算法在KroABC100上的非支配解集示意图}}{67}{figure.caption.51}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {NST-MOEA }}}{67}{subfigure.3.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {MOEA/D-WS }}}{67}{subfigure.3.2}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {MOEA/D-TCH }}}{67}{subfigure.3.3}%
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {MOEA/D-PBI }}}{67}{subfigure.3.4}%
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {DCDG }}}{67}{subfigure.3.5}%
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {GWS-PLS }}}{67}{subfigure.3.6}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces 各算法在KroABCD100上的非支配解集示意图}}{67}{figure.caption.52}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MOEA/D-WS }}}{67}{subfigure.4.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {MOEA/D-TCH }}}{67}{subfigure.4.2}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {MOEA/D-PBI }}}{67}{subfigure.4.3}%
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {GWS-PLS }}}{67}{subfigure.4.4}%
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {NST-MOEA }}}{67}{subfigure.4.5}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces 各算法Hypervolume指标对比示意图}}{69}{figure.caption.53}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {KroAB100 }}}{69}{subfigure.5.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {KroAB300 }}}{69}{subfigure.5.2}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {KroABC100 }}}{69}{subfigure.5.3}%
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {KroABCD100 }}}{69}{subfigure.5.4}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces 采用不同相似度$S^*$的NST-MOEA分别在2、3、4和5目标测试用例上的Hypervolume箱型图}}{70}{figure.caption.57}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {KroAB100 }}}{70}{subfigure.6.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {KroABC100 }}}{70}{subfigure.6.2}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {EuclidABCD100 }}}{70}{subfigure.6.3}%
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {EuclidABCDE100 }}}{70}{subfigure.6.4}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces NST-MOEA中使用随机方法和MAB模型分别在2、3和4目标测试用例上的收敛轨迹}}{71}{figure.caption.58}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {KroAB100 }}}{71}{subfigure.7.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {KroAB300 }}}{71}{subfigure.7.2}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {KroABC100 }}}{71}{subfigure.7.3}%
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {KroABCD100 }}}{71}{subfigure.7.4}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces NST-MOEA中使用随机方法和MAB模型分别在2、3和4目标测试用例上的Hypervolume指标箱型图}}{72}{figure.caption.59}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {RealAB100 }}}{72}{subfigure.8.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {RealAB300 }}}{72}{subfigure.8.2}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {RealABC100 }}}{72}{subfigure.8.3}%
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {RealABCD100 }}}{72}{subfigure.8.4}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces 各算法在部分真实地理数据测试用例上的收敛轨迹示意图}}{75}{figure.caption.62}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {RealAB100 }}}{75}{subfigure.9.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {RealAB300 }}}{75}{subfigure.9.2}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {RealABC100 }}}{75}{subfigure.9.3}%
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {RealABCD100 }}}{75}{subfigure.9.4}%
 \contentsfinish 

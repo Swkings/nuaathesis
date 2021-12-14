@@ -1,0 +1,5 @@
+PWD c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO
+INPUT c:/texlive/2020/texmf.cnf
+INPUT c:/texlive/2020/texmf-dist/web2c/texmf.cnf
+INPUT c:/texlive/2020/texmf-var/web2c/xetex/xelatex.fmt
+INPUT c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/main.tex

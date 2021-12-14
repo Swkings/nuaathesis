@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.12.16)  10 DEC 2021 10:46
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.12.16)  14 DEC 2021 20:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1680,14 +1680,14 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 \openout2 = `chapter/abbr.aux'.
 
  (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/chapter/abbr.tex
-Underfull \vbox (badness 10000) detected at line 22
+Underfull \vbox (badness 10000) detected at line 32
  []
 
 [9
 
 
 ]
-Underfull \vbox (badness 10000) detected at line 82
+Underfull \vbox (badness 10000) detected at line 95
  []
 
 [10
@@ -1924,57 +1924,97 @@ LaTeX Warning: Text page 46 contains only floats.
 
 
 ] [50] [51] [52] [53]
-File: ./figure/chapter4/相似度等级.pdf Graphic file (type pdf)
-<use ./figure/chapter4/相似度等级.pdf>
- [54] [55]
-File: ./figure/chapter4/Kns-kroAB300.pdf Graphic file (type pdf)
-<use ./figure/chapter4/Kns-kroAB300.pdf>
- [56] [57] [58] [59]
+File: ./figure/chapter4/Kns-KroAB300.pdf Graphic file (type pdf)
+<use ./figure/chapter4/Kns-KroAB300.pdf>
+ [54] [55] [56] [57] [58]
 
 Package enumitem Warning: Negative labelwidth. This does not make much
-(enumitem)                sense, on input line 319.
+(enumitem)                sense, on input line 261.
 
-[60]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 9.03374pt on input line 376.
+(Font)              scaled to size 9.03374pt on input line 318.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.0pt on input line 376.
+(Font)              scaled to size 6.0pt on input line 318.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 9.03374pt on input line 376.
+(Font)              scaled to size 9.03374pt on input line 318.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 6.0pt on input line 376.
+(Font)              scaled to size 6.0pt on input line 318.
 LaTeX Font Info:    Font shape `T1/qhv/m/n' will be
-(Font)              scaled to size 8.1303pt on input line 376.
+(Font)              scaled to size 8.1303pt on input line 318.
 LaTeX Font Info:    Font shape `T1/qhv/m/n' will be
-(Font)              scaled to size 5.39996pt on input line 376.
+(Font)              scaled to size 5.39996pt on input line 318.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/it' will be
-(Font)              scaled to size 9.03374pt on input line 376.
+(Font)              scaled to size 9.03374pt on input line 318.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/it' will be
-(Font)              scaled to size 6.0pt on input line 376.
+(Font)              scaled to size 6.0pt on input line 318.
 LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
-(Font)              scaled to size 9.03374pt on input line 376.
+(Font)              scaled to size 9.03374pt on input line 318.
 LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
-(Font)              scaled to size 6.0pt on input line 376.
+(Font)              scaled to size 6.0pt on input line 318.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.0pt on input line 411.
-
+(Font)              scaled to size 6.0pt on input line 353.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[61] [62] [63]
-File: ./figure/chapter4/PF-kroAB300.pdf Graphic file (type pdf)
-<use ./figure/chapter4/PF-kroAB300.pdf>
-File: ./figure/chapter4/PF-kroABC100.pdf Graphic file (type pdf)
-<use ./figure/chapter4/PF-kroABC100.pdf>
-File: ./figure/chapter4/PF-kroABC100.pdf Graphic file (type pdf)
-<use ./figure/chapter4/PF-kroABC100.pdf>
-File: ./figure/chapter4/Box-HV-kroAB300.pdf Graphic file (type pdf)
-<use ./figure/chapter4/Box-HV-kroAB300.pdf>
-File: ./figure/chapter4/Box-HV-kroABC100.pdf Graphic file (type pdf)
-<use ./figure/chapter4/Box-HV-kroABC100.pdf>
-File: ./figure/chapter4/Box-HV-kroABC100.pdf Graphic file (type pdf)
-<use ./figure/chapter4/Box-HV-kroABC100.pdf>
+[59]
 
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[60] [61]
+File: ./figure/chapter4/PF/KroAB300/Thesis-All-SameScale1-PF.pdf Graphic file (type pdf)
+<use ./figure/chapter4/PF/KroAB300/Thesis-All-SameScale1-PF.pdf>
+File: ./figure/chapter4/PF/KroAB300/Thesis-NST-MOEA-SameScale1-PF.pdf Graphic file (type pdf)
+<use ./figure/chapter4/PF/KroAB300/Thesis-NST-MOEA-SameScale1-PF.pdf>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: ./figure/chapter4/PF/KroAB300/Thesis-MOEAD-WS-SameScale1-PF.pdf Graphic file (type pdf)
+<use ./figure/chapter4/PF/KroAB300/Thesis-MOEAD-WS-SameScale1-PF.pdf>
+File: ./figure/chapter4/PF/KroAB300/Thesis-MOEAD-TCH-SameScale1-PF.pdf Graphic file (type pdf)
+<use ./figure/chapter4/PF/KroAB300/Thesis-MOEAD-TCH-SameScale1-PF.pdf>
+File: ./figure/chapter4/PF/KroAB300/Thesis-MOEAD-PBI-SameScale1-PF.pdf Graphic file (type pdf)
+<use ./figure/chapter4/PF/KroAB300/Thesis-MOEAD-PBI-SameScale1-PF.pdf>
+File: ./figure/chapter4/PF/KroAB300/Thesis-DCDG-SameScale1-PF.pdf Graphic file (type pdf)
+<use ./figure/chapter4/PF/KroAB300/Thesis-DCDG-SameScale1-PF.pdf>
+File: ./figure/chapter4/PF/KroAB300/Thesis-GWS-PLS-SameScale1-PF.pdf Graphic file (type pdf)
+<use ./figure/chapter4/PF/KroAB300/Thesis-GWS-PLS-SameScale1-PF.pdf>
+File: ./figure/chapter4/PF/KroAB300/Thesis-2PPLS-SameScale1-PF.pdf Graphic file (type pdf)
+<use ./figure/chapter4/PF/KroAB300/Thesis-2PPLS-SameScale1-PF.pdf>
+File: ./figure/chapter4/PF/KroABC100/Thesis-NST-MOEA-SameScale1-PF.pdf Graphic file (type pdf)
+<use ./figure/chapter4/PF/KroABC100/Thesis-NST-MOEA-SameScale1-PF.pdf>
+File: ./figure/chapter4/PF/KroABC100/Thesis-MOEAD-WS-SameScale1-PF.pdf Graphic file (type pdf)
+<use ./figure/chapter4/PF/KroABC100/Thesis-MOEAD-WS-SameScale1-PF.pdf>
+File: ./figure/chapter4/PF/KroABC100/Thesis-MOEAD-TCH-SameScale1-PF.pdf Graphic file (type pdf)
+<use ./figure/chapter4/PF/KroABC100/Thesis-MOEAD-TCH-SameScale1-PF.pdf>
+File: ./figure/chapter4/PF/KroABC100/Thesis-MOEAD-PBI-SameScale1-PF.pdf Graphic file (type pdf)
+<use ./figure/chapter4/PF/KroABC100/Thesis-MOEAD-PBI-SameScale1-PF.pdf>
+File: ./figure/chapter4/PF/KroABC100/Thesis-DCDG-SameScale1-PF.pdf Graphic file (type pdf)
+<use ./figure/chapter4/PF/KroABC100/Thesis-DCDG-SameScale1-PF.pdf>
+File: ./figure/chapter4/PF/KroABC100/Thesis-GWS-PLS-SameScale1-PF.pdf Graphic file (type pdf)
+<use ./figure/chapter4/PF/KroABC100/Thesis-GWS-PLS-SameScale1-PF.pdf>
+File: ./figure/chapter4/PF/KroABCD100/Thesis-MOEAD-WS-SameScale1-PF.pdf Graphic file (type pdf)
+<use ./figure/chapter4/PF/KroABCD100/Thesis-MOEAD-WS-SameScale1-PF.pdf>
+File: ./figure/chapter4/PF/KroABCD100/Thesis-MOEAD-TCH-SameScale1-PF.pdf Graphic file (type pdf)
+<use ./figure/chapter4/PF/KroABCD100/Thesis-MOEAD-TCH-SameScale1-PF.pdf>
+File: ./figure/chapter4/PF/KroABCD100/Thesis-MOEAD-PBI-SameScale1-PF.pdf Graphic file (type pdf)
+<use ./figure/chapter4/PF/KroABCD100/Thesis-MOEAD-PBI-SameScale1-PF.pdf>
+File: ./figure/chapter4/PF/KroABCD100/Thesis-GWS-PLS-SameScale1-PF.pdf Graphic file (type pdf)
+<use ./figure/chapter4/PF/KroABCD100/Thesis-GWS-PLS-SameScale1-PF.pdf>
+File: ./figure/chapter4/PF/KroABCD100/Thesis-NST-MOEA-SameScale1-PF.pdf Graphic file (type pdf)
+<use ./figure/chapter4/PF/KroABCD100/Thesis-NST-MOEA-SameScale1-PF.pdf>
+File: ./figure/chapter4/Box-HV-KroAB100.pdf Graphic file (type pdf)
+<use ./figure/chapter4/Box-HV-KroAB100.pdf>
+File: ./figure/chapter4/Box-HV-KroAB300.pdf Graphic file (type pdf)
+<use ./figure/chapter4/Box-HV-KroAB300.pdf>
+File: ./figure/chapter4/Box-HV-KroABC100.pdf Graphic file (type pdf)
+<use ./figure/chapter4/Box-HV-KroABC100.pdf>
+File: ./figure/chapter4/Box-HV-KroABCD100.pdf Graphic file (type pdf)
+<use ./figure/chapter4/Box-HV-KroABCD100.pdf>
+[62]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -1984,68 +2024,62 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[64]
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 9.03374pt on input line 516.
- [65] [66]
+(Font)              scaled to size 9.03374pt on input line 478.
+[63] [64] [65] [66] [67] [68]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[67] [68] [69]
-File: ./figure/chapter4/Convergence-LS-All-RealAB100.pdf Graphic file (type pdf)
-<use ./figure/chapter4/Convergence-LS-All-RealAB100.pdf>
-File: ./figure/chapter4/Convergence-LS-All-RealAB300.pdf Graphic file (type pdf)
-<use ./figure/chapter4/Convergence-LS-All-RealAB300.pdf>
-File: ./figure/chapter4/Convergence-LS-All-RealABC100.pdf Graphic file (type pdf)
-<use ./figure/chapter4/Convergence-LS-All-RealABC100.pdf>
-File: ./figure/chapter4/Convergence-LS-All-RealABCD100.pdf Graphic file (type pdf)
-<use ./figure/chapter4/Convergence-LS-All-RealABCD100.pdf>
-
+File: ./figure/chapter4/Similarity/Sim-HV-KroAB100-Dynamic.pdf Graphic file (type pdf)
+<use ./figure/chapter4/Similarity/Sim-HV-KroAB100-Dynamic.pdf>
+File: ./figure/chapter4/Similarity/Sim-HV-KroABC100-Dynamic.pdf Graphic file (type pdf)
+<use ./figure/chapter4/Similarity/Sim-HV-KroABC100-Dynamic.pdf>
+File: ./figure/chapter4/Similarity/Sim-HV-EuclidABCD100-Dynamic.pdf Graphic file (type pdf)
+<use ./figure/chapter4/Similarity/Sim-HV-EuclidABCD100-Dynamic.pdf>
+File: ./figure/chapter4/Similarity/Sim-HV-EuclidABCDE100-Dynamic.pdf Graphic file (type pdf)
+<use ./figure/chapter4/Similarity/Sim-HV-EuclidABCDE100-Dynamic.pdf>
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[70] [71]
-File: ./figure/chapter4/HV-KroAB100-Dynamic.pdf Graphic file (type pdf)
-<use ./figure/chapter4/HV-KroAB100-Dynamic.pdf>
-File: ./figure/chapter4/HV-KroABC100-Dynamic.pdf Graphic file (type pdf)
-<use ./figure/chapter4/HV-KroABC100-Dynamic.pdf>
-File: ./figure/chapter4/HV-EuclidABCD100-Dynamic.pdf Graphic file (type pdf)
-<use ./figure/chapter4/HV-EuclidABCD100-Dynamic.pdf>
-File: ./figure/chapter4/HV-EuclidABCDE100-Dynamic.pdf Graphic file (type pdf)
-<use ./figure/chapter4/HV-EuclidABCDE100-Dynamic.pdf>
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-File: ./figure/chapter4/MAB-Random-Convergence-LS-RealAB100.pdf Graphic file (type pdf)
-<use ./figure/chapter4/MAB-Random-Convergence-LS-RealAB100.pdf>
-File: ./figure/chapter4/MAB-Random-Convergence-LS-RealAB300.pdf Graphic file (type pdf)
-<use ./figure/chapter4/MAB-Random-Convergence-LS-RealAB300.pdf>
-File: ./figure/chapter4/MAB-Random-Convergence-LS-RealABC100.pdf Graphic file (type pdf)
-<use ./figure/chapter4/MAB-Random-Convergence-LS-RealABC100.pdf>
-File: ./figure/chapter4/MAB-Random-Convergence-LS-RealABCD100.pdf Graphic file (type pdf)
-<use ./figure/chapter4/MAB-Random-Convergence-LS-RealABCD100.pdf>
-File: ./figure/chapter4/MAB-Random-Convergence-LS-RealAB100.pdf Graphic file (type pdf)
-<use ./figure/chapter4/MAB-Random-Convergence-LS-RealAB100.pdf>
-File: ./figure/chapter4/MAB-Random-Convergence-LS-RealAB300.pdf Graphic file (type pdf)
-<use ./figure/chapter4/MAB-Random-Convergence-LS-RealAB300.pdf>
-File: ./figure/chapter4/MAB-Random-Convergence-LS-RealABC100.pdf Graphic file (type pdf)
-<use ./figure/chapter4/MAB-Random-Convergence-LS-RealABC100.pdf>
-File: ./figure/chapter4/MAB-Random-Convergence-LS-RealABCD100.pdf Graphic file (type pdf)
-<use ./figure/chapter4/MAB-Random-Convergence-LS-RealABCD100.pdf>
-[72]
+File: ./figure/chapter4/Ran-MAB-Convergence-LS-KroAB100.pdf Graphic file (type pdf)
+<use ./figure/chapter4/Ran-MAB-Convergence-LS-KroAB100.pdf>
+File: ./figure/chapter4/Ran-MAB-Convergence-LS-KroAB300.pdf Graphic file (type pdf)
+<use ./figure/chapter4/Ran-MAB-Convergence-LS-KroAB300.pdf>
+File: ./figure/chapter4/Ran-MAB-Convergence-LS-KroABC100.pdf Graphic file (type pdf)
+<use ./figure/chapter4/Ran-MAB-Convergence-LS-KroABC100.pdf>
+File: ./figure/chapter4/Ran-MAB-Convergence-LS-KroABCD100.pdf Graphic file (type pdf)
+<use ./figure/chapter4/Ran-MAB-Convergence-LS-KroABCD100.pdf>
+File: ./figure/chapter4/Box-HV-KroAB300.pdf Graphic file (type pdf)
+<use ./figure/chapter4/Box-HV-KroAB300.pdf>
+File: ./figure/chapter4/Box-HV-KroAB300.pdf Graphic file (type pdf)
+<use ./figure/chapter4/Box-HV-KroAB300.pdf>
+File: ./figure/chapter4/Box-HV-KroAB300.pdf Graphic file (type pdf)
+<use ./figure/chapter4/Box-HV-KroAB300.pdf>
+File: ./figure/chapter4/Box-HV-KroAB300.pdf Graphic file (type pdf)
+<use ./figure/chapter4/Box-HV-KroAB300.pdf>
+[69] [70]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[71] [72] [73]
+File: ./figure/chapter4/Real/Convergence-LS-All-RealAB100.pdf Graphic file (type pdf)
+<use ./figure/chapter4/Real/Convergence-LS-All-RealAB100.pdf>
+File: ./figure/chapter4/Real/Convergence-LS-All-RealAB300.pdf Graphic file (type pdf)
+<use ./figure/chapter4/Real/Convergence-LS-All-RealAB300.pdf>
+File: ./figure/chapter4/Real/Convergence-LS-All-RealABC100.pdf Graphic file (type pdf)
+<use ./figure/chapter4/Real/Convergence-LS-All-RealABC100.pdf>
+File: ./figure/chapter4/Real/Convergence-LS-All-RealABCD100.pdf Graphic file (type pdf)
+<use ./figure/chapter4/Real/Convergence-LS-All-RealABCD100.pdf>
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 )
-Overfull \hbox (0.33423pt too wide) in paragraph at lines 910--40
+Overfull \hbox (0.33423pt too wide) in paragraph at lines 976--40
 []\TU/SimSun(0)/m/n/10.53937 本 章 提 出 了 一 种 基 于 邻 域 结 构 迁 移 的 多 目 标 组 合 优 化 算 法  |（\T1/ntxtlf/m/n/10.53937 NST-MOEA\TU/SimSun(0)/m/n/10.53937 ） 。|  主 要 针 对 \T1/ntxtlf/m/n/10.53937 MOTSP
  []
 
-[73] [74] [75]
+[74] [75]
 \openout2 = `chapter/Conclusion.aux'.
 
  (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/chapter/Conclusion.tex
@@ -2079,17 +2113,17 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 57.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 57.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 57.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 07EC96D080B98BDEE98385718AC1C502;9962.
+(rerunfilecheck)             Checksum: 8736C0CBB7B05E3CDB2EA74AFEE30B24;10153.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 50359 strings out of 479418
- 1174063 string characters out of 5888104
- 1543947 words of memory out of 5000000
- 66730 multiletter control sequences out of 15000+600000
+ 50579 strings out of 479418
+ 1184573 string characters out of 5888104
+ 1548050 words of memory out of 5000000
+ 66862 multiletter control sequences out of 15000+600000
  683787 words of font info for 238 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  76i,25n,129p,1408b,1347s stack positions out of 5000i,500n,10000p,200000b,80000s

@@ -48,25 +48,26 @@
 \contentsline {section}{\numberline {4.3}邻域结构迁移}{51}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}子问题}{51}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {4.3.2}邻域结构}{52}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}双目标相似度模型}{52}{subsection.4.3.3}%
-\contentsline {subsection}{\numberline {4.3.4}多臂老虎机模型}{57}{subsection.4.3.4}%
-\contentsline {section}{\numberline {4.4}算法设计}{58}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}NST-MOEA算法主框架}{59}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}初始化阶段}{59}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}局部搜索阶段}{60}{subsection.4.4.3}%
-\contentsline {subsection}{\numberline {4.4.4}更新阶段}{60}{subsection.4.4.4}%
-\contentsline {section}{\numberline {4.5}实验与讨论}{61}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}测试集}{61}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}实验参数设置}{63}{subsection.4.5.2}%
-\contentsline {subsection}{\numberline {4.5.3}各算法在TSPLIB测试集上的对比}{64}{subsection.4.5.3}%
-\contentsline {subsection}{\numberline {4.5.4}各算法在真实地理数据测试集上的对比}{68}{subsection.4.5.4}%
-\contentsline {subsection}{\numberline {4.5.5}两目标相似度模型有效性分析}{71}{subsection.4.5.5}%
-\contentsline {subsection}{\numberline {4.5.6}多臂老虎机模型有效性分析}{72}{subsection.4.5.6}%
-\contentsline {section}{\numberline {4.6}本章小结}{73}{section.4.6}%
+\contentsline {subsection}{\numberline {4.3.3}两目标相似度模型}{52}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}多臂老虎机模型}{56}{subsection.4.3.4}%
+\contentsline {section}{\numberline {4.4}算法设计}{57}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}NST-MOEA算法主框架}{57}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}初始化阶段}{58}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}局部搜索阶段}{59}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.4}更新阶段}{59}{subsection.4.4.4}%
+\contentsline {section}{\numberline {4.5}实验与讨论}{59}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}测试集}{59}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}实验参数设置}{62}{subsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.5.3}各算法在TSPLIB测试集上的对比}{62}{subsection.4.5.3}%
+\contentsline {subsection}{\numberline {4.5.4}邻域结构迁移的有效性分析}{66}{subsection.4.5.4}%
+\contentsline {subsection}{\numberline {4.5.5}两目标相似度模型有效性分析}{68}{subsection.4.5.5}%
+\contentsline {subsection}{\numberline {4.5.6}多臂老虎机模型有效性分析}{70}{subsection.4.5.6}%
+\contentsline {subsection}{\numberline {4.5.7}各算法在真实地理数据测试集上的对比}{72}{subsection.4.5.7}%
+\contentsline {section}{\numberline {4.6}本章小结}{74}{section.4.6}%
 \contentsline {chapter}{\numberline {第五章\hspace {.3em}}研究工作总结和展望}{76}{chapter.5}%
 \contentsline {section}{\numberline {5.1}本文总结}{76}{section.5.1}%
 \contentsline {section}{\numberline {5.2}研究展望}{77}{section.5.2}%
-\contentsline {chapter}{参考文献}{78}{section*.64}%
-\contentsline {chapter}{致谢}{84}{chapter*.66}%
-\contentsline {chapter}{在学期间的研究成果及学术论文情况}{85}{chapter*.67}%
+\contentsline {chapter}{参考文献}{78}{section*.63}%
+\contentsline {chapter}{致谢}{84}{chapter*.65}%
+\contentsline {chapter}{在学期间的研究成果及学术论文情况}{85}{chapter*.66}%
 \contentsfinish 
