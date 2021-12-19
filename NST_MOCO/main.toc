@@ -10,16 +10,16 @@
 \contentsline {section}{\numberline {2.2}多目标组合优化算法}{9}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}进化算法}{9}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}基于分解的多目标进化算法}{11}{subsection.2.2.2}%
-\contentsline {section}{\numberline {2.3}局部搜索}{16}{section.2.3}%
+\contentsline {section}{\numberline {2.3}局部搜索}{15}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}基本概念}{16}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}邻域结构}{18}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.2}邻域结构}{17}{subsection.2.3.2}%
 \contentsline {subsection}{\numberline {2.3.3}邻域动作}{19}{subsection.2.3.3}%
 \contentsline {section}{\numberline {2.4}进化迁移优化}{20}{section.2.4}%
 \contentsline {section}{\numberline {2.5}性能评价指标}{21}{section.2.5}%
 \contentsline {subsection}{\numberline {2.5.1}超体积度量指标}{21}{subsection.2.5.1}%
 \contentsline {subsection}{\numberline {2.5.2}反向世代距离指标}{22}{subsection.2.5.2}%
 \contentsline {subsection}{\numberline {2.5.3}集合覆盖度量指标}{23}{subsection.2.5.3}%
-\contentsline {subsection}{\numberline {2.5.4}距离趋近度指标}{24}{subsection.2.5.4}%
+\contentsline {subsection}{\numberline {2.5.4}距离趋近度指标}{23}{subsection.2.5.4}%
 \contentsline {subsection}{\numberline {2.5.5}最优边遗失率指标}{24}{subsection.2.5.5}%
 \contentsline {section}{\numberline {2.6}测试问题}{24}{section.2.6}%
 \contentsline {subsection}{\numberline {2.6.1}TSP}{25}{subsection.2.6.1}%
@@ -50,24 +50,24 @@
 \contentsline {subsection}{\numberline {4.3.2}邻域结构}{52}{subsection.4.3.2}%
 \contentsline {subsection}{\numberline {4.3.3}两目标相似度模型}{52}{subsection.4.3.3}%
 \contentsline {subsection}{\numberline {4.3.4}多臂老虎机模型}{56}{subsection.4.3.4}%
-\contentsline {section}{\numberline {4.4}算法设计}{57}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}NST-MOEA算法主框架}{57}{subsection.4.4.1}%
+\contentsline {section}{\numberline {4.4}算法设计}{58}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}NST-MOEA算法主框架}{58}{subsection.4.4.1}%
 \contentsline {subsection}{\numberline {4.4.2}初始化阶段}{58}{subsection.4.4.2}%
 \contentsline {subsection}{\numberline {4.4.3}局部搜索阶段}{59}{subsection.4.4.3}%
-\contentsline {subsection}{\numberline {4.4.4}更新阶段}{59}{subsection.4.4.4}%
-\contentsline {section}{\numberline {4.5}实验与讨论}{59}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}测试集}{59}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.4.4}更新阶段}{60}{subsection.4.4.4}%
+\contentsline {section}{\numberline {4.5}实验与讨论}{60}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}测试集}{60}{subsection.4.5.1}%
 \contentsline {subsection}{\numberline {4.5.2}实验参数设置}{62}{subsection.4.5.2}%
-\contentsline {subsection}{\numberline {4.5.3}各算法在TSPLIB测试集上的对比}{62}{subsection.4.5.3}%
-\contentsline {subsection}{\numberline {4.5.4}邻域结构迁移的有效性分析}{66}{subsection.4.5.4}%
-\contentsline {subsection}{\numberline {4.5.5}两目标相似度模型有效性分析}{68}{subsection.4.5.5}%
-\contentsline {subsection}{\numberline {4.5.6}多臂老虎机模型有效性分析}{70}{subsection.4.5.6}%
+\contentsline {subsection}{\numberline {4.5.3}各算法在TSPLIB测试集上的对比}{63}{subsection.4.5.3}%
+\contentsline {subsection}{\numberline {4.5.4}邻域结构迁移的有效性分析}{68}{subsection.4.5.4}%
+\contentsline {subsection}{\numberline {4.5.5}两目标相似度模型有效性分析}{69}{subsection.4.5.5}%
+\contentsline {subsection}{\numberline {4.5.6}多臂老虎机模型有效性分析}{71}{subsection.4.5.6}%
 \contentsline {subsection}{\numberline {4.5.7}各算法在真实地理数据测试集上的对比}{72}{subsection.4.5.7}%
-\contentsline {section}{\numberline {4.6}本章小结}{74}{section.4.6}%
+\contentsline {section}{\numberline {4.6}本章小结}{75}{section.4.6}%
 \contentsline {chapter}{\numberline {第五章\hspace {.3em}}研究工作总结和展望}{76}{chapter.5}%
 \contentsline {section}{\numberline {5.1}本文总结}{76}{section.5.1}%
 \contentsline {section}{\numberline {5.2}研究展望}{77}{section.5.2}%
-\contentsline {chapter}{参考文献}{78}{section*.63}%
-\contentsline {chapter}{致谢}{84}{chapter*.65}%
-\contentsline {chapter}{在学期间的研究成果及学术论文情况}{85}{chapter*.66}%
+\contentsline {chapter}{参考文献}{78}{section*.59}%
+\contentsline {chapter}{致谢}{84}{chapter*.61}%
+\contentsline {chapter}{在学期间的研究成果及学术论文情况}{85}{chapter*.62}%
 \contentsfinish 

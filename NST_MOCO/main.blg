@@ -20,43 +20,43 @@ Warning--there's a publisher but no address in crowder1974computational
 Warning--there's a publisher but no address in sutton2018reinforcement
 You've used 102 entries,
             2324 wiz_defined-function locations,
-            1107 strings with 22541 characters,
-and the built_in function-call counts, 48068 in all, are:
-= -- 4998
+            1113 strings with 22537 characters,
+and the built_in function-call counts, 48437 in all, are:
+= -- 5041
 > -- 1074
-< -- 32
+< -- 33
 + -- 496
 - -- 248
-* -- 3873
-:= -- 6360
-add.period$ -- 233
+* -- 3912
+:= -- 6395
+add.period$ -- 229
 call.type$ -- 102
 change.case$ -- 0
 chr.to.int$ -- 0
 cite$ -- 109
-duplicate$ -- 3314
-empty$ -- 5027
+duplicate$ -- 3326
+empty$ -- 5065
 format.name$ -- 330
-if$ -- 10990
+if$ -- 11083
 int.to.chr$ -- 0
 int.to.str$ -- 102
 missing$ -- 105
 newline$ -- 537
 num.names$ -- 102
-pop$ -- 436
+pop$ -- 432
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 811
+skip$ -- 821
 stack$ -- 0
-substring$ -- 6577
-swap$ -- 254
-text.length$ -- 32
+substring$ -- 6663
+swap$ -- 263
+text.length$ -- 33
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 7
-while$ -- 548
+while$ -- 553
 width$ -- 105
-write$ -- 1265
+write$ -- 1270
 (There were 7 warnings)

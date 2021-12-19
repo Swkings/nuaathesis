@@ -2,10 +2,10 @@
 \contentsline {table}{\numberline {3.2}{\ignorespaces meNS生成算法的效率和质量 \relax }}{40}{table.caption.33}%
 \contentsline {table}{\numberline {3.3}{\ignorespaces meNS与K-NN、$\alpha $-nearest和Delaunay邻域结构生成算法的邻域结构质量对比\relax }}{42}{table.3.3}%
 \contentsline {table}{\numberline {4.1}{\ignorespaces MOTSP问题测试集 \relax }}{61}{table.caption.46}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces 各算法在TSPLIB测试集上获得的非支配解集的Hypervolume指标对比\relax }}{63}{table.4.2}%
-\contentsline {table}{\numberline {4.3}{\ignorespaces 各算法在TSPLIB测试集上获得的非支配解集的C-Metric指标对比 \relax }}{65}{table.caption.54}%
-\contentsline {table}{\numberline {4.4}{\ignorespaces NST-MOEA和未使用NST的NST-MOEA在TSPLIB测试集上获得的非支配解集的Hypervolume指标和部分C-Metric指标的对比\relax }}{67}{table.4.4}%
-\contentsline {table}{\numberline {4.5}{\ignorespaces 两目标相似度模型获取的部分相似度$S^*$值表 \relax }}{70}{table.caption.56}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces 各算法在TSPLIB测试集上获得的非支配解集的Hypervolume指标对比\relax }}{66}{table.4.2}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces 各算法在TSPLIB测试集上获得的非支配解集的C-Metric指标对比 \relax }}{67}{table.4.3}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces NST-MOEA和未使用NST的NST-MOEA在TSPLIB测试集上获得的非支配解集的Hypervolume指标和部分C-Metric指标的对比\relax }}{68}{table.4.4}%
+\contentsline {table}{\numberline {4.5}{\ignorespaces 两目标相似度模型获取的部分相似度$S^*$值表 \relax }}{70}{table.caption.53}%
 \contentsline {table}{\numberline {4.6}{\ignorespaces 各算法在真实地理数据测试集上获得的非支配解集的Hypervolume指标对比\relax }}{72}{table.4.6}%
-\contentsline {table}{\numberline {4.7}{\ignorespaces 各算法在部分真实地理数据测试集上获得的非支配解集的C-Metric指标对比 \relax }}{74}{table.caption.60}%
+\contentsline {table}{\numberline {4.7}{\ignorespaces 各算法在部分真实地理数据测试集上获得的非支配解集的C-Metric指标对比 \relax }}{74}{table.caption.56}%
 \contentsfinish 

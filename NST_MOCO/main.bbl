@@ -179,7 +179,7 @@ Lin J, Liu H~L, Tan K~C, et~al.
 Liang Z, Liang W, Xu X, et~al.
 \newblock A two stage adaptive knowledge transfer evolutionary multi-tasking
   based on population distribution for multi/many-objective optimization[J].
-\newblock arXiv preprint arXiv:2001.00810, 2020..
+\newblock ArXiv, 2020, abs/2001.00810.
 
 \bibitem{tan2021evolutionary}
 Tan K~C, Feng L, Jiang M.
@@ -541,7 +541,7 @@ Yuan Y, Xu H, Wang B, et~al.
 Feng L, Huang Y, Zhou L, et~al.
 \newblock Explicit Evolutionary Multitasking for Combinatorial Optimization: A
   Case Study on Capacitated Vehicle Routing Problem[J].
-\newblock IEEE Transactions on Cybernetics, 2020..
+\newblock IEEE Transactions on Cybernetics, 2021, 51:3143--3156.
 
 \bibitem{gupta2016multiobjective}
 Gupta A, Ong Y~S, Feng L, et~al.
@@ -557,7 +557,7 @@ Robbins H.
 \bibitem{kuleshov2014algorithms}
 Kuleshov V, Precup D.
 \newblock Algorithms for multi-armed bandit problems[J].
-\newblock arXiv preprint arXiv:1402.6028, 2014..
+\newblock ArXiv, 2014, abs/1402.6028.
 
 \bibitem{gittins1979bandit}
 Gittins J~C.
@@ -597,9 +597,9 @@ Auer P.
 
 \bibitem{garivier2008upper}
 Garivier A, Moulines E.
-\newblock On upper-confidence bound policies for non-stationary bandit
-  problems[J].
-\newblock arXiv preprint arXiv:0805.3415, 2008..
+\newblock On Upper-Confidence Bound Policies for Non-Stationary Bandit
+  Problems[J].
+\newblock Mathematics, 2008. 174--188.
 
 \bibitem{slivkins2011contextual}
 Slivkins A.
@@ -623,7 +623,7 @@ Lin S, Kernighan B~W.
 Cai X, Xia C, Zhang Q, et~al.
 \newblock The collaborative local search based on dynamic-constrained
   decomposition with grids for combinatorial multiobjective optimization[J].
-\newblock IEEE Transactions on Cybernetics, 2019..
+\newblock {IEEE} Trans. Cybern., 2021, 51(5):2639--2650.
 
 \bibitem{cai2018grid}
 Cai X, Sun H, Zhang Q, et~al.

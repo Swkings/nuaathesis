@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.12.16)  14 DEC 2021 20:32
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.12.16)  19 DEC 2021 14:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1687,7 +1687,12 @@ Underfull \vbox (badness 10000) detected at line 32
 
 
 ]
-Underfull \vbox (badness 10000) detected at line 95
+Overfull \hbox (2.07904pt too wide) in paragraph at lines 156--156
+ []\T1/ntxtlf/m/n/10.53937 MOEA/D| 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 156
  []
 
 [10
@@ -1924,54 +1929,53 @@ LaTeX Warning: Text page 46 contains only floats.
 
 
 ] [50] [51] [52] [53]
+Overfull \hbox (14.09447pt too wide) in paragraph at lines 116--117
+[][][]\TU/SimHei(0)/m/n/10.53937 定 义 \T1/qhv/m/n/10.53937 4.3\TU/SimHei(0)/m/n/10.53937 ：| []\TU/SimSun(0)/m/n/10.53937 对 于 一 个 具 有 $\OML/ntxmi/m/it/10.53937 m$ \TU/SimSun(0)/m/n/10.53937 个 目 标 的 \T1/ntxtlf/m/n/10.53937 MOP\TU/SimSun(0)/m/n/10.53937 ，|  分 解 得 到 中 心 子 问 题 的 权 重 被 定 义 为 $[][]$。|
+ []
+
+[54]
 File: ./figure/chapter4/Kns-KroAB300.pdf Graphic file (type pdf)
 <use ./figure/chapter4/Kns-KroAB300.pdf>
- [54] [55] [56] [57] [58]
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[55] [56] [57]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 
 Package enumitem Warning: Negative labelwidth. This does not make much
-(enumitem)                sense, on input line 261.
+(enumitem)                sense, on input line 314.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
+[58] [59] [60]
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 9.03374pt on input line 318.
+(Font)              scaled to size 9.03374pt on input line 371.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.0pt on input line 318.
+(Font)              scaled to size 6.0pt on input line 371.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 9.03374pt on input line 318.
+(Font)              scaled to size 9.03374pt on input line 371.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 6.0pt on input line 318.
+(Font)              scaled to size 6.0pt on input line 371.
 LaTeX Font Info:    Font shape `T1/qhv/m/n' will be
-(Font)              scaled to size 8.1303pt on input line 318.
+(Font)              scaled to size 8.1303pt on input line 371.
 LaTeX Font Info:    Font shape `T1/qhv/m/n' will be
-(Font)              scaled to size 5.39996pt on input line 318.
+(Font)              scaled to size 5.39996pt on input line 371.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/it' will be
-(Font)              scaled to size 9.03374pt on input line 318.
+(Font)              scaled to size 9.03374pt on input line 371.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/it' will be
-(Font)              scaled to size 6.0pt on input line 318.
+(Font)              scaled to size 6.0pt on input line 371.
 LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
-(Font)              scaled to size 9.03374pt on input line 318.
+(Font)              scaled to size 9.03374pt on input line 371.
 LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
-(Font)              scaled to size 6.0pt on input line 318.
+(Font)              scaled to size 6.0pt on input line 371.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.0pt on input line 353.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[59]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[60] [61]
+(Font)              scaled to size 6.0pt on input line 406.
+ [61] [62]
 File: ./figure/chapter4/PF/KroAB300/Thesis-All-SameScale1-PF.pdf Graphic file (type pdf)
 <use ./figure/chapter4/PF/KroAB300/Thesis-All-SameScale1-PF.pdf>
 File: ./figure/chapter4/PF/KroAB300/Thesis-NST-MOEA-SameScale1-PF.pdf Graphic file (type pdf)
 <use ./figure/chapter4/PF/KroAB300/Thesis-NST-MOEA-SameScale1-PF.pdf>
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 File: ./figure/chapter4/PF/KroAB300/Thesis-MOEAD-WS-SameScale1-PF.pdf Graphic file (type pdf)
 <use ./figure/chapter4/PF/KroAB300/Thesis-MOEAD-WS-SameScale1-PF.pdf>
 File: ./figure/chapter4/PF/KroAB300/Thesis-MOEAD-TCH-SameScale1-PF.pdf Graphic file (type pdf)
@@ -2014,19 +2018,17 @@ File: ./figure/chapter4/Box-HV-KroABC100.pdf Graphic file (type pdf)
 <use ./figure/chapter4/Box-HV-KroABC100.pdf>
 File: ./figure/chapter4/Box-HV-KroABCD100.pdf Graphic file (type pdf)
 <use ./figure/chapter4/Box-HV-KroABCD100.pdf>
-[62]
+ [63]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
+[64] [65]
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 9.03374pt on input line 478.
-[63] [64] [65] [66] [67] [68]
+(Font)              scaled to size 9.03374pt on input line 540.
+ [66] [67] [68]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -2041,6 +2043,7 @@ File: ./figure/chapter4/Similarity/Sim-HV-EuclidABCDE100-Dynamic.pdf Graphic fil
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
+[69] [70]
 File: ./figure/chapter4/Ran-MAB-Convergence-LS-KroAB100.pdf Graphic file (type pdf)
 <use ./figure/chapter4/Ran-MAB-Convergence-LS-KroAB100.pdf>
 File: ./figure/chapter4/Ran-MAB-Convergence-LS-KroAB300.pdf Graphic file (type pdf)
@@ -2049,19 +2052,10 @@ File: ./figure/chapter4/Ran-MAB-Convergence-LS-KroABC100.pdf Graphic file (type 
 <use ./figure/chapter4/Ran-MAB-Convergence-LS-KroABC100.pdf>
 File: ./figure/chapter4/Ran-MAB-Convergence-LS-KroABCD100.pdf Graphic file (type pdf)
 <use ./figure/chapter4/Ran-MAB-Convergence-LS-KroABCD100.pdf>
-File: ./figure/chapter4/Box-HV-KroAB300.pdf Graphic file (type pdf)
-<use ./figure/chapter4/Box-HV-KroAB300.pdf>
-File: ./figure/chapter4/Box-HV-KroAB300.pdf Graphic file (type pdf)
-<use ./figure/chapter4/Box-HV-KroAB300.pdf>
-File: ./figure/chapter4/Box-HV-KroAB300.pdf Graphic file (type pdf)
-<use ./figure/chapter4/Box-HV-KroAB300.pdf>
-File: ./figure/chapter4/Box-HV-KroAB300.pdf Graphic file (type pdf)
-<use ./figure/chapter4/Box-HV-KroAB300.pdf>
-[69] [70]
+ [71] [72]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[71] [72] [73]
 File: ./figure/chapter4/Real/Convergence-LS-All-RealAB100.pdf Graphic file (type pdf)
 <use ./figure/chapter4/Real/Convergence-LS-All-RealAB100.pdf>
 File: ./figure/chapter4/Real/Convergence-LS-All-RealAB300.pdf Graphic file (type pdf)
@@ -2071,15 +2065,21 @@ File: ./figure/chapter4/Real/Convergence-LS-All-RealABC100.pdf Graphic file (typ
 File: ./figure/chapter4/Real/Convergence-LS-All-RealABCD100.pdf Graphic file (type pdf)
 <use ./figure/chapter4/Real/Convergence-LS-All-RealABCD100.pdf>
 
-
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 )
-Overfull \hbox (0.33423pt too wide) in paragraph at lines 976--40
+Overfull \hbox (0.33423pt too wide) in paragraph at lines 1102--40
 []\TU/SimSun(0)/m/n/10.53937 本 章 提 出 了 一 种 基 于 邻 域 结 构 迁 移 的 多 目 标 组 合 优 化 算 法  |（\T1/ntxtlf/m/n/10.53937 NST-MOEA\TU/SimSun(0)/m/n/10.53937 ） 。|  主 要 针 对 \T1/ntxtlf/m/n/10.53937 MOTSP
  []
 
-[74] [75]
+[73]
+
+LaTeX Warning: Text page 74 contains only floats.
+
+
+Overfull \vbox (1.2092pt too high) has occurred while \output is active []
+
+ [74] [75]
 \openout2 = `chapter/Conclusion.aux'.
 
  (c:/CodeSpace/PaperSpace/nuaathesis/NST_MOCO/chapter/Conclusion.tex
@@ -2113,17 +2113,17 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 57.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 57.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 57.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 8736C0CBB7B05E3CDB2EA74AFEE30B24;10153.
+(rerunfilecheck)             Checksum: DB34C89D656C3C32AE0D7190F84CC12C;10153.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 50579 strings out of 479418
- 1184573 string characters out of 5888104
- 1548050 words of memory out of 5000000
- 66862 multiletter control sequences out of 15000+600000
+ 50575 strings out of 479418
+ 1184356 string characters out of 5888104
+ 1556969 words of memory out of 5000000
+ 66858 multiletter control sequences out of 15000+600000
  683787 words of font info for 238 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  76i,25n,129p,1408b,1347s stack positions out of 5000i,500n,10000p,200000b,80000s
