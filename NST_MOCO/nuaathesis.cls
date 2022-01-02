@@ -473,13 +473,13 @@
 \fancypagestyle{style@main}{
   \fancyhead{}
   \fancyhead[C]{\ifodd\value{page}
-    {\mbox{\songti\zihao{5}\nuaa@university\nuaa@worktypecn}}
+    {\mbox{\songti\zihao{5}{\nuaa@university\nuaa@worktypecn}}}
   \else
     \ifnuaa@bachelor
       \ifnuaa@mainmatter
         {\mbox{\songti\zihao{5}\leftmark}}
       \else
-        {\mbox{\songti\zihao{5}\nuaa@university\nuaa@worktypecn}}
+        {\mbox{\songti\zihao{5}{\nuaa@university\nuaa@worktypecn}}}
       \fi
     \else
       {\mbox{\zihao{5}\nuaa@title}}
@@ -835,7 +835,8 @@
   \setbox0=\hbox{#3}
   \ooalign{\copy0\cr\rule[\dimexpr#1-#2\relax]{\wd0}{#2}}}}
 \ifnuaa@blindtrail
-  \newcommand{\secretize}[1]{$\times\times\times$}
+  % \newcommand{\secretize}[1]{$\times\times\times$}
+  \newcommand{\secretize}[1]{$***$}
 \else
   \newcommand{\secretize}[1]{#1}
 \fi

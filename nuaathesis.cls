@@ -485,6 +485,7 @@
       {\mbox{\zihao{5}\nuaa@title}}
     \fi
   \fi}
+
   \fancyfoot{}
   \if@twoside
     \fancyfoot[OR,EL]{\footnotesize{\nuaa@footerpagenum@decorate{\thepage}}}
